@@ -8,13 +8,14 @@
   }
 },
     "routes": [
-        { "src": "/build/(.*)", "dest": "/public/build/$1" },
+        { "src": "/build/(.*)", "dest": "/build/$1" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
         "APP_URL": "https://gki-darmo-permai.vercel.app",
+        "ASSET_URL": "https://gki-darmo-permai.vercel.app",
         "APP_KEY": "base64:mLxw1W4noSe9jLV/NJDVyBtwfa9jncdGmFzcPLMvnOg=",
         "VIEW_COMPILED_PATH": "/tmp",
         "CACHE_DRIVER": "array",
