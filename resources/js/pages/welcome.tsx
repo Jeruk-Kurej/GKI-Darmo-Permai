@@ -1,14 +1,14 @@
 import { Head } from '@inertiajs/react';
 import { Navbar } from '@/components/navbar';
-import { Hero } from '@/components/pages/hero';
-import { JadwalIbadah } from '@/components/pages/jadwal-ibadah';
-import { TentangKami } from '@/components/pages/tentang-kami';
-import { VisiKami } from '@/components/pages/visi-kami';
-import { AcaraMendatang } from '@/components/pages/acara-mendatang';
-import { VideoIbadah } from '@/components/pages/video-ibadah';
-import { LatestPost } from '@/components/pages/latest-post';
-import { CallToAction } from '@/components/pages/cta';
-import { Footer } from '@/components/pages/footer';
+import { Hero } from '@/components/home/hero';
+import { JadwalIbadah } from '@/components/home/jadwal-ibadah';
+import { TentangKami } from '@/components/home/tentang-kami';
+import { VisiKami } from '@/components/home/visi-kami';
+import { AcaraMendatang } from '@/components/home/acara-mendatang';
+import { VideoIbadah } from '@/components/home/video-ibadah';
+import { LatestPost } from '@/components/home/latest-post';
+import { CallToAction } from '@/components/home/cta';
+import { Footer } from '@/components/footer';
 
 export default function Welcome() {
     return (

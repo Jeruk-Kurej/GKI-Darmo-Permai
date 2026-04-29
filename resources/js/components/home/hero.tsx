@@ -5,7 +5,7 @@ export function Hero() {
     return (
         <section 
             className="relative w-full flex-1 min-h-[600px] flex items-center bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('/images/home-header.png')` }}
+            style={{ backgroundImage: `url('/images/home/home-header.png')` }}
         >
             {/* Overlay Gelap agar teks terbaca jelas */}
             <div className="absolute inset-0 bg-black/40"></div>

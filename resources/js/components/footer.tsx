@@ -9,7 +9,7 @@ export function Footer() {
                 {/* Kolom 1: Logo & Info Kontak */}
                 <div className="flex flex-col text-white lg:col-span-2 pr-0 lg:pr-8">
                     <div className="flex items-center gap-3 mb-6">
-                        <img src="/images/logo-only.png" alt="GKI Logo" className="w-10 h-10 object-contain" />
+                        <img src="/images/home/logo-only.png" alt="GKI Logo" className="w-10 h-10 object-contain" />
                         <span className="font-bold tracking-widest text-sm">GKI DARMO PERMAI</span>
                     </div>
                     

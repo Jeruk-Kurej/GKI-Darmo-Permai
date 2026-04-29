@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 export function Navbar() {
     const navLinks = [
-        { name: 'Tentang Kami', href: '/tentang' },
+        { name: 'Tentang Kami', href: '/tentang-kami' },
         { name: 'Ibadah', href: '/ibadah' },
         { name: 'Kegiatan', href: '/kegiatan' },
         { name: 'Media', href: '/media' },
@@ -17,7 +17,7 @@ export function Navbar() {
                 <div className="flex items-center">
                     <Link href="/" className="flex items-center gap-2">
                         <img 
-                            src="/images/logo.png" 
+                            src="/images/home/logo.png" 
                             alt="Logo GKI" 
                             className="h-12 w-auto object-contain"
                         />
