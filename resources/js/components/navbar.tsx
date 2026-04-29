@@ -69,7 +69,7 @@ export function Navbar() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className={`text-[15px] font-semibold transition-colors relative py-2 ${
+                                    className={`text-[15px] font-semibold transition-colors relative py-2 cursor-pointer ${
                                         isActive ? 'text-[#7a9d54]' : 'text-gray-700 hover:text-[#7a9d54]'
                                     }`}
                                 >
@@ -81,8 +81,8 @@ export function Navbar() {
                             );
                         })}
 
-                        <Link href="/hubungi-kami">
-                            <Button className={`transition-all duration-300 bg-[#7a9d54] hover:bg-[#688945] text-white rounded-md font-bold shadow-lg shadow-[#7a9d54]/20 ${
+                        <Link href="/hubungi-kami" className="cursor-pointer">
+                            <Button className={`transition-all duration-300 bg-[#7a9d54] hover:bg-[#688945] text-white rounded-md font-bold shadow-lg shadow-[#7a9d54]/20 cursor-pointer ${
                                 scrolled ? 'px-5 py-4 text-sm' : 'px-6 py-5'
                             }`}>
                                 Hubungi Kami
