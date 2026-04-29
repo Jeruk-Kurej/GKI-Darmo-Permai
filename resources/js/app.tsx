@@ -22,6 +22,7 @@ createInertiaApp({
                     case name === 'welcome':
                     case name === 'about-us':
                     case name === 'ibadah':
+                    case name === 'contact-us':
                         return page;
                     case name.startsWith('auth/'):
                         return <AuthLayout children={page} />;

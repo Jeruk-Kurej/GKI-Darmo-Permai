@@ -81,11 +81,13 @@ export function Navbar() {
                             );
                         })}
 
-                        <Button className={`transition-all duration-300 bg-[#7a9d54] hover:bg-[#688945] text-white rounded-md font-bold shadow-lg shadow-[#7a9d54]/20 ${
-                            scrolled ? 'px-5 py-4 text-sm' : 'px-6 py-5'
-                        }`}>
-                            Hubungi Kami
-                        </Button>
+                        <Link href="/hubungi-kami">
+                            <Button className={`transition-all duration-300 bg-[#7a9d54] hover:bg-[#688945] text-white rounded-md font-bold shadow-lg shadow-[#7a9d54]/20 ${
+                                scrolled ? 'px-5 py-4 text-sm' : 'px-6 py-5'
+                            }`}>
+                                Hubungi Kami
+                            </Button>
+                        </Link>
                     </div>
                     
                     {/* Mobile Menu Button */}
@@ -152,9 +154,11 @@ export function Navbar() {
                                     );
                                 })}
                                 <div className="pt-6 border-t border-gray-100">
-                                    <Button className="w-full bg-[#7a9d54] hover:bg-[#688945] text-white py-6 rounded-xl font-bold text-lg">
-                                        Hubungi Kami
-                                    </Button>
+                                    <Link href="/hubungi-kami" onClick={() => setIsMenuOpen(false)}>
+                                        <Button className="w-full bg-[#7a9d54] hover:bg-[#688945] text-white py-6 rounded-xl font-bold text-lg">
+                                            Hubungi Kami
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </motion.div>

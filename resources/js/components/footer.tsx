@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, CheckCircle2, MapPin, Facebook, Youtube, Instagram } from 'lucide-react';
+import { Phone, Mail, Check, MapPin, Facebook, Youtube, Instagram } from 'lucide-react';
 
 export function Footer() {
     return (
@@ -35,7 +35,7 @@ export function Footer() {
                             <span>info@gkidamai.org</span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <CheckCircle2 size={16} className="mt-0.5" />
+                            <Check size={18} className="mt-0.5 stroke-[3px]" />
                             <div>
                                 <span className="block font-bold">258.350.712.4 BCA</span>
                                 <span className="block text-[10px] opacity-80">a.n GKI Darmo Permai</span>
