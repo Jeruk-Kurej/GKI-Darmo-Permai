@@ -1,4 +1,5 @@
 import { createInertiaApp } from '@inertiajs/react';
+import { createRoot } from 'react-dom/client';
 import { Toaster } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { initializeTheme } from '@/hooks/use-appearance';
@@ -10,25 +11,38 @@ const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
-    layout: (name) => {
-        switch (true) {
-            case name === 'welcome':
-            case name === 'about-us':
-                return null;
-            case name.startsWith('auth/'):
-                return AuthLayout;
-            case name.startsWith('settings/'):
-            case name.startsWith('teams/'):
-                return [AppLayout, SettingsLayout];
-            default:
-                return AppLayout;
-        }
+    resolve: (name) => {
+        const pages = import.meta.glob('./pages/**/*.tsx', { eager: true });
+        const page = (pages[`./pages/${name}.tsx`] as any).default;
+
+        page.layout =
+            page.layout ||
+            ((page: any) => {
+                switch (true) {
+                    case name === 'welcome':
+                    case name === 'about-us':
+                    case name === 'ibadah':
+                        return page;
+                    case name.startsWith('auth/'):
+                        return <AuthLayout children={page} />;
+                    case name.startsWith('settings/'):
+                    case name.startsWith('teams/'):
+                        return (
+                            <AppLayout>
+                                <SettingsLayout children={page} />
+                            </AppLayout>
+                        );
+                    default:
+                        return <AppLayout children={page} />;
+                }
+            });
+
+        return page;
     },
-    strictMode: true,
-    withApp(app) {
-        return (
+    setup({ el, App, props }) {
+        createRoot(el).render(
             <TooltipProvider delayDuration={0}>
-                {app}
+                <App {...props} />
                 <Toaster />
             </TooltipProvider>
         );

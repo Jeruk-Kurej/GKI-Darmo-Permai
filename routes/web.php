@@ -10,6 +10,7 @@ Route::inertia('/', 'welcome', [
 ])->name('home');
 
 Route::inertia('/tentang-kami', 'about-us')->name('about-us');
+Route::inertia('/ibadah', 'ibadah')->name('ibadah');
 
 Route::prefix('{current_team}')
     ->middleware(['auth', 'verified', EnsureTeamMembership::class])
