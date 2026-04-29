@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export function AboutHero() {
     return (
         <section 
-            className="relative w-full flex-1 min-h-[500px] lg:min-h-[600px] flex items-center bg-cover bg-center bg-no-repeat bg-fixed"
+            className="relative w-full flex-1 min-h-[500px] lg:min-h-[600px] flex items-center bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url('/images/about-us/about-us-header.png')` }}
         >
             {/* Optional subtle overlay if needed to make text stand out */}
