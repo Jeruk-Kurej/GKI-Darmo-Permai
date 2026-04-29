@@ -1,70 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { DiamondOutline, DiamondSolid, DotsPattern, TriangleDotsPattern } from '@/components/ui/shapes';
+import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
 
 export function TentangKami() {
     return (
-        <section className="relative w-full overflow-hidden bg-white py-12 md:py-20 flex-1 flex flex-col justify-center">
-            {/* === BACKGROUND SHAPES (Gray Theme) === */}
+        <section className="relative w-full h-full flex items-center justify-center bg-white overflow-hidden py-16 lg:py-0">
+            
+            {/* === BACKGROUND SHAPES === */}
             
             {/* Kiri Atas */}
             <div className="absolute top-0 left-0 h-full w-[30%] pointer-events-none">
-                <DiamondSolid 
-                    className="-left-32 top-[-50px]" 
-                    size="w-96 h-96" 
-                    bgColor="bg-gray-50"
-                    opacity="opacity-100" 
-                    blur="backdrop-blur-none"
-                />
-                <DiamondOutline 
-                    className="-left-20 top-0" 
-                    size="w-64 h-64" 
-                    borderWidth="border-2"
-                    borderColor="border-gray-200"
-                    opacity="opacity-100" 
-                />
-                <DiamondOutline 
-                    className="-left-48 top-32" 
-                    size="w-96 h-96" 
-                    borderWidth="border-[1px]"
-                    borderColor="border-gray-300"
-                    opacity="opacity-60" 
-                />
+                <BrandDecoLeft className="-translate-x-32 -translate-y-20 scale-150 opacity-50" />
             </div>
 
             {/* Kanan Bawah */}
-            <div className="absolute top-0 right-0 h-full w-[30%] pointer-events-none flex justify-end">
-                <DiamondOutline 
-                    className="-right-32 bottom-[-50px]" 
-                    size="w-[500px] h-[500px]" 
-                    borderWidth="border-[1px]"
-                    borderColor="border-gray-200"
-                    opacity="opacity-100" 
-                />
-                <DiamondOutline 
-                    className="-right-20 bottom-10" 
-                    size="w-80 h-80" 
-                    borderWidth="border-2"
-                    borderColor="border-gray-100"
-                    opacity="opacity-80" 
-                />
-            </div>
-
-            {/* Titik-titik (Dots) Tersebar */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <DotsPattern 
-                    className="left-1/4 top-20" 
-                    size="w-24 h-24" 
-                    dotColor="#e5e7eb"
-                    opacity="opacity-60" 
-                />
-                <TriangleDotsPattern 
-                    className="right-[600px] -bottom-10" 
-                    size="w-48 h-48" 
-                    dotColor="#e5e7eb"
-                    opacity="opacity-80" 
-                    clipPath="polygon(50% 0, 0 100%, 100% 100%)"
-                />
+            <div className="absolute top-0 right-0 h-full w-[30%] pointer-events-none flex justify-end items-end pb-10">
+                <BrandDecoRight className="translate-x-32 translate-y-32 scale-150 opacity-50" />
             </div>
 
             {/* === MAIN CONTENT === */}
@@ -75,7 +26,7 @@ export function TentangKami() {
                     <motion.p 
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.8 }}
+                        viewport={{ once: false, amount: 0.3 }}
                         transition={{ duration: 0.6 }}
                         className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase mb-3"
                     >
@@ -84,7 +35,7 @@ export function TentangKami() {
                     <motion.div 
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.8 }}
+                        viewport={{ once: false, amount: 0.3 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="relative inline-block"
                     >
@@ -103,7 +54,7 @@ export function TentangKami() {
                     <motion.div 
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
+                        viewport={{ once: false, amount: 0.3 }}
                         transition={{ duration: 0.8 }}
                         className="flex flex-col items-start relative pl-4 md:pl-10"
                     >
