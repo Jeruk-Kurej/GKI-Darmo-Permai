@@ -40,28 +40,28 @@ export function ContactContent() {
                                 <input 
                                     type="text" 
                                     placeholder="Nama Lengkap" 
-                                    className="w-full px-6 py-4 bg-white border-none rounded-sm focus:ring-1 focus:ring-[#7a9d54] outline-none text-sm placeholder:text-gray-400"
+                                    className="w-full px-6 py-4 bg-white border-none rounded-sm focus:ring-1 focus:ring-[#7a9d54] outline-none text-sm placeholder:text-gray-400 caret-black"
                                 />
                             </div>
                             <div className="shadow-[0_4px_12px_rgba(0,0,0,0.04)] rounded-sm">
                                 <input 
                                     type="email" 
                                     placeholder="Email" 
-                                    className="w-full px-6 py-4 bg-white border-none rounded-sm focus:ring-1 focus:ring-[#7a9d54] outline-none text-sm placeholder:text-gray-400"
+                                    className="w-full px-6 py-4 bg-white border-none rounded-sm focus:ring-1 focus:ring-[#7a9d54] outline-none text-sm placeholder:text-gray-400 caret-black"
                                 />
                             </div>
                             <div className="shadow-[0_4px_12px_rgba(0,0,0,0.04)] rounded-sm">
                                 <input 
                                     type="text" 
                                     placeholder="Topik Terkait" 
-                                    className="w-full px-6 py-4 bg-white border-none rounded-sm focus:ring-1 focus:ring-[#7a9d54] outline-none text-sm placeholder:text-gray-400"
+                                    className="w-full px-6 py-4 bg-white border-none rounded-sm focus:ring-1 focus:ring-[#7a9d54] outline-none text-sm placeholder:text-gray-400 caret-black"
                                 />
                             </div>
                             <div className="shadow-[0_4px_12px_rgba(0,0,0,0.04)] rounded-sm">
                                 <textarea 
                                     placeholder="Pesan" 
                                     rows={6}
-                                    className="w-full px-6 py-4 bg-white border-none rounded-sm focus:ring-1 focus:ring-[#7a9d54] outline-none text-sm resize-none placeholder:text-gray-400"
+                                    className="w-full px-6 py-4 bg-white border-none rounded-sm focus:ring-1 focus:ring-[#7a9d54] outline-none text-sm resize-none placeholder:text-gray-400 caret-black"
                                 ></textarea>
                             </div>
                             
