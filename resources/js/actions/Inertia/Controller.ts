@@ -242,6 +242,86 @@ Controller05d51cd1fea0aaa330d8c8fd0b00707a.form = Controller05d51cd1fea0aaa330d8
 /**
 * @see \Inertia\Controller::__invoke
 * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+const Controllerd6ed9cd88c3989be14a7aade5f3e62b3 = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: Controllerd6ed9cd88c3989be14a7aade5f3e62b3.url(options),
+    method: 'get',
+})
+
+Controllerd6ed9cd88c3989be14a7aade5f3e62b3.definition = {
+    methods: ["get","head"],
+    url: '/kegiatan',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+Controllerd6ed9cd88c3989be14a7aade5f3e62b3.url = (options?: RouteQueryOptions) => {
+    return Controllerd6ed9cd88c3989be14a7aade5f3e62b3.definition.url + queryParams(options)
+}
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+Controllerd6ed9cd88c3989be14a7aade5f3e62b3.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: Controllerd6ed9cd88c3989be14a7aade5f3e62b3.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+Controllerd6ed9cd88c3989be14a7aade5f3e62b3.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: Controllerd6ed9cd88c3989be14a7aade5f3e62b3.url(options),
+    method: 'head',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+const Controllerd6ed9cd88c3989be14a7aade5f3e62b3Form = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: Controllerd6ed9cd88c3989be14a7aade5f3e62b3.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+Controllerd6ed9cd88c3989be14a7aade5f3e62b3Form.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: Controllerd6ed9cd88c3989be14a7aade5f3e62b3.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+Controllerd6ed9cd88c3989be14a7aade5f3e62b3Form.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: Controllerd6ed9cd88c3989be14a7aade5f3e62b3.url({
+        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+            _method: 'HEAD',
+            ...(options?.query ?? options?.mergeQuery ?? {}),
+        }
+    }),
+    method: 'get',
+})
+
+Controllerd6ed9cd88c3989be14a7aade5f3e62b3.form = Controllerd6ed9cd88c3989be14a7aade5f3e62b3Form
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
 * @route '/hubungi-kami'
 */
 const Controllerb2ad1919cc156958282f0facf292d011 = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -502,6 +582,7 @@ const Controller = {
     '/': Controller980bb49ee7ae63891f1d891d2fbcf1c9,
     '/tentang-kami': Controllercaa0ac59a54ac8054bbfb3b32db74b70,
     '/ibadah': Controller05d51cd1fea0aaa330d8c8fd0b00707a,
+    '/kegiatan': Controllerd6ed9cd88c3989be14a7aade5f3e62b3,
     '/hubungi-kami': Controllerb2ad1919cc156958282f0facf292d011,
     '/{current_team}/dashboard': Controller7c56b49c1afb48e6321cba0b75b6ac61,
     '/settings/appearance': Controllere19ee86e9cf603ce1a59a1ec5d21dec5,

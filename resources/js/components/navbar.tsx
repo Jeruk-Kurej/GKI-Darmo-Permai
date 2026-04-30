@@ -46,7 +46,7 @@ export function Navbar() {
                 className={`w-full px-6 transition-all duration-500 fixed top-0 z-[60] ${
                     scrolled 
                         ? 'py-3 bg-white/95 backdrop-blur-lg shadow-md border-b border-gray-200' 
-                        : 'py-5 bg-white/70 backdrop-blur-md border-b border-gray-200/30'
+                        : 'py-5 bg-white border-b border-gray-200'
                 }`}
             >
                 <div className="mx-auto max-w-7xl flex items-center justify-between">
@@ -109,11 +109,6 @@ export function Navbar() {
                     </div>
                 </div>
 
-                {/* Scroll Progress Bar */}
-                <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#7a9d54] origin-left"
-                    style={{ scaleX }}
-                />
             </nav>
 
             {/* Mobile Menu Overlay */}

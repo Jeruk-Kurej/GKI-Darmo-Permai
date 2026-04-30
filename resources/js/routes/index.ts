@@ -463,6 +463,87 @@ ibadah.form = ibadahForm
 /**
 * @see \Inertia\Controller::__invoke
 * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+export const kegiatan = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: kegiatan.url(options),
+    method: 'get',
+})
+
+kegiatan.definition = {
+    methods: ["get","head"],
+    url: '/kegiatan',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+kegiatan.url = (options?: RouteQueryOptions) => {
+    return kegiatan.definition.url + queryParams(options)
+}
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+kegiatan.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: kegiatan.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+kegiatan.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: kegiatan.url(options),
+    method: 'head',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+const kegiatanForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: kegiatan.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+kegiatanForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: kegiatan.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/kegiatan'
+*/
+kegiatanForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: kegiatan.url({
+        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+            _method: 'HEAD',
+            ...(options?.query ?? options?.mergeQuery ?? {}),
+        }
+    }),
+    method: 'get',
+})
+
+kegiatan.form = kegiatanForm
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
 * @route '/hubungi-kami'
 */
 export const contactUs = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({

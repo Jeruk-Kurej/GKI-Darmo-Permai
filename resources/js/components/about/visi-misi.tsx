@@ -11,13 +11,24 @@ export function VisiMisi() {
     ];
 
     return (
-        <section className="relative w-full py-24 bg-white">
-            {/* Background Decorative Elements */}
-            <div className="absolute top-0 left-0 w-[40%] h-full pointer-events-none opacity-60">
-                <BrandDecoLeft className="-translate-x-32 -translate-y-20 scale-125" />
+        <section className="relative w-full py-24 bg-white z-10">
+            {/* Background Decorative Elements - Peeking Style */}
+            {/* Top-left decoration */}
+            <div className="absolute top-0 left-0 w-[40%] h-[150%] pointer-events-none opacity-60">
+                <BrandDecoLeft className="-translate-x-64 -translate-y-20 scale-125" />
             </div>
+
+            {/* Bottom-right decoration */}
             <div className="absolute bottom-0 right-0 w-[40%] h-full pointer-events-none opacity-60 flex justify-end items-end">
-                <BrandDecoRight className="translate-x-32 translate-y-20 scale-125" />
+                <BrandDecoRight className="translate-x-64 translate-y-32 scale-125" />
+            </div>
+
+            {/* Extra subtle spread elements for "menyebar" effect */}
+            <div className="absolute top-1/3 left-0 opacity-10 pointer-events-none">
+                <BrandDecoLeft className="-translate-x-80 scale-75 -rotate-6" />
+            </div>
+            <div className="absolute bottom-1/4 right-0 opacity-10 pointer-events-none flex justify-end">
+                <BrandDecoRight className="translate-x-80 scale-90 rotate-12" />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex flex-col items-center">

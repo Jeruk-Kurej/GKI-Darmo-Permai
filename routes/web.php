@@ -11,6 +11,7 @@ Route::inertia('/', 'welcome', [
 
 Route::inertia('/tentang-kami', 'about-us')->name('about-us');
 Route::inertia('/ibadah', 'ibadah')->name('ibadah');
+Route::inertia('/kegiatan', 'kegiatan')->name('kegiatan');
 Route::inertia('/hubungi-kami', 'contact-us')->name('contact-us');
 
 Route::prefix('{current_team}')

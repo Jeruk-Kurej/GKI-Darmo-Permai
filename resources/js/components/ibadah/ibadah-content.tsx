@@ -12,7 +12,7 @@ const UMUM_DATA = {
         pastor: "Oleh Ibu Dian Stephanita",
         time: "Minggu | 07:00 WIB",
         location: "Gedung Gereja GKI Damai",
-        thumbnail: "/Users/bcls/.gemini/antigravity/brain/7de78e02-d94f-4574-b737-c01628f57220/church_live_stream_umum_1777469078760.png",
+        thumbnail: "/images/ibadah/live-umum-placeholder.png",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     schedules: [
@@ -33,7 +33,7 @@ const PROUD_DATA = {
         pastor: "Ibu Victoria Woen",
         time: "Minggu | 10:00 WIB",
         location: "Gedung Gereja GKI Damai",
-        thumbnail: "/Users/bcls/.gemini/antigravity/brain/7de78e02-d94f-4574-b737-c01628f57220/church_youth_vibe_1777469096182.png",
+        thumbnail: "/images/ibadah/live-proud-placeholder.png",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     schedules: [
@@ -74,8 +74,8 @@ export function IbadahTabs({ activeTab, setActiveTab }: { activeTab: string, set
 
 export function IbadahContent({ activeTab }: { activeTab: string }) {
     return (
-        <section className="relative w-full pb-10 bg-white overflow-hidden">
-            {/* Decorative Backgrounds - More Dynamic */}
+        <section className="relative w-full pb-10 bg-white z-10">
+            {/* Decorative Backgrounds - Pushed further to edges for "peeking" effect */}
             <motion.div 
                 animate={{ 
                     y: [0, -20, 0],
@@ -88,7 +88,8 @@ export function IbadahContent({ activeTab }: { activeTab: string }) {
                 }}
                 className="absolute top-20 left-0 w-[40%] h-full pointer-events-none opacity-30"
             >
-                <BrandDecoLeft className="-translate-x-32 scale-150" />
+                {/* Pushed further left (-translate-x-64) */}
+                <BrandDecoLeft className="-translate-x-64 scale-150" />
             </motion.div>
 
             <motion.div 
@@ -103,8 +104,17 @@ export function IbadahContent({ activeTab }: { activeTab: string }) {
                 }}
                 className="absolute bottom-20 right-0 w-[40%] h-full pointer-events-none opacity-30 flex justify-end items-end"
             >
-                <BrandDecoRight className="translate-x-32 scale-150" />
+                {/* Pushed further right (translate-x-64) */}
+                <BrandDecoRight className="translate-x-64 scale-150" />
             </motion.div>
+
+            {/* Extra subtle spread elements */}
+            <div className="absolute top-1/2 right-10 opacity-10 pointer-events-none">
+                <BrandDecoRight className="translate-x-80 scale-75 rotate-12" />
+            </div>
+            <div className="absolute bottom-1/4 left-10 opacity-10 pointer-events-none">
+                <BrandDecoLeft className="-translate-x-80 scale-90 -rotate-6" />
+            </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24 pt-32 pb-16">
                 <AnimatePresence mode="wait">
