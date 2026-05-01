@@ -1,15 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { classes } from './ibadah-data';
 
 export function IbadahAnak() {
-    const classes = [
-        { name: "Kelas Nuh", age: "Playgroup" },
-        { name: "Kelas Ishak", age: "TK" },
-        { name: "Kelas Abraham", age: "SD 1-2" },
-        { name: "Kelas Yakub", age: "SD 3-4" },
-        { name: "Kelas Yusuf", age: "SD 5-6" },
-    ];
-
     return (
         <motion.div 
             initial={{ opacity: 0, y: 30 }} 

@@ -1,15 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
+import { misiList } from './about-data';
 
 export function VisiMisi() {
-    const misiList = [
-        "Membangun spiritualitas keluarga yang berpusat pada Kristus",
-        "Membangun persekutuan keluarga yang saling menghargai, memperhatikan, dan berbagi",
-        "Mendorong dan memfasilitasi jemaat untuk melayani",
-        "Menghadirkan gereja yang menjadi saluran berkat bagi masyarakat, bangsa, dan negara"
-    ];
-
     return (
         <section id="visi-misi" className="relative w-full py-24 bg-white z-10 overflow-hidden">
             {/* Background Decorative Elements - Peeking Style */}

@@ -34,3 +34,11 @@ export const PROUD_DATA = {
         { id: 2, date: "20 JULY", title: "IBADAH PROUD 1", theme: '"BERBAHAGIALAH YANG MURAH HATI"', pastor: "Ibu Victoria Woen", time: "Minggu | 10:00 WIB", location: "Gedung Gereja GKI Damai" },
     ]
 };
+
+export const classes = [
+    { name: "Kelas Nuh", age: "Playgroup" },
+    { name: "Kelas Ishak", age: "TK" },
+    { name: "Kelas Abraham", age: "SD 1-2" },
+    { name: "Kelas Yakub", age: "SD 3-4" },
+    { name: "Kelas Yusuf", age: "SD 5-6" },
+];

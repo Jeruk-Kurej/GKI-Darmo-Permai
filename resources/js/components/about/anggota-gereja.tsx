@@ -1,30 +1,8 @@
 import React from 'react';
 import { Facebook, Twitter, Linkedin } from 'lucide-react';
+import { members } from './about-data';
 
 export function AnggotaGereja() {
-    const members = [
-        {
-            name: "KIM BOWEN",
-            role: "Pastor, Church",
-            image: "/images/about-us/anggota-gereja/samuel.webp" // Placeholder
-        },
-        {
-            name: "DANIELLE WATKINS",
-            role: "Pastor, Church",
-            image: "/images/about-us/anggota-gereja/samuel.webp" // Placeholder
-        },
-        {
-            name: "NAOMI CRAIG",
-            role: "Pastor, Church",
-            image: "/images/about-us/anggota-gereja/samuel.webp" // Placeholder
-        },
-        {
-            name: "SANTOS PAYNE",
-            role: "Pastor, Church",
-            image: "/images/about-us/anggota-gereja/samuel.webp" // Placeholder
-        }
-    ];
-
     return (
         <section className="relative w-full py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 text-center">

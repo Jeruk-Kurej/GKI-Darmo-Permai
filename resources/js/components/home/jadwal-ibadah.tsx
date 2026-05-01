@@ -1,31 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
-
-// Data jadwal dinamis
-const schedulesData = [
-    {
-        category: "Umum",
-        items: [
-            { type: "ONSITE", time: "07:00 WIB" },
-            { type: "ONSITE", time: "09:30 WIB" },
-            { type: "ONSITE", time: "17:00 WIB" },
-            { type: "STREAMING", time: "07:30 WIB" },
-        ]
-    },
-    {
-        category: "PROUD",
-        items: [
-            { type: "ONSITE", time: "09:30 WIB" },
-            { type: "STREAMING", time: "09:30 WIB" },
-        ]
-    },
-    {
-        category: "Anak",
-        items: [
-            { type: "ONSITE", time: "09:30 WIB" },
-        ]
-    }
-];
+import { schedulesData } from './home-data';
 
 const AUTO_PLAY_INTERVAL = 4000;
 
