@@ -15,7 +15,7 @@
     ],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
+        "APP_DEBUG": "false",
         "APP_URL": "https://gki-darmo-permai.vercel.app",
         "APP_KEY": "base64:mLxw1W4noSe9jLV/NJDVyBtwfa9jncdGmFzcPLMvnOg=",
         "VIEW_COMPILED_PATH": "/tmp",
