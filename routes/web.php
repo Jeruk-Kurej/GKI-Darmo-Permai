@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
 
-function safe_db_get($callback) {
+function safe_db_get(callable $callback) {
     try {
         return $callback();
     } catch (\Throwable $e) {
