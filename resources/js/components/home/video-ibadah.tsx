@@ -5,7 +5,7 @@ export function VideoIbadah() {
     return (
         <section 
             className="relative w-full py-20 md:py-32 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('/images/home/video-terbaru-bg.png')` }}
+            style={{ backgroundImage: `url('/images/home/video-terbaru-bg.webp')` }}
         >
             {/* Dark Overlay untuk membuat teks putih lebih terbaca */}
             <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>

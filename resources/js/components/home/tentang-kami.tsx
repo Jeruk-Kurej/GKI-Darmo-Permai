@@ -125,7 +125,7 @@ export function TentangKami() {
                         {/* Main Image */}
                         <div className="relative z-10 pr-6 pb-6">
                             <img 
-                                src="/images/home/about-us-people.png" 
+                                src="/images/home/about-us-people.webp" 
                                 alt="Pdt. Emmanuel Oarhe" 
                                 className="w-full max-w-sm md:max-w-md h-auto object-cover shadow-lg"
                                 onError={(e) => {

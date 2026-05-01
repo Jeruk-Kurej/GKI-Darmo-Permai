@@ -5,7 +5,7 @@ export function IbadahHero() {
     return (
         <section 
             className="relative w-full min-h-[500px] lg:min-h-[600px] flex items-center bg-cover bg-center bg-no-repeat pt-20"
-            style={{ backgroundImage: `url('/images/ibadah/ibadah-header.png')` }}
+            style={{ backgroundImage: `url('/images/ibadah/ibadah-header.webp')` }}
         >
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/10"></div>

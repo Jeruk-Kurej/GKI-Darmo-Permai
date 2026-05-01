@@ -5,7 +5,7 @@ export function MediaHero() {
     return (
         <section 
             className="relative w-full flex-1 min-h-[500px] lg:min-h-[600px] flex items-center bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('/images/media/media-header.png')` }}
+            style={{ backgroundImage: `url('/images/media/media-header.webp')` }}
         >
             {/* Dark overlay to make white text more readable */}
             <div className="absolute inset-0 bg-black/50"></div>

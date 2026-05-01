@@ -6,22 +6,22 @@ export function AnggotaGereja() {
         {
             name: "KIM BOWEN",
             role: "Pastor, Church",
-            image: "/images/about-us/anggota-gereja/samuel.png" // Placeholder
+            image: "/images/about-us/anggota-gereja/samuel.webp" // Placeholder
         },
         {
             name: "DANIELLE WATKINS",
             role: "Pastor, Church",
-            image: "/images/about-us/anggota-gereja/samuel.png" // Placeholder
+            image: "/images/about-us/anggota-gereja/samuel.webp" // Placeholder
         },
         {
             name: "NAOMI CRAIG",
             role: "Pastor, Church",
-            image: "/images/about-us/anggota-gereja/samuel.png" // Placeholder
+            image: "/images/about-us/anggota-gereja/samuel.webp" // Placeholder
         },
         {
             name: "SANTOS PAYNE",
             role: "Pastor, Church",
-            image: "/images/about-us/anggota-gereja/samuel.png" // Placeholder
+            image: "/images/about-us/anggota-gereja/samuel.webp" // Placeholder
         }
     ];
 

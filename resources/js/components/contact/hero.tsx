@@ -5,7 +5,7 @@ export function ContactHero() {
     return (
         <section 
             className="relative w-full min-h-[500px] lg:min-h-[600px] flex items-center bg-cover bg-center bg-no-repeat pt-20"
-            style={{ backgroundImage: `url('/images/contact-us/hubungi-kami-header.png')` }}
+            style={{ backgroundImage: `url('/images/contact-us/hubungi-kami-header.webp')` }}
         >
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/40" />

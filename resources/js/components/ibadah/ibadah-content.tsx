@@ -12,7 +12,7 @@ const UMUM_DATA = {
         pastor: "Oleh Ibu Dian Stephanita",
         time: "Minggu | 07:00 WIB",
         location: "Gedung Gereja GKI Damai",
-        thumbnail: "/images/ibadah/live-umum-placeholder.png",
+        thumbnail: "/images/ibadah/live-umum-placeholder.webp",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     schedules: [
@@ -32,7 +32,7 @@ const PROUD_DATA = {
         pastor: "Ibu Victoria Woen",
         time: "Minggu | 10:00 WIB",
         location: "Gedung Gereja GKI Damai",
-        thumbnail: "/images/ibadah/live-proud-placeholder.png",
+        thumbnail: "/images/ibadah/live-proud-placeholder.webp",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     schedules: [

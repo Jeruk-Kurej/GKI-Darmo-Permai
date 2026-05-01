@@ -28,7 +28,7 @@ const EVENTS_DATA: EventData[] = [
         category: "Keluarga",
         pastor: "Oleh Albert Einstein",
         time: "MINGGU | 07:00 WIB",
-        image: "/images/kegiatan/kebaktian-thumbnail.png",
+        image: "/images/kegiatan/kebaktian-thumbnail.webp",
     },
     {
         id: 2,
@@ -38,7 +38,7 @@ const EVENTS_DATA: EventData[] = [
         category: "Keluarga",
         pastor: "Oleh Pdt. Budi Santoso",
         time: "SENIN | 18:00 WIB",
-        image: "/images/kegiatan/kebaktian-thumbnail.png",
+        image: "/images/kegiatan/kebaktian-thumbnail.webp",
     },
     {
         id: 3,
@@ -48,7 +48,7 @@ const EVENTS_DATA: EventData[] = [
         category: "Anak",
         pastor: "Kak Maria",
         time: "SELASA | 09:00 WIB",
-        image: "/images/kegiatan/kebaktian-thumbnail.png",
+        image: "/images/kegiatan/kebaktian-thumbnail.webp",
     },
     {
         id: 4,
@@ -58,7 +58,7 @@ const EVENTS_DATA: EventData[] = [
         category: "Remaja",
         pastor: "Brother Joshua",
         time: "RABU | 17:00 WIB",
-        image: "/images/kegiatan/kebaktian-thumbnail.png",
+        image: "/images/kegiatan/kebaktian-thumbnail.webp",
     }
 ];
 

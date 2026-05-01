@@ -54,7 +54,7 @@ export function Navbar() {
                     <div className="flex items-center">
                         <Link href="/" className="flex items-center gap-2">
                             <img 
-                                src="/images/home/logo.png" 
+                                src="/images/home/logo.webp" 
                                 alt="Logo GKI" 
                                 className={`transition-all duration-500 object-contain ${scrolled ? 'h-10' : 'h-12'}`}
                             />

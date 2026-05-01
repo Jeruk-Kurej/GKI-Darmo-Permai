@@ -21,7 +21,7 @@ const wartaData = [
                 subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
                 date: "20 JULI",
                 dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.png"
+                image: "/images/kegiatan/kebaktian-thumbnail.webp"
             },
             {
                 id: 6,
@@ -29,7 +29,7 @@ const wartaData = [
                 subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
                 date: "20 JULI",
                 dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.png"
+                image: "/images/kegiatan/kebaktian-thumbnail.webp"
             },
             {
                 id: 7,
@@ -37,7 +37,7 @@ const wartaData = [
                 subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
                 date: "20 JULI",
                 dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.png"
+                image: "/images/kegiatan/kebaktian-thumbnail.webp"
             },
             {
                 id: 8,
@@ -45,7 +45,7 @@ const wartaData = [
                 subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
                 date: "20 JULI",
                 dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.png"
+                image: "/images/kegiatan/kebaktian-thumbnail.webp"
             }
         ]
     },
@@ -58,7 +58,7 @@ const wartaData = [
                 subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
                 date: "20 JULI",
                 dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.png"
+                image: "/images/kegiatan/kebaktian-thumbnail.webp"
             },
             {
                 id: 2,
@@ -66,7 +66,7 @@ const wartaData = [
                 subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
                 date: "20 JULI",
                 dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.png"
+                image: "/images/kegiatan/kebaktian-thumbnail.webp"
             },
             {
                 id: 3,
@@ -74,7 +74,7 @@ const wartaData = [
                 subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
                 date: "20 JULI",
                 dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.png"
+                image: "/images/kegiatan/kebaktian-thumbnail.webp"
             },
             {
                 id: 4,
@@ -82,7 +82,7 @@ const wartaData = [
                 subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
                 date: "20 JULI",
                 dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.png"
+                image: "/images/kegiatan/kebaktian-thumbnail.webp"
             }
         ]
     },
@@ -95,7 +95,7 @@ const wartaData = [
                 subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
                 date: "20 JULI",
                 dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.png"
+                image: "/images/kegiatan/kebaktian-thumbnail.webp"
             },
             {
                 id: 10,
@@ -103,7 +103,7 @@ const wartaData = [
                 subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
                 date: "20 JULI",
                 dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.png"
+                image: "/images/kegiatan/kebaktian-thumbnail.webp"
             },
             {
                 id: 11,
@@ -111,7 +111,7 @@ const wartaData = [
                 subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
                 date: "20 JULI",
                 dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.png"
+                image: "/images/kegiatan/kebaktian-thumbnail.webp"
             },
             {
                 id: 12,
@@ -119,7 +119,7 @@ const wartaData = [
                 subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
                 date: "20 JULI",
                 dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.png"
+                image: "/images/kegiatan/kebaktian-thumbnail.webp"
             }
         ]
     }

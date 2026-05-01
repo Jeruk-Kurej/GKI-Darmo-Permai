@@ -52,21 +52,21 @@ export function Sejarah() {
             year: "1980",
             title: "AWAL MULA",
             description: "GKI Damai adalah sekelompok warga Darmo Permai dan sekitarnya, yang merasa terlalu jauh untuk beribadah di GKI Diponegoro Surabaya, terutama bagi anak-anak sekolah minggu.",
-            image: "/images/about-us/awal-mula.png",
+            image: "/images/about-us/awal-mula.webp",
             align: "right"
         },
         {
             year: "1981",
             title: "KA DARMO PERMAI",
             description: "Kemudian pada November 1981 berdirilah Persekutuan Komisi Anak GKI Diponegoro di daerah Darmo Permai mengambil tempat di rumah Kel. Bpk. Gunawan & Ibu Sienta Jln DPU I/48. Inilah embrio yang kelak menjadi GKI Damai.\n\nKemudian atas kebaikan PPPK Petra, tempat tersebut akhirnya dipindahkan ke tempat yang lebih leluasa, yaitu SD Petra X Darmo Harapan, kemudian dibentuklah Kebaktian Umum.",
-            image: "/images/about-us/ka-darmo-permai.png",
+            image: "/images/about-us/ka-darmo-permai.webp",
             align: "left"
         },
         {
             year: "1989",
             title: "TEMPAT YANG BARU",
             description: "Setelah berkembang selama beberapa tahun, kebutuhan dan keinginan untuk mempunyai tempat ibadah sendiri mulai muncul. Melalui doa dan perjuangan yang panjang, akhirnya pada tanggal 23 April 1989 penandatanganan pembelian tanah di notaris dapat dilaksanakan.",
-            image: "/images/about-us/tempat-yang-baru.png",
+            image: "/images/about-us/tempat-yang-baru.webp",
             align: "right"
         },
         {
@@ -74,9 +74,9 @@ export function Sejarah() {
             title: "KEBAKTIAN PENDEWASAAN",
             description: "Akhirnya pada tanggal 9 Nopember 1994 GKI Darmo Permai dikukuhkan sebagai gereja dewasa, melalui kebaktian Pendewasaan.",
             images: [
-                "/images/about-us/kebaktian-pendewasaan/1.png",
-                "/images/about-us/kebaktian-pendewasaan/2.png",
-                "/images/about-us/kebaktian-pendewasaan/3.png",
+                "/images/about-us/kebaktian-pendewasaan/1.webp",
+                "/images/about-us/kebaktian-pendewasaan/2.webp",
+                "/images/about-us/kebaktian-pendewasaan/3.webp",
             ],
             align: "left"
         },
@@ -85,8 +85,8 @@ export function Sejarah() {
             title: "PERJUANGAN BERLANJUT",
             description: "Setelah berkembang selama beberapa tahun, kebutuhan dan keinginan untuk mempunyai tempat ibadah sendiri mulai muncul. Melalui doa dan perjuangan yang panjang, akhirnya pada tanggal 23 April 1989 penandatanganan pembelian tanah di notaris dapat dilaksanakan.",
             images: [
-                "/images/about-us/perjuangan-berlanjut/1.png",
-                "/images/about-us/perjuangan-berlanjut/2.png",
+                "/images/about-us/perjuangan-berlanjut/1.webp",
+                "/images/about-us/perjuangan-berlanjut/2.webp",
             ],
             align: "right",
             hideYear: true

@@ -4,7 +4,7 @@ export function VisiKami() {
     return (
         <section 
             className="relative w-full py-8 md:py-12 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('/images/home/vision-bg.png')` }}
+            style={{ backgroundImage: `url('/images/home/vision-bg.webp')` }}
         >
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black/60"></div>

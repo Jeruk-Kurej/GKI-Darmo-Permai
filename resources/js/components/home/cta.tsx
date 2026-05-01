@@ -6,7 +6,7 @@ export function CallToAction() {
     return (
         <section 
             className="relative w-full py-24 md:py-32 flex justify-center items-center bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('/images/home/cta-bg.png')` }}
+            style={{ backgroundImage: `url('/images/home/cta-bg.webp')` }}
         >
             {/* Dark/Green Overlay untuk memperjelas card putih */}
             <div className="absolute inset-0 bg-[#779965]/20 backdrop-blur-[1px]"></div>

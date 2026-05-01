@@ -30,8 +30,8 @@
             }
         </style>
 
-        <link rel="icon" href="/images/logo-only.png" type="image/png">
-        <link rel="apple-touch-icon" href="/images/logo-only.png">
+        <link rel="icon" href="/images/logo-only.webp" type="image/webp">
+        <link rel="apple-touch-icon" href="/images/logo-only.webp">
 
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
