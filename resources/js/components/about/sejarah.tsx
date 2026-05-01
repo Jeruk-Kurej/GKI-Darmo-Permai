@@ -146,11 +146,11 @@ export function Sejarah() {
                 <div className="relative w-full mx-auto flex flex-col items-center">
                     
                     {/* Vertical Center Line - Growing Effect */}
-                    <div className="absolute left-[30px] md:left-1/2 top-0 bottom-0 w-[4px] bg-gray-100 md:-translate-x-1/2 z-0">
+                    <div className="absolute left-[40px] md:left-1/2 top-0 bottom-0 w-[4px] bg-gray-100 md:-translate-x-1/2 z-0">
                         <motion.div 
                             initial={{ height: 0 }}
                             whileInView={{ height: '100%' }}
-                            viewport={{ once: false, margin: "-100px" }}
+                            viewport={{ once: true, margin: "0px" }}
                             transition={{ duration: 1.5, ease: "linear" }}
                             className="w-full bg-[#7a9d54]"
                         />
@@ -176,7 +176,7 @@ export function Sejarah() {
                                         initial={{ scale: 0 }}
                                         whileInView={{ scale: 1 }}
                                         viewport={{ once: true }}
-                                        className="absolute left-[32px] md:left-1/2 top-8 w-5 h-5 bg-white border-[4px] border-[#7a9d54] rounded-full transform -translate-x-1/2 z-20 shadow-sm group-hover:scale-125 transition-transform duration-300"
+                                        className="absolute left-[42px] md:left-1/2 top-8 w-5 h-5 bg-white border-[4px] border-[#7a9d54] rounded-full transform -translate-x-1/2 z-20 shadow-sm group-hover:scale-125 transition-transform duration-300"
                                     />
 
                                     {/* Left Alignment Container */}
@@ -206,7 +206,7 @@ export function Sejarah() {
                                                     <div className="mb-6 w-full">
                                                         {item.images ? (
                                                             item.images.length === 3 ? (
-                                                                <div className="flex gap-3 md:gap-4 w-full">
+                                                                <div className="flex gap-3 md:gap-4 w-full flex-row-reverse md:flex-row">
                                                                     <div className="flex flex-col gap-3 md:gap-4 w-[40%]">
                                                                         <motion.div whileHover={{ scale: 1.05 }} className="w-full h-full rounded-sm overflow-hidden shadow-sm relative group cursor-pointer">
                                                                             <img src={item.images[0]} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="" />
@@ -284,7 +284,7 @@ export function Sejarah() {
                                                     <div className="mb-6 w-full">
                                                         {item.images ? (
                                                             item.images.length === 3 ? (
-                                                                <div className="flex gap-3 md:gap-4 w-full">
+                                                                <div className="flex gap-3 md:gap-4 w-full flex-row-reverse md:flex-row">
                                                                     <div className="flex flex-col gap-3 md:gap-4 w-[40%]">
                                                                         <motion.div whileHover={{ scale: 1.05 }} className="w-full h-full rounded-sm overflow-hidden shadow-sm relative group cursor-pointer">
                                                                             <img src={item.images[0]} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="" />

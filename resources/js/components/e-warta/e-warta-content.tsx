@@ -2,13 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
 import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
+import { FilterDropdown } from '@/components/ui/filter-dropdown';
 import { wartaData } from './warta-data';
 
 export function EWartaContent() {
@@ -41,25 +35,17 @@ export function EWartaContent() {
 
                 {/* Filter Section */}
                 <div className="flex justify-center mb-16">
-                    <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-                        <SelectTrigger className="w-[200px] h-11 bg-[#EDEDED] border-2 border-[#7a9d54] rounded-full text-gray-700 hover:text-[#7a9d54] font-bold px-5 transition-all duration-300 cursor-pointer flex justify-between items-center select-none shadow-sm hover:shadow-md">
-                            <SelectValue placeholder="Choose Month" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-white rounded-xl border border-gray-100 shadow-xl z-[70] text-gray-800 min-w-[200px] p-1.5">
-                            <SelectItem value="all" className="font-semibold text-gray-700 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
-                                Choose Month
-                            </SelectItem>
-                            <SelectItem value="JANUARI 2026" className="font-semibold text-gray-700 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
-                                Januari 2026
-                            </SelectItem>
-                            <SelectItem value="FEBRUARI 2026" className="font-semibold text-gray-700 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
-                                Februari 2026
-                            </SelectItem>
-                            <SelectItem value="DESEMBER 2025" className="font-semibold text-gray-700 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
-                                Desember 2025
-                            </SelectItem>
-                        </SelectContent>
-                    </Select>
+                    <FilterDropdown 
+                        value={selectedMonth} 
+                        onValueChange={setSelectedMonth} 
+                        placeholder="Choose Month"
+                        options={[
+                            { value: "all", label: "Choose Month" },
+                            { value: "JANUARI 2026", label: "Januari 2026" },
+                            { value: "FEBRUARI 2026", label: "Februari 2026" },
+                            { value: "DESEMBER 2025", label: "Desember 2025" }
+                        ]}
+                    />
                 </div>
 
                 {/* Content Groups */}

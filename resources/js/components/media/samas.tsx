@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Calendar } from 'lucide-react';
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
+import { FilterDropdown } from '@/components/ui/filter-dropdown';
 
 // Spotify custom icon for matching perfectly
 function SpotifyIcon({ className = "w-5 h-5" }) {
@@ -95,7 +89,7 @@ const initialSamas = [
 ];
 
 export function SamasSection() {
-    const [selectedMonth, setSelectedMonth] = useState<string>("FEBRUARI 2026");
+    const [selectedMonth, setSelectedMonth] = useState<string>("JANUARI 2026");
 
     const filteredSamas = initialSamas.filter(s => s.month === selectedMonth);
 
@@ -115,22 +109,16 @@ export function SamasSection() {
 
                 {/* Filter Section */}
                 <div className="flex justify-center mb-10">
-                    <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-                        <SelectTrigger className="w-[200px] h-11 bg-[#fcfcfc] border-2 border-[#7a9d54] rounded-full text-gray-700 hover:text-[#7a9d54] font-bold px-5 transition-all duration-300 flex justify-between items-center shadow-sm select-none">
-                            <SelectValue placeholder="Februari 2026" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-white rounded-xl border border-gray-100 shadow-xl z-[70] text-gray-800 min-w-[200px] p-1.5">
-                            <SelectItem value="FEBRUARI 2026" className="font-semibold cursor-pointer rounded-lg px-4 py-2 text-sm transition-all focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
-                                Februari 2026
-                            </SelectItem>
-                            <SelectItem value="JANUARI 2026" className="font-semibold cursor-pointer rounded-lg px-4 py-2 text-sm transition-all focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
-                                Januari 2026
-                            </SelectItem>
-                            <SelectItem value="DESEMBER 2025" className="font-semibold cursor-pointer rounded-lg px-4 py-2 text-sm transition-all focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
-                                Desember 2025
-                            </SelectItem>
-                        </SelectContent>
-                    </Select>
+                    <FilterDropdown 
+                        value={selectedMonth} 
+                        onValueChange={setSelectedMonth} 
+                        placeholder="Choose Month"
+                        options={[
+                            { value: "JANUARI 2026", label: "Januari 2026" },
+                            { value: "FEBRUARI 2026", label: "Februari 2026" },
+                            { value: "DESEMBER 2025", label: "Desember 2025" }
+                        ]}
+                    />
                 </div>
 
                 {/* 2-Column Responsive Grid */}

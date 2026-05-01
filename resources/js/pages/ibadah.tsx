@@ -17,7 +17,7 @@ export default function Ibadah() {
                     const startY = window.scrollY;
                     const difference = targetY - startY;
                     const startTime = performance.now();
-                    const duration = 1200; // 1.2 seconds for ultra-premium feel
+                    const duration = 1200; 
 
                     const step = (currentTime: number) => {
                         const progress = (currentTime - startTime) / duration;
