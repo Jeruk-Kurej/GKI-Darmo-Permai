@@ -27,7 +27,7 @@ export default function Welcome() {
                 <JadwalIbadah />
                 
                 {/* SCREEN 2: Tentang Kami (Full Screen) */}
-                <div className="w-full h-screen flex flex-col">
+                <div className="w-full min-h-screen flex flex-col">
                     <TentangKami />
                 </div>
                 

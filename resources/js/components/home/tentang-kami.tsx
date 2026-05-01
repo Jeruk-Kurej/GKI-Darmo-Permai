@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from '@inertiajs/react';
 import { motion } from 'framer-motion';
 import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
 
 export function TentangKami() {
     return (
-        <section className="relative w-full h-full flex items-center justify-center bg-white overflow-hidden py-16 lg:py-0">
+        <section className="relative w-full min-h-screen flex items-center justify-center bg-white overflow-hidden py-16 lg:py-24">
             
             {/* === BACKGROUND SHAPES === */}
             
@@ -101,12 +102,12 @@ export function TentangKami() {
                             </p>
                         </div>
 
-                        <a 
-                            href="#" 
+                        <Link 
+                            href="/tentang-kami" 
                             className="bg-[#779965] hover:bg-[#5f7a50] text-white font-medium py-3 px-8 rounded transition-colors shadow-sm"
                         >
                             Lihat Selengkapnya
-                        </a>
+                        </Link>
 
                     </motion.div>
 

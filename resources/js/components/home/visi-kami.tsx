@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from '@inertiajs/react';
 
 export function VisiKami() {
     return (
@@ -24,8 +24,8 @@ export function VisiKami() {
                     Mewujudkan keluarga Kristen yang berintegritas, mandiri dan produktif, dalam keutuhan jemaat yang saling menopang dan melayani.
                 </p>
 
-                <a 
-                    href="#" 
+                <Link 
+                    href="/tentang-kami#visi-misi" 
                     className="group flex items-center gap-2 text-white font-medium hover:text-gray-300 transition-colors"
                 >
                     Lihat Semua
@@ -37,7 +37,7 @@ export function VisiKami() {
                     >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
-                </a>
+                </Link>
                 
             </div>
         </section>

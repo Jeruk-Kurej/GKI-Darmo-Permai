@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@inertiajs/react';
 import { motion } from 'framer-motion';
 
 export function CallToAction() {
@@ -28,12 +29,12 @@ export function CallToAction() {
                     <p className="text-gray-600 mb-8 max-w-sm mx-auto md:mx-0 font-medium leading-relaxed">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
                     </p>
-                    <a 
-                        href="#" 
+                    <Link 
+                        href="/hubungi-kami" 
                         className="inline-block bg-[#779965] hover:bg-[#5f7a50] text-white font-bold py-3 px-12 rounded-md transition-colors shadow-md"
                     >
                         Visit
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Right Content (Quote Graphics) */}

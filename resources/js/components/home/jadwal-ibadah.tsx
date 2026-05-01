@@ -41,7 +41,7 @@ export function JadwalIbadah() {
     const activeSchedule = schedulesData[currentIndex];
 
     return (
-        <section className="relative w-full overflow-hidden bg-[#779965] py-4 md:py-6">
+        <section id="jadwal-ibadah" className="relative w-full overflow-hidden bg-[#779965] py-4 md:py-6">
             
             {/* === BACKGROUND SHAPES === */}
             
@@ -56,7 +56,7 @@ export function JadwalIbadah() {
             </div>
 
             {/* Main Content */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-white text-center flex flex-col items-center justify-center min-h-[110px]">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-white text-center flex flex-col items-center justify-center min-h-[140px] md:min-h-[120px]">
                 
                 {/* Title Section */}
                 <div className="flex items-center justify-center gap-6 md:gap-12 mb-3">
@@ -91,7 +91,7 @@ export function JadwalIbadah() {
                 </div>
 
                 {/* Schedules */}
-                <div key={`items-${activeSchedule.category}`} className="flex flex-wrap items-center justify-center gap-y-2 md:gap-y-0 text-center w-full mt-1 animate-[fadeInUp_0.4s_ease-out]">
+                <div key={`items-${activeSchedule.category}`} className="flex flex-wrap items-center justify-center gap-y-2 md:gap-y-0 text-center w-full mt-1 min-h-[64px] md:min-h-[36px] animate-[fadeInUp_0.4s_ease-out]">
                     {activeSchedule.items.map((item, index) => (
                         <div key={index} className="flex items-center justify-center px-3 md:px-5">
                             <div className="flex flex-col items-end mr-2">
