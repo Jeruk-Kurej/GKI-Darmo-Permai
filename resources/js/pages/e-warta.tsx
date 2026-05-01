@@ -9,16 +9,14 @@ export default function EWarta() {
         <>
             <Head title="E-Warta - GKI Darmo Permai" />
 
-            <div className="bg-[#f8f9fa] w-full min-h-screen flex flex-col overflow-x-hidden">
+            <div className="bg-[#f8f9fa] w-full flex flex-col overflow-x-hidden">
                 <Navbar />
                 
-                <main className="flex-1 flex flex-col pt-16">
-                    {/* Hero Section */}
-                    <EWartaHero />
-                    
-                    {/* Content Section */}
-                    <EWartaContent />
-                </main>
+                {/* Hero Section */}
+                <EWartaHero />
+                
+                {/* Content Section */}
+                <EWartaContent />
 
                 <Footer />
             </div>
