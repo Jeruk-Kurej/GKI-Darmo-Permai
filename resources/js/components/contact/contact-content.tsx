@@ -65,7 +65,7 @@ export function ContactContent() {
                                 ></textarea>
                             </div>
                             
-                            <button className="w-full py-4 bg-[#7a9d54] hover:bg-[#688945] text-white font-bold text-sm tracking-wide rounded-sm shadow-lg transition-all active:scale-[0.98]">
+                            <button className="w-full py-4 bg-[#7a9d54] cursor-pointer hover:bg-[#688945] text-white font-bold text-sm tracking-wide rounded-sm shadow-lg transition-all active:scale-[0.98]">
                                 Kirim Pesan
                             </button>
                         </div>
