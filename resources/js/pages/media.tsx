@@ -5,33 +5,57 @@ import { MediaHero } from '@/components/media/hero';
 import { VideoIbadahSection } from '@/components/media/video-ibadah';
 import { SamasSection } from '@/components/media/samas';
 import { GaleriSection } from '@/components/media/galeri';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+const slowSmoothScrollTo = (targetY: number, duration: number) => {
+    const startY = window.scrollY;
+    const difference = targetY - startY;
+    const startTime = performance.now();
+
+    const step = (currentTime: number) => {
+        const progress = (currentTime - startTime) / duration;
+        if (progress < 1) {
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            window.scrollTo(0, startY + difference * easeProgress);
+            requestAnimationFrame(step);
+        } else {
+            window.scrollTo(0, targetY);
+        }
+    };
+
+    requestAnimationFrame(step);
+};
 
 export default function Media() {
     const [activeTab, setActiveTab] = useState<string>("video-ibadah");
+    const tabs = [
+        { id: "video-ibadah", label: "Video Ibadah" },
+        { id: "samas", label: "SAMAS" },
+        { id: "galeri", label: "Galeri" }
+    ];
 
-    const handleScrollTo = (id: string) => {
-        setActiveTab(id);
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = tabs.map(tab => document.getElementById(tab.id));
+            const scrollPosition = window.scrollY + 200;
+
+            sections.forEach((section, idx) => {
+                if (section && scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+                    setActiveTab(tabs[idx].id);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const handleTabClick = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
-            const offset = 100;
+            const offset = 140;
             const targetY = element.getBoundingClientRect().top + window.scrollY - offset;
-            const startY = window.scrollY;
-            const difference = targetY - startY;
-            const startTime = performance.now();
-            const duration = 1000; // 1 second smooth scroll
-
-            const step = (currentTime: number) => {
-                const progress = (currentTime - startTime) / duration;
-                if (progress < 1) {
-                    const easeProgress = 1 - Math.pow(1 - progress, 3);
-                    window.scrollTo(0, startY + difference * easeProgress);
-                    requestAnimationFrame(step);
-                } else {
-                    window.scrollTo(0, targetY);
-                }
-            };
-            requestAnimationFrame(step);
+            slowSmoothScrollTo(targetY, 1200);
         }
     };
 
@@ -45,39 +69,24 @@ export default function Media() {
                 {/* Hero Section */}
                 <MediaHero />
                 
-                {/* Sub-Navigation Tabs */}
-                <div className="w-full bg-white border-b border-gray-100 flex justify-center py-6 sticky top-[64px] z-30 shadow-sm">
-                    <div className="flex items-center gap-4 md:gap-8 max-w-7xl px-4 flex-wrap justify-center">
-                        <button
-                            onClick={() => handleScrollTo("video-ibadah")}
-                            className={`px-6 py-2.5 rounded-full font-extrabold text-xs md:text-sm uppercase tracking-wider cursor-pointer transition-all duration-300 select-none ${
-                                activeTab === "video-ibadah"
-                                    ? "bg-[#7a9d54] text-white shadow-lg shadow-[#7a9d54]/25"
-                                    : "bg-transparent text-[#1a1a1a] hover:text-[#7a9d54]"
-                            }`}
-                        >
-                            Video Ibadah
-                        </button>
-                        <button
-                            onClick={() => handleScrollTo("samas")}
-                            className={`px-6 py-2.5 rounded-full font-extrabold text-xs md:text-sm uppercase tracking-wider cursor-pointer transition-all duration-300 select-none ${
-                                activeTab === "samas"
-                                    ? "bg-[#7a9d54] text-white shadow-lg shadow-[#7a9d54]/25"
-                                    : "bg-transparent text-[#1a1a1a] hover:text-[#7a9d54]"
-                            }`}
-                        >
-                            SAMAS
-                        </button>
-                        <button
-                            onClick={() => handleScrollTo("galeri")}
-                            className={`px-6 py-2.5 rounded-full font-extrabold text-xs md:text-sm uppercase tracking-wider cursor-pointer transition-all duration-300 select-none ${
-                                activeTab === "galeri"
-                                    ? "bg-[#7a9d54] text-white shadow-lg shadow-[#7a9d54]/25"
-                                    : "bg-transparent text-[#1a1a1a] hover:text-[#7a9d54]"
-                            }`}
-                        >
-                            Galeri
-                        </button>
+                {/* Sub-Navigation Tabs - Exact same look and feel as Ibadah */}
+                <div className="sticky top-[72px] z-40 w-full bg-[#8ca36b] shadow-lg select-none">
+                    <div className="max-w-7xl mx-auto flex items-center">
+                        {tabs.map((tab, idx) => (
+                            <React.Fragment key={tab.id}>
+                                <button
+                                    onClick={() => handleTabClick(tab.id)}
+                                    className={`flex-1 py-5 text-sm md:text-xl font-bold tracking-[0.2em] transition-all relative uppercase cursor-pointer select-none ${
+                                        activeTab === tab.id ? 'text-white' : 'text-white/60 hover:text-white'
+                                    }`}
+                                >
+                                    {tab.label}
+                                </button>
+                                {idx < tabs.length - 1 && (
+                                    <div className="h-8 w-[2px] bg-white/20" />
+                                )}
+                            </React.Fragment>
+                        ))}
                     </div>
                 </div>
 
