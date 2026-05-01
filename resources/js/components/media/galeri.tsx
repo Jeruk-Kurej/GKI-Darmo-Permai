@@ -1,65 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FilterDropdown } from '@/components/ui/filter-dropdown';
-
-const initialGallery = [
-    {
-        id: 1,
-        month: "FEBRUARI 2026",
-        title: "LOREM IPSUM",
-        subtitle: "DOLOR SIT AMET",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 2,
-        month: "FEBRUARI 2026",
-        title: "LOREM IPSUM",
-        subtitle: "DOLOR SIT AMET",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 3,
-        month: "FEBRUARI 2026",
-        title: "LOREM IPSUM",
-        subtitle: "DOLOR SIT AMET",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 4,
-        month: "FEBRUARI 2026",
-        title: "LOREM IPSUM",
-        subtitle: "DOLOR SIT AMET",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 5,
-        month: "FEBRUARI 2026",
-        title: "LOREM IPSUM",
-        subtitle: "DOLOR SIT AMET",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 6,
-        month: "FEBRUARI 2026",
-        title: "LOREM IPSUM",
-        subtitle: "DOLOR SIT AMET",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 7,
-        month: "JANUARI 2026",
-        title: "LOREM IPSUM",
-        subtitle: "DOLOR SIT AMET",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 8,
-        month: "DESEMBER 2025",
-        title: "LOREM IPSUM",
-        subtitle: "DOLOR SIT AMET",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    }
-];
+import { initialGallery } from './media-data';
 
 export function GaleriSection() {
     const [selectedMonth, setSelectedMonth] = useState<string>("JANUARI 2026");

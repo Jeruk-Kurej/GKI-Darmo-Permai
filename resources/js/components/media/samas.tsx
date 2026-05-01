@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Calendar } from 'lucide-react';
 import { FilterDropdown } from '@/components/ui/filter-dropdown';
+import { initialSamas } from './media-data';
 
 // Spotify custom icon for matching perfectly
 function SpotifyIcon({ className = "w-5 h-5" }) {
@@ -11,82 +12,6 @@ function SpotifyIcon({ className = "w-5 h-5" }) {
         </svg>
     );
 }
-
-// Dummy data for SAMAS
-const initialSamas = [
-    {
-        id: 1,
-        month: "FEBRUARI 2026",
-        title: "YANG KECIL BERDAMPAK BESAR",
-        date: "13 FEBRUARI 2026",
-        youtube: "https://youtube.com",
-        spotify: "https://spotify.com",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 2,
-        month: "FEBRUARI 2026",
-        title: "YANG KECIL BERDAMPAK BESAR",
-        date: "13 FEBRUARI 2026",
-        youtube: "https://youtube.com",
-        spotify: "https://spotify.com",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 3,
-        month: "FEBRUARI 2026",
-        title: "YANG KECIL BERDAMPAK BESAR",
-        date: "13 FEBRUARI 2026",
-        youtube: "https://youtube.com",
-        spotify: "https://spotify.com",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 4,
-        month: "FEBRUARI 2026",
-        title: "YANG KECIL BERDAMPAK BESAR",
-        date: "13 FEBRUARI 2026",
-        youtube: "https://youtube.com",
-        spotify: "https://spotify.com",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 5,
-        month: "FEBRUARI 2026",
-        title: "YANG KECIL BERDAMPAK BESAR",
-        date: "13 FEBRUARI 2026",
-        youtube: "https://youtube.com",
-        spotify: "https://spotify.com",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 6,
-        month: "FEBRUARI 2026",
-        title: "YANG KECIL BERDAMPAK BESAR",
-        date: "13 FEBRUARI 2026",
-        youtube: "https://youtube.com",
-        spotify: "https://spotify.com",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 7,
-        month: "JANUARI 2026",
-        title: "BERTUMBUH DALAM KEBENARAN",
-        date: "20 JANUARI 2026",
-        youtube: "https://youtube.com",
-        spotify: "https://spotify.com",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 8,
-        month: "DESEMBER 2025",
-        title: "KASIH YANG MEMULIHKAN",
-        date: "25 DESEMBER 2025",
-        youtube: "https://youtube.com",
-        spotify: "https://spotify.com",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    }
-];
 
 export function SamasSection() {
     const [selectedMonth, setSelectedMonth] = useState<string>("JANUARI 2026");

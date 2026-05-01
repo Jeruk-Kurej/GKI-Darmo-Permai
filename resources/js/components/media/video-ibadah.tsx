@@ -2,45 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { FilterDropdown } from '@/components/ui/filter-dropdown';
-
-// Dummy Data
-const initialVideos = [
-    {
-        id: 1,
-        month: "FEBRUARI 2026",
-        title: "LOREM IPSUM",
-        subtitle: "DOLOR SIT AMET",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 2,
-        month: "FEBRUARI 2026",
-        title: "LOREM IPSUM",
-        subtitle: "DOLOR SIT AMET",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 3,
-        month: "FEBRUARI 2026",
-        title: "LOREM IPSUM",
-        subtitle: "DOLOR SIT AMET",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 4,
-        month: "JANUARI 2026",
-        title: "LOREM IPSUM",
-        subtitle: "CONSECTETUR ADIPISCING",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    },
-    {
-        id: 5,
-        month: "DESEMBER 2025",
-        title: "LOREM IPSUM",
-        subtitle: "ELIT SED DO EIUSMOD",
-        image: "/images/kegiatan/kebaktian-thumbnail.webp"
-    }
-];
+import { initialVideos } from './media-data';
 
 export function VideoIbadahSection() {
     const [selectedMonth, setSelectedMonth] = useState<string>("JANUARI 2026");
