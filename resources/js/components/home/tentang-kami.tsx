@@ -57,7 +57,7 @@ export function TentangKami() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: false, amount: 0.3 }}
                         transition={{ duration: 0.8 }}
-                        className="flex flex-col items-start relative pl-4 md:pl-10"
+                        className="flex flex-col items-start relative pl-4 md:pl-10 order-2 lg:order-1"
                     >
                         
                         {/* Quote Mark Using Custom SVG Asset */}
@@ -117,7 +117,7 @@ export function TentangKami() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative flex justify-center lg:justify-end"
+                        className="relative flex justify-center lg:justify-end order-1 lg:order-2"
                     >
                         {/* Aksen Kotak Hijau di Belakang Foto */}
                         <div className="absolute right-0 md:right-[-20px] top-[-20px] w-64 h-64 md:w-80 md:h-80 bg-[#779965] z-0"></div>

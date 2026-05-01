@@ -56,7 +56,7 @@ export function JadwalIbadah() {
             </div>
 
             {/* Main Content */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-white text-center flex flex-col items-center justify-center min-h-[140px] md:min-h-[120px]">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-white text-center flex flex-col items-center justify-center">
                 
                 {/* Title Section */}
                 <div className="flex items-center justify-center gap-6 md:gap-12 mb-3">
@@ -91,17 +91,24 @@ export function JadwalIbadah() {
                 </div>
 
                 {/* Schedules */}
-                <div key={`items-${activeSchedule.category}`} className="flex flex-wrap items-center justify-center gap-y-2 md:gap-y-0 text-center w-full mt-1 min-h-[64px] md:min-h-[36px] animate-[fadeInUp_0.4s_ease-out]">
+                <div
+                    key={`items-${activeSchedule.category}`}
+                    className={`${
+                        activeSchedule.items.length > 2
+                            ? 'grid grid-cols-2 gap-x-3 gap-y-3 max-w-[320px]'
+                            : 'flex gap-x-8'
+                    } md:flex items-center justify-center md:gap-x-12 gap-y-0 text-center w-full md:max-w-none mx-auto mt-2 h-[88px] md:h-[48px] animate-[fadeInUp_0.4s_ease-out]`}
+                >
                     {activeSchedule.items.map((item, index) => (
-                        <div key={index} className="flex items-center justify-center px-3 md:px-5">
-                            <div className="flex flex-col items-end mr-2">
-                                <span className="text-[10px] md:text-xs font-semibold tracking-widest leading-none">
+                        <div key={index} className="flex items-center justify-center whitespace-nowrap">
+                            <div className={`${activeSchedule.items.length > 2 ? 'w-[48px] md:w-auto' : 'w-auto'} flex justify-end mr-1.5`}>
+                                <span className={`${activeSchedule.items.length > 2 ? 'text-[7px]' : 'text-[9px]'} md:text-xs font-semibold tracking-normal leading-none text-white text-right`}>
                                     {item.type}
                                 </span>
                             </div>
-                            <div className="h-6 w-0.5 bg-white mx-1"></div>
-                            <div className="ml-2">
-                                <span className="text-xl md:text-2xl font-bold">{item.time}</span>
+                            <div className="h-4 w-0.5 bg-white mx-1 flex-shrink-0"></div>
+                            <div className="ml-1.5">
+                                <span className={`${activeSchedule.items.length > 2 ? 'text-sm' : 'text-base'} md:text-2xl font-bold text-white leading-none`}>{item.time}</span>
                             </div>
                         </div>
                     ))}
