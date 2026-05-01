@@ -137,7 +137,7 @@ logoutForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => 
 logout.form = logoutForm
 
 /**
-* @see routes/web.php:17
+* @see routes/web.php:25
 * @route '/'
 */
 export const home = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -151,7 +151,7 @@ home.definition = {
 } satisfies RouteDefinition<["get","head"]>
 
 /**
-* @see routes/web.php:17
+* @see routes/web.php:25
 * @route '/'
 */
 home.url = (options?: RouteQueryOptions) => {
@@ -159,7 +159,7 @@ home.url = (options?: RouteQueryOptions) => {
 }
 
 /**
-* @see routes/web.php:17
+* @see routes/web.php:25
 * @route '/'
 */
 home.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -168,7 +168,7 @@ home.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 
 /**
-* @see routes/web.php:17
+* @see routes/web.php:25
 * @route '/'
 */
 home.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -177,7 +177,7 @@ home.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 })
 
 /**
-* @see routes/web.php:17
+* @see routes/web.php:25
 * @route '/'
 */
 const homeForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -186,7 +186,7 @@ const homeForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 })
 
 /**
-* @see routes/web.php:17
+* @see routes/web.php:25
 * @route '/'
 */
 homeForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -195,7 +195,7 @@ homeForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 })
 
 /**
-* @see routes/web.php:17
+* @see routes/web.php:25
 * @route '/'
 */
 homeForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -373,7 +373,7 @@ ibadahForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => (
 ibadah.form = ibadahForm
 
 /**
-* @see routes/web.php:27
+* @see routes/web.php:35
 * @route '/kegiatan'
 */
 export const kegiatan = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -387,7 +387,7 @@ kegiatan.definition = {
 } satisfies RouteDefinition<["get","head"]>
 
 /**
-* @see routes/web.php:27
+* @see routes/web.php:35
 * @route '/kegiatan'
 */
 kegiatan.url = (options?: RouteQueryOptions) => {
@@ -395,7 +395,7 @@ kegiatan.url = (options?: RouteQueryOptions) => {
 }
 
 /**
-* @see routes/web.php:27
+* @see routes/web.php:35
 * @route '/kegiatan'
 */
 kegiatan.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -404,7 +404,7 @@ kegiatan.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 
 /**
-* @see routes/web.php:27
+* @see routes/web.php:35
 * @route '/kegiatan'
 */
 kegiatan.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -413,7 +413,7 @@ kegiatan.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 })
 
 /**
-* @see routes/web.php:27
+* @see routes/web.php:35
 * @route '/kegiatan'
 */
 const kegiatanForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -422,7 +422,7 @@ const kegiatanForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> =
 })
 
 /**
-* @see routes/web.php:27
+* @see routes/web.php:35
 * @route '/kegiatan'
 */
 kegiatanForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -431,7 +431,7 @@ kegiatanForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => 
 })
 
 /**
-* @see routes/web.php:27
+* @see routes/web.php:35
 * @route '/kegiatan'
 */
 kegiatanForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -447,7 +447,7 @@ kegiatanForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> =>
 kegiatan.form = kegiatanForm
 
 /**
-* @see routes/web.php:33
+* @see routes/web.php:41
 * @route '/media'
 */
 export const media = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -461,7 +461,7 @@ media.definition = {
 } satisfies RouteDefinition<["get","head"]>
 
 /**
-* @see routes/web.php:33
+* @see routes/web.php:41
 * @route '/media'
 */
 media.url = (options?: RouteQueryOptions) => {
@@ -469,7 +469,7 @@ media.url = (options?: RouteQueryOptions) => {
 }
 
 /**
-* @see routes/web.php:33
+* @see routes/web.php:41
 * @route '/media'
 */
 media.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -478,7 +478,7 @@ media.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 
 /**
-* @see routes/web.php:33
+* @see routes/web.php:41
 * @route '/media'
 */
 media.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -487,7 +487,7 @@ media.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 })
 
 /**
-* @see routes/web.php:33
+* @see routes/web.php:41
 * @route '/media'
 */
 const mediaForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -496,7 +496,7 @@ const mediaForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => (
 })
 
 /**
-* @see routes/web.php:33
+* @see routes/web.php:41
 * @route '/media'
 */
 mediaForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -505,7 +505,7 @@ mediaForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 })
 
 /**
-* @see routes/web.php:33
+* @see routes/web.php:41
 * @route '/media'
 */
 mediaForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -521,7 +521,7 @@ mediaForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 media.form = mediaForm
 
 /**
-* @see routes/web.php:39
+* @see routes/web.php:47
 * @route '/e-warta'
 */
 export const eWarta = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -535,7 +535,7 @@ eWarta.definition = {
 } satisfies RouteDefinition<["get","head"]>
 
 /**
-* @see routes/web.php:39
+* @see routes/web.php:47
 * @route '/e-warta'
 */
 eWarta.url = (options?: RouteQueryOptions) => {
@@ -543,7 +543,7 @@ eWarta.url = (options?: RouteQueryOptions) => {
 }
 
 /**
-* @see routes/web.php:39
+* @see routes/web.php:47
 * @route '/e-warta'
 */
 eWarta.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -552,7 +552,7 @@ eWarta.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 
 /**
-* @see routes/web.php:39
+* @see routes/web.php:47
 * @route '/e-warta'
 */
 eWarta.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -561,7 +561,7 @@ eWarta.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 })
 
 /**
-* @see routes/web.php:39
+* @see routes/web.php:47
 * @route '/e-warta'
 */
 const eWartaForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -570,7 +570,7 @@ const eWartaForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => 
 })
 
 /**
-* @see routes/web.php:39
+* @see routes/web.php:47
 * @route '/e-warta'
 */
 eWartaForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -579,7 +579,7 @@ eWartaForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 })
 
 /**
-* @see routes/web.php:39
+* @see routes/web.php:47
 * @route '/e-warta'
 */
 eWartaForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({

@@ -14,10 +14,18 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
 
+function safe_db_get($callback) {
+    try {
+        return $callback();
+    } catch (\Throwable $e) {
+        return collect([]);
+    }
+}
+
 Route::get('/', function () {
     return Inertia::render('welcome', [
         'canRegister' => Features::enabled(Features::registration()),
-        'schedules' => Schedule::orderBy('category')->orderBy('id')->get(),
+        'schedules' => safe_db_get(fn() => Schedule::orderBy('category')->orderBy('id')->get()),
     ]);
 })->name('home');
 
@@ -26,19 +34,19 @@ Route::inertia('/ibadah', 'ibadah')->name('ibadah');
 
 Route::get('/kegiatan', function () {
     return Inertia::render('kegiatan', [
-        'events' => Event::orderBy('date', 'desc')->get()
+        'events' => safe_db_get(fn() => Event::orderBy('date', 'desc')->get())
     ]);
 })->name('kegiatan');
 
 Route::get('/media', function () {
     return Inertia::render('media', [
-        'mediaItems' => MediaItem::orderBy('month', 'desc')->get()
+        'mediaItems' => safe_db_get(fn() => MediaItem::orderBy('month', 'desc')->get())
     ]);
 })->name('media');
 
 Route::get('/e-warta', function () {
     return Inertia::render('e-warta', [
-        'bulletins' => Bulletin::orderBy('release_date', 'desc')->get()
+        'bulletins' => safe_db_get(fn() => Bulletin::orderBy('release_date', 'desc')->get())
     ]);
 })->name('e-warta');
 
