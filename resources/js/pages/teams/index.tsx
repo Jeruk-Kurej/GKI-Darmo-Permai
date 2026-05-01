@@ -1,6 +1,6 @@
 import { Head, Link } from '@inertiajs/react';
 import { Eye, Pencil, Plus } from 'lucide-react';
-import CreateTeamModal from '@/components/create-team-modal';
+import CreateTeamModal from '@/components/starter-template-unused/create-team-modal';
 import Heading from '@/components/heading';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';

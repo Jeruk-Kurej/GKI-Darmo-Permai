@@ -1,12 +1,12 @@
 import { Form, Head, router } from '@inertiajs/react';
 import { ChevronDown, Mail, UserPlus, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
-import CancelInvitationModal from '@/components/cancel-invitation-modal';
-import DeleteTeamModal from '@/components/delete-team-modal';
+import CancelInvitationModal from '@/components/starter-template-unused/cancel-invitation-modal';
+import DeleteTeamModal from '@/components/starter-template-unused/delete-team-modal';
 import Heading from '@/components/heading';
 import InputError from '@/components/input-error';
-import InviteMemberModal from '@/components/invite-member-modal';
-import RemoveMemberModal from '@/components/remove-member-modal';
+import InviteMemberModal from '@/components/starter-template-unused/invite-member-modal';
+import RemoveMemberModal from '@/components/starter-template-unused/remove-member-modal';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
