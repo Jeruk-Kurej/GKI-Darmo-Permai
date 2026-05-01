@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
 import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
-import { Button } from '@/components/ui/button';
 import {
     Select,
     SelectContent,
@@ -10,120 +9,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-
-const wartaData = [
-    {
-        month: "JANUARI 2026",
-        items: [
-            {
-                id: 5,
-                title: "IBADAH UMUM 1",
-                subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
-                date: "20 JULI",
-                dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.webp"
-            },
-            {
-                id: 6,
-                title: "IBADAH UMUM 1",
-                subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
-                date: "20 JULI",
-                dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.webp"
-            },
-            {
-                id: 7,
-                title: "IBADAH UMUM 1",
-                subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
-                date: "20 JULI",
-                dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.webp"
-            },
-            {
-                id: 8,
-                title: "IBADAH UMUM 1",
-                subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
-                date: "20 JULI",
-                dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.webp"
-            }
-        ]
-    },
-    {
-        month: "FEBRUARI 2026",
-        items: [
-            {
-                id: 1,
-                title: "IBADAH UMUM 1",
-                subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
-                date: "20 JULI",
-                dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.webp"
-            },
-            {
-                id: 2,
-                title: "IBADAH UMUM 1",
-                subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
-                date: "20 JULI",
-                dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.webp"
-            },
-            {
-                id: 3,
-                title: "IBADAH UMUM 1",
-                subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
-                date: "20 JULI",
-                dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.webp"
-            },
-            {
-                id: 4,
-                title: "IBADAH UMUM 1",
-                subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
-                date: "20 JULI",
-                dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.webp"
-            }
-        ]
-    },
-    {
-        month: "DESEMBER 2025",
-        items: [
-            {
-                id: 9,
-                title: "IBADAH UMUM 1",
-                subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
-                date: "20 JULI",
-                dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.webp"
-            },
-            {
-                id: 10,
-                title: "IBADAH UMUM 1",
-                subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
-                date: "20 JULI",
-                dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.webp"
-            },
-            {
-                id: 11,
-                title: "IBADAH UMUM 1",
-                subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
-                date: "20 JULI",
-                dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.webp"
-            },
-            {
-                id: 12,
-                title: "IBADAH UMUM 1",
-                subtitle: '"Diteguhkan oleh Cahaya Kemuliaan-Nya"',
-                date: "20 JULI",
-                dayTime: "MINGGU | 07:00 WIB",
-                image: "/images/kegiatan/kebaktian-thumbnail.webp"
-            }
-        ]
-    }
-];
+import { wartaData } from './warta-data';
 
 export function EWartaContent() {
     const [selectedMonth, setSelectedMonth] = useState<string>("all");
@@ -134,7 +20,7 @@ export function EWartaContent() {
         : wartaData.filter(group => group.month === selectedMonth);
 
     return (
-        <section className="relative py-20 overflow-hidden bg-white">
+        <section className="relative py-20 overflow-hidden bg-white select-none">
              {/* Background Decorations */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden select-none">
                 <BrandDecoLeft className="absolute top-20 -left-40 scale-125 opacity-40 hover:opacity-60 transition-opacity duration-1000" />
@@ -160,16 +46,16 @@ export function EWartaContent() {
                             <SelectValue placeholder="Choose Month" />
                         </SelectTrigger>
                         <SelectContent className="bg-white rounded-xl border border-gray-100 shadow-xl z-[70] text-gray-800 min-w-[200px] p-1.5">
-                            <SelectItem value="all" className="font-semibold text-gray-700 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all data-[highlighted]:!bg-[#f7f9f0] data-[highlighted]:!text-[#7a9d54] data-[state=checked]:!bg-[#f7f9f0] data-[state=checked]:!text-[#7a9d54] focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
+                            <SelectItem value="all" className="font-semibold text-gray-700 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
                                 Choose Month
                             </SelectItem>
-                            <SelectItem value="JANUARI 2026" className="font-semibold text-gray-700 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all data-[highlighted]:!bg-[#f7f9f0] data-[highlighted]:!text-[#7a9d54] data-[state=checked]:!bg-[#f7f9f0] data-[state=checked]:!text-[#7a9d54] focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
+                            <SelectItem value="JANUARI 2026" className="font-semibold text-gray-700 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
                                 Januari 2026
                             </SelectItem>
-                            <SelectItem value="FEBRUARI 2026" className="font-semibold text-gray-700 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all data-[highlighted]:!bg-[#f7f9f0] data-[highlighted]:!text-[#7a9d54] data-[state=checked]:!bg-[#f7f9f0] data-[state=checked]:!text-[#7a9d54] focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
+                            <SelectItem value="FEBRUARI 2026" className="font-semibold text-gray-700 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
                                 Februari 2026
                             </SelectItem>
-                            <SelectItem value="DESEMBER 2025" className="font-semibold text-gray-700 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all data-[highlighted]:!bg-[#f7f9f0] data-[highlighted]:!text-[#7a9d54] data-[state=checked]:!bg-[#f7f9f0] data-[state=checked]:!text-[#7a9d54] focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
+                            <SelectItem value="DESEMBER 2025" className="font-semibold text-gray-700 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all focus:!bg-[#f7f9f0] focus:!text-[#7a9d54]">
                                 Desember 2025
                             </SelectItem>
                         </SelectContent>
@@ -197,7 +83,7 @@ export function EWartaContent() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: itemIdx * 0.08 }}
-                                    className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
+                                    className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full select-none"
                                 >
                                     {/* Image Container */}
                                     <div className="relative aspect-[4/3] overflow-hidden select-none">
