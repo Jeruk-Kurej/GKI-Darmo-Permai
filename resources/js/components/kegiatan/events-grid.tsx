@@ -85,12 +85,30 @@ const EventCard = ({ event }: { event: EventData }) => (
     </motion.div>
 );
 
-export function EventsGrid() {
+export function EventsGrid({ events }: { events?: any[] }) {
     const [searchQuery, setSearchQuery] = useState("");
     const [activeCategory, setActiveCategory] = useState("Semua");
     const categories = ["Semua", "Keluarga", "Anak", "Remaja"];
 
-    const filteredEvents = EVENTS_DATA.filter(event =>
+    let displayEvents = EVENTS_DATA;
+
+    if (events && events.length > 0) {
+        displayEvents = events.map((item) => {
+            const date = new Date(item.date);
+            return {
+                id: item.id,
+                date: date.getDate().toString(),
+                month: date.toLocaleDateString('id-ID', { month: 'short' }).toUpperCase(),
+                title: item.title,
+                category: item.category,
+                pastor: item.pastor,
+                time: item.time,
+                image: item.image_path,
+            };
+        });
+    }
+
+    const filteredEvents = displayEvents.filter(event =>
         event.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
         (activeCategory === "Semua" || event.category === activeCategory)
     );

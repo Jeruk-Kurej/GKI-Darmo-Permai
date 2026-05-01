@@ -10,7 +10,7 @@ import { LatestPost } from '@/components/home/latest-post';
 import { CallToAction } from '@/components/home/cta';
 import { Footer } from '@/components/footer';
 
-export default function Welcome() {
+export default function Welcome({ schedules }: { schedules: any[] }) {
     return (
         <>
             <Head title="Home" />
@@ -24,7 +24,7 @@ export default function Welcome() {
                 </div>
 
                 {/* Jadwal Ibadah - biarkan ukuran natural */}
-                <JadwalIbadah />
+                <JadwalIbadah schedules={schedules} />
                 
                 {/* SCREEN 2: Tentang Kami (Full Screen) */}
                 <div className="w-full min-h-screen flex flex-col">

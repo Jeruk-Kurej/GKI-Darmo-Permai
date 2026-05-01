@@ -5,13 +5,49 @@ import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
 import { FilterDropdown } from '@/components/ui/filter-dropdown';
 import { wartaData } from './warta-data';
 
-export function EWartaContent() {
+export function EWartaContent({ bulletins }: { bulletins?: any[] }) {
     const [selectedMonth, setSelectedMonth] = useState<string>("all");
 
-    // Filter content correctly
+    let displayData = wartaData;
+
+    if (bulletins && bulletins.length > 0) {
+        const groups: Record<string, any[]> = {};
+        bulletins.forEach((b) => {
+            const date = new Date(b.release_date);
+            const monthName = date.toLocaleDateString('id-ID', { month: 'long', year: 'numeric' }).toUpperCase();
+            if (!groups[monthName]) {
+                groups[monthName] = [];
+            }
+            groups[monthName].push({
+                id: b.id.toString(),
+                title: b.title,
+                subtitle: "Warta Resmi GKI Darmo Permai",
+                dayTime: date.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' }),
+                image: b.file_path.endsWith('.pdf') ? '/storage/kegiatan_header_bg_1777523047771.png' : b.file_path,
+                file_path: b.file_path,
+                day: date.getDate(),
+                monthShort: date.toLocaleDateString('id-ID', { month: 'short' }).toUpperCase(),
+            });
+        });
+
+        displayData = Object.keys(groups).map((month) => ({
+            month,
+            items: groups[month],
+        }));
+    }
+
     const filteredData = selectedMonth === "all"
-        ? wartaData
-        : wartaData.filter(group => group.month === selectedMonth);
+        ? displayData
+        : displayData.filter(group => group.month === selectedMonth);
+
+    const monthOptions = [
+        { value: "all", label: "Choose Month" },
+        ...displayData.map(group => ({ value: group.month, label: group.month }))
+    ];
+
+    const handleDownload = (filePath: string) => {
+        window.open(filePath, '_blank');
+    };
 
     return (
         <section className="relative py-20 overflow-hidden bg-white select-none">
@@ -39,12 +75,7 @@ export function EWartaContent() {
                         value={selectedMonth} 
                         onValueChange={setSelectedMonth} 
                         placeholder="Choose Month"
-                        options={[
-                            { value: "all", label: "Choose Month" },
-                            { value: "JANUARI 2026", label: "Januari 2026" },
-                            { value: "FEBRUARI 2026", label: "Februari 2026" },
-                            { value: "DESEMBER 2025", label: "Desember 2025" }
-                        ]}
+                        options={monthOptions}
                     />
                 </div>
 
@@ -62,7 +93,7 @@ export function EWartaContent() {
                         </motion.h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {group.items.map((item, itemIdx) => (
+                            {group.items.map((item: any, itemIdx: number) => (
                                 <motion.div
                                     key={item.id}
                                     initial={{ opacity: 0, y: 30 }}
@@ -74,14 +105,14 @@ export function EWartaContent() {
                                     {/* Image Container */}
                                     <div className="relative aspect-[4/3] overflow-hidden select-none">
                                         <img
-                                            src={item.image}
+                                            src={item.image || "/storage/kegiatan_header_bg_1777523047771.png"}
                                             alt={item.title}
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
                                         {/* Date Badge */}
                                         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-center shadow-md">
-                                            <span className="block text-xl font-black text-[#1a1a1a] leading-none">20</span>
-                                            <span className="block text-[10px] font-bold text-gray-500 uppercase tracking-tighter">JULI</span>
+                                            <span className="block text-xl font-black text-[#1a1a1a] leading-none">{item.day || 20}</span>
+                                            <span className="block text-[10px] font-bold text-gray-500 uppercase tracking-tighter">{item.monthShort || "JULI"}</span>
                                         </div>
                                     </div>
 
@@ -98,7 +129,10 @@ export function EWartaContent() {
                                             <span className="text-[10px] font-bold text-[#7a9d54] uppercase tracking-wider">
                                                 {item.dayTime}
                                             </span>
-                                            <button className="bg-[#7a9d54] cursor-pointer p-2 rounded-lg text-white hover:bg-[#688945] transition-all duration-300 transform group-hover:translate-y-[-2px] shadow-lg shadow-[#7a9d54]/20">
+                                            <button 
+                                                onClick={() => handleDownload(item.file_path || item.image)}
+                                                className="bg-[#7a9d54] cursor-pointer p-2 rounded-lg text-white hover:bg-[#688945] transition-all duration-300 transform group-hover:translate-y-[-2px] shadow-lg shadow-[#7a9d54]/20"
+                                            >
                                                 <Download size={18} strokeWidth={2.5} />
                                             </button>
                                         </div>

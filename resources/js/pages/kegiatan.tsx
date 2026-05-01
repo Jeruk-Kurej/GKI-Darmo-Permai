@@ -4,7 +4,7 @@ import { Footer } from '@/components/footer';
 import { KegiatanHero } from '@/components/kegiatan/hero';
 import { UpcomingEvents } from '@/components/kegiatan/upcoming-events';
 
-export default function Kegiatan() {
+export default function Kegiatan({ events }: { events?: any[] }) {
     return (
         <>
             <Head title="Kegiatan" />
@@ -16,7 +16,7 @@ export default function Kegiatan() {
                 <KegiatanHero />
                 
                 {/* Upcoming Events Section */}
-                <UpcomingEvents />
+                <UpcomingEvents events={events} />
 
                 <Footer />
             </div>

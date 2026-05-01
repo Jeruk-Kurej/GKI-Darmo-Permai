@@ -4,7 +4,17 @@ import { schedulesData } from './home-data';
 
 const AUTO_PLAY_INTERVAL = 4000;
 
-export function JadwalIbadah() {
+export function JadwalIbadah({ schedules }: { schedules?: any[] }) {
+    const schedulesToDisplay = schedules && schedules.length > 0 ? Object.values(
+        schedules.reduce((acc: any, item: any) => {
+            if (!acc[item.category]) {
+                acc[item.category] = { category: item.category, items: [] };
+            }
+            acc[item.category].items.push({ type: item.type, time: item.time });
+            return acc;
+        }, {})
+    ) : schedulesData;
+
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const [direction, setDirection] = useState<'left' | 'right'>('left');
@@ -19,7 +29,7 @@ export function JadwalIbadah() {
 
     const goToNext = () => {
         setCurrentIndex(prev => {
-            const next = prev === schedulesData.length - 1 ? 0 : prev + 1;
+            const next = prev === schedulesToDisplay.length - 1 ? 0 : prev + 1;
             setDirection('left');
             setAnimKey(k => k + 1);
             return next;
@@ -32,13 +42,13 @@ export function JadwalIbadah() {
     };
 
     const handlePrev = () => {
-        const newIndex = currentIndex === 0 ? schedulesData.length - 1 : currentIndex - 1;
+        const newIndex = currentIndex === 0 ? schedulesToDisplay.length - 1 : currentIndex - 1;
         navigate(newIndex, 'right');
         startAutoPlay();
     };
 
     const handleNext = () => {
-        const newIndex = currentIndex === schedulesData.length - 1 ? 0 : currentIndex + 1;
+        const newIndex = currentIndex === schedulesToDisplay.length - 1 ? 0 : currentIndex + 1;
         navigate(newIndex, 'left');
         startAutoPlay();
     };
@@ -60,7 +70,7 @@ export function JadwalIbadah() {
         };
     }, [isPaused]);
 
-    const activeSchedule = schedulesData[currentIndex];
+    const activeSchedule = schedulesToDisplay[currentIndex] || { category: '', items: [] };
 
     return (
         <section
@@ -126,7 +136,7 @@ export function JadwalIbadah() {
                 <div
                     key={`items-${animKey}`}
                     className={`${
-                        activeSchedule.items.length > 2
+                        activeSchedule.items && activeSchedule.items.length > 2
                             ? 'grid grid-cols-2 gap-x-3 gap-y-3 max-w-[320px]'
                             : 'flex gap-x-8'
                     } md:flex items-center justify-center md:gap-x-12 gap-y-0 text-center w-full md:max-w-none mx-auto mt-2 h-[88px] md:h-[48px]`}
@@ -134,7 +144,7 @@ export function JadwalIbadah() {
                         animation: `slideIn${direction === 'left' ? 'Left' : 'Right'} 1s cubic-bezier(0.16, 1, 0.3, 1) both`,
                     }}
                 >
-                    {activeSchedule.items.map((item, index) => (
+                    {activeSchedule.items && activeSchedule.items.map((item: any, index: number) => (
                         <div key={index} className="flex items-center justify-center whitespace-nowrap">
                             <div className={`${activeSchedule.items.length > 2 ? 'w-[48px] md:w-auto' : 'w-auto'} flex justify-end mr-1.5`}>
                                 <span className={`${activeSchedule.items.length > 2 ? 'text-[7px]' : 'text-[9px]'} md:text-xs font-semibold tracking-normal leading-none text-white text-right`}>
@@ -151,11 +161,11 @@ export function JadwalIbadah() {
 
                 {/* Dot Indicators */}
                 <div className="flex items-center justify-center gap-2 mt-4">
-                    {schedulesData.map((_, index) => (
+                    {schedulesToDisplay.map((_, index) => (
                         <button
                             key={index}
                             onClick={() => handleDotClick(index)}
-                            aria-label={`Lihat jadwal ${schedulesData[index].category}`}
+                            aria-label={`Lihat jadwal ${schedulesToDisplay[index]?.category}`}
                             className="relative w-5 h-1.5 rounded-full overflow-hidden transition-all duration-300 focus:outline-none"
                             style={{ background: 'rgba(255,255,255,0.35)' }}
                         >

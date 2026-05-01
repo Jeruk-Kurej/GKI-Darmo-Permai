@@ -26,7 +26,7 @@ const slowSmoothScrollTo = (targetY: number, duration: number) => {
     requestAnimationFrame(step);
 };
 
-export default function Media() {
+export default function Media({ mediaItems }: { mediaItems?: any[] }) {
     const [activeTab, setActiveTab] = useState<string>("video-ibadah");
     const tabs = [
         { id: "video-ibadah", label: "Video Ibadah" },
@@ -92,9 +92,9 @@ export default function Media() {
 
                 {/* Main Content Sections */}
                 <div className="relative">
-                    <VideoIbadahSection />
-                    <SamasSection />
-                    <GaleriSection />
+                    <VideoIbadahSection mediaItems={mediaItems} />
+                    <SamasSection mediaItems={mediaItems} />
+                    <GaleriSection mediaItems={mediaItems} />
                 </div>
 
                 <Footer />

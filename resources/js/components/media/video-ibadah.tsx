@@ -4,11 +4,28 @@ import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { FilterDropdown } from '@/components/ui/filter-dropdown';
 import { initialVideos } from './media-data';
 
-export function VideoIbadahSection() {
-    const [selectedMonth, setSelectedMonth] = useState<string>("JANUARI 2026");
+export function VideoIbadahSection({ mediaItems }: { mediaItems?: any[] }) {
+    let displayVideos = initialVideos;
+
+    if (mediaItems && mediaItems.length > 0) {
+        const dbVideos = mediaItems.filter(m => m.type === 'video').map(m => ({
+            id: m.id,
+            month: m.month,
+            title: m.title,
+            subtitle: m.subtitle,
+            image: m.image_path,
+            youtube_url: m.youtube_url,
+        }));
+        if (dbVideos.length > 0) {
+            displayVideos = dbVideos;
+        }
+    }
+
+    const uniqueMonths = [...new Set(displayVideos.map(v => v.month))];
+    const [selectedMonth, setSelectedMonth] = useState<string>(uniqueMonths[0] || "JANUARI 2026");
     const [slideIndex, setSlideIndex] = useState(0);
 
-    const filteredVideos = initialVideos.filter(v => v.month === selectedMonth);
+    const filteredVideos = displayVideos.filter(v => v.month === selectedMonth);
 
     const handlePrev = () => {
         setSlideIndex(prev => (prev > 0 ? prev - 1 : filteredVideos.length - 3));
@@ -17,6 +34,8 @@ export function VideoIbadahSection() {
     const handleNext = () => {
         setSlideIndex(prev => (prev < filteredVideos.length - 3 ? prev + 1 : 0));
     };
+
+    const monthOptions = uniqueMonths.map(m => ({ value: m, label: m }));
 
     return (
         <section id="video-ibadah" className="relative py-16 overflow-hidden bg-white">
@@ -33,18 +52,16 @@ export function VideoIbadahSection() {
                 </div>
 
                 {/* Filter Section */}
-                <div className="flex justify-center mb-10">
-                    <FilterDropdown 
-                        value={selectedMonth} 
-                        onValueChange={(val) => { setSelectedMonth(val); setSlideIndex(0); }} 
-                        placeholder="Choose Month"
-                        options={[
-                            { value: "JANUARI 2026", label: "Januari 2026" },
-                            { value: "FEBRUARI 2026", label: "Februari 2026" },
-                            { value: "DESEMBER 2025", label: "Desember 2025" }
-                        ]}
-                    />
-                </div>
+                {monthOptions.length > 1 && (
+                    <div className="flex justify-center mb-10">
+                        <FilterDropdown 
+                            value={selectedMonth} 
+                            onValueChange={(val) => { setSelectedMonth(val); setSlideIndex(0); }} 
+                            placeholder="Choose Month"
+                            options={monthOptions}
+                        />
+                    </div>
+                )}
 
                 {/* Slider / Carousel with left/right arrows */}
                 <div className="relative w-full flex items-center justify-center gap-4">
@@ -71,6 +88,7 @@ export function VideoIbadahSection() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: idx * 0.08 }}
+                                    onClick={() => video.youtube_url && window.open(video.youtube_url, '_blank')}
                                     className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col cursor-pointer"
                                 >
                                     {/* Video Thumbnail Container */}
@@ -81,6 +99,9 @@ export function VideoIbadahSection() {
                                                 <Play size={24} fill="currentColor" strokeWidth={0} />
                                             </div>
                                         </div>
+                                        {video.image && (
+                                            <img src={video.image} alt={video.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                        )}
                                         {/* Fallback pattern background just in case image fails */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-gray-400 to-gray-600 opacity-60"></div>
                                         <div className="absolute bottom-4 left-4 right-4 z-20 text-white flex flex-col text-left">

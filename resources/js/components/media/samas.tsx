@@ -13,10 +13,30 @@ function SpotifyIcon({ className = "w-5 h-5" }) {
     );
 }
 
-export function SamasSection() {
-    const [selectedMonth, setSelectedMonth] = useState<string>("JANUARI 2026");
+export function SamasSection({ mediaItems }: { mediaItems?: any[] }) {
+    let displaySamas = initialSamas;
 
-    const filteredSamas = initialSamas.filter(s => s.month === selectedMonth);
+    if (mediaItems && mediaItems.length > 0) {
+        const dbSamas = mediaItems.filter(m => m.type === 'samas').map(m => ({
+            id: m.id,
+            month: m.month,
+            title: m.title,
+            date: m.subtitle || m.month,
+            youtube: m.youtube_url,
+            spotify: m.spotify_url,
+            image: m.image_path,
+        }));
+        if (dbSamas.length > 0) {
+            displaySamas = dbSamas;
+        }
+    }
+
+    const uniqueMonths = [...new Set(displaySamas.map(s => s.month))];
+    const [selectedMonth, setSelectedMonth] = useState<string>(uniqueMonths[0] || "JANUARI 2026");
+
+    const filteredSamas = displaySamas.filter(s => s.month === selectedMonth);
+
+    const monthOptions = uniqueMonths.map(m => ({ value: m, label: m }));
 
     return (
         <section id="samas" className="relative py-16 overflow-hidden bg-[#fafbfa]">
@@ -33,18 +53,16 @@ export function SamasSection() {
                 </div>
 
                 {/* Filter Section */}
-                <div className="flex justify-center mb-10">
-                    <FilterDropdown 
-                        value={selectedMonth} 
-                        onValueChange={setSelectedMonth} 
-                        placeholder="Choose Month"
-                        options={[
-                            { value: "JANUARI 2026", label: "Januari 2026" },
-                            { value: "FEBRUARI 2026", label: "Februari 2026" },
-                            { value: "DESEMBER 2025", label: "Desember 2025" }
-                        ]}
-                    />
-                </div>
+                {monthOptions.length > 1 && (
+                    <div className="flex justify-center mb-10">
+                        <FilterDropdown 
+                            value={selectedMonth} 
+                            onValueChange={setSelectedMonth} 
+                            placeholder="Choose Month"
+                            options={monthOptions}
+                        />
+                    </div>
+                )}
 
                 {/* 2-Column Responsive Grid */}
                 <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -80,24 +98,28 @@ export function SamasSection() {
 
                             {/* Right: Platforms / Links */}
                             <div className="flex items-center gap-3">
-                                <a 
-                                    href={samas.youtube} 
-                                    target="_blank" 
-                                    rel="noreferrer" 
-                                    className="p-2 bg-white/10 hover:bg-white text-white hover:text-red-500 rounded-full transition-all duration-300 transform hover:scale-110 flex items-center justify-center backdrop-blur-sm"
-                                    aria-label="YouTube"
-                                >
-                                    <Play size={16} fill="currentColor" strokeWidth={0} />
-                                </a>
-                                <a 
-                                    href={samas.spotify} 
-                                    target="_blank" 
-                                    rel="noreferrer" 
-                                    className="p-2 bg-white/10 hover:bg-white text-white hover:text-green-500 rounded-full transition-all duration-300 transform hover:scale-110 flex items-center justify-center backdrop-blur-sm"
-                                    aria-label="Spotify"
-                                >
-                                    <SpotifyIcon className="w-4 h-4" />
-                                </a>
+                                {samas.youtube && (
+                                    <a 
+                                        href={samas.youtube} 
+                                        target="_blank" 
+                                        rel="noreferrer" 
+                                        className="p-2 bg-white/10 hover:bg-white text-white hover:text-red-500 rounded-full transition-all duration-300 transform hover:scale-110 flex items-center justify-center backdrop-blur-sm"
+                                        aria-label="YouTube"
+                                    >
+                                        <Play size={16} fill="currentColor" strokeWidth={0} />
+                                    </a>
+                                )}
+                                {samas.spotify && (
+                                    <a 
+                                        href={samas.spotify} 
+                                        target="_blank" 
+                                        rel="noreferrer" 
+                                        className="p-2 bg-white/10 hover:bg-white text-white hover:text-green-500 rounded-full transition-all duration-300 transform hover:scale-110 flex items-center justify-center backdrop-blur-sm"
+                                        aria-label="Spotify"
+                                    >
+                                        <SpotifyIcon className="w-4 h-4" />
+                                    </a>
+                                )}
                             </div>
                         </motion.div>
                     ))}

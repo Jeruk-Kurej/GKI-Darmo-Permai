@@ -4,7 +4,7 @@ import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
 import { EventsCarousel } from './events-carousel';
 import { EventsGrid } from './events-grid';
 
-export function UpcomingEvents() {
+export function UpcomingEvents({ events }: { events?: any[] }) {
     return (
         <section className="relative w-full overflow-hidden bg-white py-16 md:py-24 z-10 select-none">
             {/* === BACKGROUND SHAPES === */}
@@ -49,13 +49,13 @@ export function UpcomingEvents() {
                 </motion.a>
 
                 {/* Top Slide Carousel Section */}
-                <EventsCarousel />
+                <EventsCarousel events={events} />
 
                 {/* Space separator */}
                 <div className="h-20 w-full" />
 
                 {/* Bottom Search & Categories Event Grid Section */}
-                <EventsGrid />
+                <EventsGrid events={events} />
             </div>
         </section>
     );

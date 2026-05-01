@@ -3,10 +3,28 @@ import { motion } from 'framer-motion';
 import { FilterDropdown } from '@/components/ui/filter-dropdown';
 import { initialGallery } from './media-data';
 
-export function GaleriSection() {
-    const [selectedMonth, setSelectedMonth] = useState<string>("JANUARI 2026");
+export function GaleriSection({ mediaItems }: { mediaItems?: any[] }) {
+    let displayGallery = initialGallery;
 
-    const filteredGallery = initialGallery.filter(g => g.month === selectedMonth);
+    if (mediaItems && mediaItems.length > 0) {
+        const dbGallery = mediaItems.filter(m => m.type === 'gallery').map(m => ({
+            id: m.id,
+            month: m.month,
+            title: m.title,
+            subtitle: m.subtitle,
+            image: m.image_path,
+        }));
+        if (dbGallery.length > 0) {
+            displayGallery = dbGallery;
+        }
+    }
+
+    const uniqueMonths = [...new Set(displayGallery.map(g => g.month))];
+    const [selectedMonth, setSelectedMonth] = useState<string>(uniqueMonths[0] || "JANUARI 2026");
+
+    const filteredGallery = displayGallery.filter(g => g.month === selectedMonth);
+
+    const monthOptions = uniqueMonths.map(m => ({ value: m, label: m }));
 
     return (
         <section id="galeri" className="relative py-16 overflow-hidden bg-white">
@@ -23,18 +41,16 @@ export function GaleriSection() {
                 </div>
 
                 {/* Filter Section */}
-                <div className="flex justify-center mb-10">
-                    <FilterDropdown 
-                        value={selectedMonth} 
-                        onValueChange={setSelectedMonth} 
-                        placeholder="Choose Month"
-                        options={[
-                            { value: "JANUARI 2026", label: "Januari 2026" },
-                            { value: "FEBRUARI 2026", label: "Februari 2026" },
-                            { value: "DESEMBER 2025", label: "Desember 2025" }
-                        ]}
-                    />
-                </div>
+                {monthOptions.length > 1 && (
+                    <div className="flex justify-center mb-10">
+                        <FilterDropdown 
+                            value={selectedMonth} 
+                            onValueChange={setSelectedMonth} 
+                            placeholder="Choose Month"
+                            options={monthOptions}
+                        />
+                    </div>
+                )}
 
                 {/* 3-Column Image Grid */}
                 <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -49,11 +65,13 @@ export function GaleriSection() {
                         >
                             {/* Fallback color / background image */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/85 via-black/25 to-transparent z-10"></div>
-                            <img 
-                                src={item.image} 
-                                alt={item.title} 
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0 select-none opacity-80" 
-                            />
+                            {item.image && (
+                                <img 
+                                    src={item.image} 
+                                    alt={item.title} 
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0 select-none opacity-80" 
+                                />
+                            )}
 
                             {/* Caption at bottom */}
                             <div className="relative z-20 p-6 text-left flex flex-col">

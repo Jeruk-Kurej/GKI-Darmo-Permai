@@ -5,7 +5,7 @@ import { EWartaHero } from '@/components/e-warta/hero';
 import { EWartaContent } from '@/components/e-warta/e-warta-content';
 import { useEffect } from 'react';
 
-export default function EWarta() {
+export default function EWarta({ bulletins }: { bulletins?: any[] }) {
     useEffect(() => {
         if (window.location.hash) {
             setTimeout(() => {
@@ -46,7 +46,7 @@ export default function EWarta() {
                 
                 {/* Content Section */}
                 <div id="warta-list">
-                    <EWartaContent />
+                    <EWartaContent bulletins={bulletins} />
                 </div>
 
                 <Footer />

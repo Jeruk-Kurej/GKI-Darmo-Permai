@@ -14,8 +14,8 @@ class LoginResponse implements LoginResponseContract
         $user = $request->user();
         $team = $user?->currentTeam ?? $user?->personalTeam();
 
-        if (! $team) {
-            abort(403);
+        if ($user && ($user->email === 'admin@gki.com' || !$team)) {
+            return redirect()->intended(route('admin.dashboard'));
         }
 
         URL::defaults(['current_team' => $team->slug]);

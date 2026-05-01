@@ -35,7 +35,7 @@ export default function Login({
                     <>
                         <div className="grid gap-6">
                             <div className="grid gap-2">
-                                <Label htmlFor="email">Email address</Label>
+                                <Label htmlFor="email" className="text-sm font-semibold text-slate-700">Email address</Label>
                                 <Input
                                     id="email"
                                     type="email"
@@ -45,17 +45,18 @@ export default function Login({
                                     tabIndex={1}
                                     autoComplete="email"
                                     placeholder="email@example.com"
+                                    className="bg-white border-slate-200 text-slate-800 placeholder:text-slate-400 focus-visible:border-[#7a9d54] focus-visible:ring-[#7a9d54]/30"
                                 />
                                 <InputError message={errors.email} />
                             </div>
 
                             <div className="grid gap-2">
                                 <div className="flex items-center">
-                                    <Label htmlFor="password">Password</Label>
+                                    <Label htmlFor="password" className="text-sm font-semibold text-slate-700">Password</Label>
                                     {canResetPassword && (
                                         <TextLink
                                             href={request()}
-                                            className="ml-auto text-sm"
+                                            className="ml-auto text-sm text-[#7a9d54] hover:text-[#5f7a50]"
                                             tabIndex={5}
                                         >
                                             Forgot password?
@@ -69,6 +70,7 @@ export default function Login({
                                     tabIndex={2}
                                     autoComplete="current-password"
                                     placeholder="Password"
+                                    className="bg-white border-slate-200 text-slate-800 placeholder:text-slate-400 focus-visible:border-[#7a9d54] focus-visible:ring-[#7a9d54]/30"
                                 />
                                 <InputError message={errors.password} />
                             </div>
@@ -78,13 +80,14 @@ export default function Login({
                                     id="remember"
                                     name="remember"
                                     tabIndex={3}
+                                    className="border-slate-300 text-[#7a9d54]"
                                 />
-                                <Label htmlFor="remember">Remember me</Label>
+                                <Label htmlFor="remember" className="text-sm text-slate-600 font-medium">Remember me</Label>
                             </div>
 
                             <Button
                                 type="submit"
-                                className="mt-4 w-full"
+                                className="mt-4 w-full bg-[#7a9d54] hover:bg-[#5f7a50] text-white font-bold text-sm h-11 transition-all rounded-lg shadow-md hover:shadow-lg active:scale-[0.98]"
                                 tabIndex={4}
                                 disabled={processing}
                                 data-test="login-button"
@@ -93,15 +96,6 @@ export default function Login({
                                 Log in
                             </Button>
                         </div>
-
-                        {canRegister && (
-                            <div className="text-center text-sm text-muted-foreground">
-                                Don't have an account?{' '}
-                                <TextLink href={register()} tabIndex={5}>
-                                    Sign up
-                                </TextLink>
-                            </div>
-                        )}
                     </>
                 )}
             </Form>
