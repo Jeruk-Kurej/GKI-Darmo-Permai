@@ -65,7 +65,7 @@ export function JadwalIbadah() {
                         className="text-white hover:text-white/70 transition-transform active:scale-95 p-2"
                         aria-label="Jadwal Sebelumnya"
                     >
-                        <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 cursor-pointer md:w-6 md:h-6" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
@@ -84,7 +84,7 @@ export function JadwalIbadah() {
                         className="text-white hover:text-white/70 transition-transform active:scale-95 p-2"
                         aria-label="Jadwal Selanjutnya"
                     >
-                        <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 cursor-pointer md:w-6 md:h-6" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                         </svg>
                     </button>

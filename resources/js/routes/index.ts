@@ -544,6 +544,168 @@ kegiatan.form = kegiatanForm
 /**
 * @see \Inertia\Controller::__invoke
 * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+export const media = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: media.url(options),
+    method: 'get',
+})
+
+media.definition = {
+    methods: ["get","head"],
+    url: '/media',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+media.url = (options?: RouteQueryOptions) => {
+    return media.definition.url + queryParams(options)
+}
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+media.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: media.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+media.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: media.url(options),
+    method: 'head',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+const mediaForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: media.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+mediaForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: media.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+mediaForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: media.url({
+        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+            _method: 'HEAD',
+            ...(options?.query ?? options?.mergeQuery ?? {}),
+        }
+    }),
+    method: 'get',
+})
+
+media.form = mediaForm
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+export const eWarta = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: eWarta.url(options),
+    method: 'get',
+})
+
+eWarta.definition = {
+    methods: ["get","head"],
+    url: '/e-warta',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+eWarta.url = (options?: RouteQueryOptions) => {
+    return eWarta.definition.url + queryParams(options)
+}
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+eWarta.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: eWarta.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+eWarta.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: eWarta.url(options),
+    method: 'head',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+const eWartaForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: eWarta.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+eWartaForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: eWarta.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+eWartaForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: eWarta.url({
+        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+            _method: 'HEAD',
+            ...(options?.query ?? options?.mergeQuery ?? {}),
+        }
+    }),
+    method: 'get',
+})
+
+eWarta.form = eWartaForm
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
 * @route '/hubungi-kami'
 */
 export const contactUs = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({

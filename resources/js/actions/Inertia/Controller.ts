@@ -322,6 +322,166 @@ Controllerd6ed9cd88c3989be14a7aade5f3e62b3.form = Controllerd6ed9cd88c3989be14a7
 /**
 * @see \Inertia\Controller::__invoke
 * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+const Controllerb6e246e27f8af7b9881470f6aa5d44b9 = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: Controllerb6e246e27f8af7b9881470f6aa5d44b9.url(options),
+    method: 'get',
+})
+
+Controllerb6e246e27f8af7b9881470f6aa5d44b9.definition = {
+    methods: ["get","head"],
+    url: '/media',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+Controllerb6e246e27f8af7b9881470f6aa5d44b9.url = (options?: RouteQueryOptions) => {
+    return Controllerb6e246e27f8af7b9881470f6aa5d44b9.definition.url + queryParams(options)
+}
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+Controllerb6e246e27f8af7b9881470f6aa5d44b9.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: Controllerb6e246e27f8af7b9881470f6aa5d44b9.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+Controllerb6e246e27f8af7b9881470f6aa5d44b9.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: Controllerb6e246e27f8af7b9881470f6aa5d44b9.url(options),
+    method: 'head',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+const Controllerb6e246e27f8af7b9881470f6aa5d44b9Form = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: Controllerb6e246e27f8af7b9881470f6aa5d44b9.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+Controllerb6e246e27f8af7b9881470f6aa5d44b9Form.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: Controllerb6e246e27f8af7b9881470f6aa5d44b9.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/media'
+*/
+Controllerb6e246e27f8af7b9881470f6aa5d44b9Form.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: Controllerb6e246e27f8af7b9881470f6aa5d44b9.url({
+        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+            _method: 'HEAD',
+            ...(options?.query ?? options?.mergeQuery ?? {}),
+        }
+    }),
+    method: 'get',
+})
+
+Controllerb6e246e27f8af7b9881470f6aa5d44b9.form = Controllerb6e246e27f8af7b9881470f6aa5d44b9Form
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+const Controller5434ee3a6279dbb9b617adf65e6dbcf3 = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: Controller5434ee3a6279dbb9b617adf65e6dbcf3.url(options),
+    method: 'get',
+})
+
+Controller5434ee3a6279dbb9b617adf65e6dbcf3.definition = {
+    methods: ["get","head"],
+    url: '/e-warta',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+Controller5434ee3a6279dbb9b617adf65e6dbcf3.url = (options?: RouteQueryOptions) => {
+    return Controller5434ee3a6279dbb9b617adf65e6dbcf3.definition.url + queryParams(options)
+}
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+Controller5434ee3a6279dbb9b617adf65e6dbcf3.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: Controller5434ee3a6279dbb9b617adf65e6dbcf3.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+Controller5434ee3a6279dbb9b617adf65e6dbcf3.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: Controller5434ee3a6279dbb9b617adf65e6dbcf3.url(options),
+    method: 'head',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+const Controller5434ee3a6279dbb9b617adf65e6dbcf3Form = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: Controller5434ee3a6279dbb9b617adf65e6dbcf3.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+Controller5434ee3a6279dbb9b617adf65e6dbcf3Form.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: Controller5434ee3a6279dbb9b617adf65e6dbcf3.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/e-warta'
+*/
+Controller5434ee3a6279dbb9b617adf65e6dbcf3Form.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: Controller5434ee3a6279dbb9b617adf65e6dbcf3.url({
+        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+            _method: 'HEAD',
+            ...(options?.query ?? options?.mergeQuery ?? {}),
+        }
+    }),
+    method: 'get',
+})
+
+Controller5434ee3a6279dbb9b617adf65e6dbcf3.form = Controller5434ee3a6279dbb9b617adf65e6dbcf3Form
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
 * @route '/hubungi-kami'
 */
 const Controllerb2ad1919cc156958282f0facf292d011 = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -583,6 +743,8 @@ const Controller = {
     '/tentang-kami': Controllercaa0ac59a54ac8054bbfb3b32db74b70,
     '/ibadah': Controller05d51cd1fea0aaa330d8c8fd0b00707a,
     '/kegiatan': Controllerd6ed9cd88c3989be14a7aade5f3e62b3,
+    '/media': Controllerb6e246e27f8af7b9881470f6aa5d44b9,
+    '/e-warta': Controller5434ee3a6279dbb9b617adf65e6dbcf3,
     '/hubungi-kami': Controllerb2ad1919cc156958282f0facf292d011,
     '/{current_team}/dashboard': Controller7c56b49c1afb48e6321cba0b75b6ac61,
     '/settings/appearance': Controllere19ee86e9cf603ce1a59a1ec5d21dec5,
