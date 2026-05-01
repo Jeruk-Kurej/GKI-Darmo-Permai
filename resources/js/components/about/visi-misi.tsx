@@ -11,7 +11,7 @@ export function VisiMisi() {
     ];
 
     return (
-        <section className="relative w-full py-24 bg-white z-10">
+        <section className="relative w-full py-24 bg-white z-10 overflow-hidden">
             {/* Background Decorative Elements - Peeking Style */}
             {/* Top-left decoration */}
             <div className="absolute top-0 left-0 w-[40%] h-[150%] pointer-events-none opacity-60">
