@@ -83,19 +83,20 @@ export function VisiMisi() {
                                 </div>
                             </div>
 
-                            <div className="flex items-center mb-6">
-                                <div className="w-[55px] md:w-[75px] shrink-0 flex justify-end pr-3">
+                            <div className="flex items-center mb-6 pt-4">
+                                <div className="w-[55px] md:w-[75px] shrink-0"></div>
+                                <div className="flex flex-grow items-center gap-4">
                                     <span className="text-[12px] md:text-[15px] font-bold text-gray-600 uppercase leading-none">
                                         YANG
                                     </span>
+                                    <motion.div 
+                                        initial={{ width: 0 }}
+                                        whileInView={{ width: '85%' }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 1.2, delay: 0.5, ease: "circOut" }}
+                                        className="h-[12px] md:h-[18px] lg:h-[24px] bg-[#7a9d54]"
+                                    />
                                 </div>
-                                <motion.div 
-                                    initial={{ width: 0 }}
-                                    whileInView={{ width: '100%' }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 1.2, delay: 0.5, ease: "circOut" }}
-                                    className="flex-grow h-[12px] md:h-[18px] lg:h-[24px] bg-[#7a9d54]"
-                                />
                             </div>
 
                             <div className="flex items-start">
