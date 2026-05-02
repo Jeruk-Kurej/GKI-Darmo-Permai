@@ -5,7 +5,7 @@ import { schedulesData } from './home-data';
 const AUTO_PLAY_INTERVAL = 4000;
 
 export function JadwalIbadah({ schedules }: { schedules?: any[] }) {
-    const schedulesToDisplay = schedules && schedules.length > 0 ? Object.values(
+    const schedulesToDisplay: any[] = schedules && schedules.length > 0 ? Object.values(
         schedules.reduce((acc: any, item: any) => {
             if (!acc[item.category]) {
                 acc[item.category] = { category: item.category, items: [] };
@@ -70,7 +70,14 @@ export function JadwalIbadah({ schedules }: { schedules?: any[] }) {
         };
     }, [isPaused]);
 
-    const activeSchedule = schedulesToDisplay[currentIndex] || { category: '', items: [] };
+    useEffect(() => {
+        if (currentIndex >= schedulesToDisplay.length) {
+            setCurrentIndex(0);
+        }
+    }, [schedulesToDisplay.length]);
+
+    const activeSchedule: any = schedulesToDisplay[currentIndex] || { category: '', items: [] };
+    const activeItems: any[] = activeSchedule?.items || [];
 
     return (
         <section
@@ -136,7 +143,7 @@ export function JadwalIbadah({ schedules }: { schedules?: any[] }) {
                 <div
                     key={`items-${animKey}`}
                     className={`${
-                        activeSchedule.items && activeSchedule.items.length > 2
+                        activeItems.length > 2
                             ? 'grid grid-cols-2 gap-x-3 gap-y-3 max-w-[320px]'
                             : 'flex gap-x-8'
                     } md:flex items-center justify-center md:gap-x-12 gap-y-0 text-center w-full md:max-w-none mx-auto mt-2 h-[88px] md:h-[48px]`}
@@ -144,16 +151,16 @@ export function JadwalIbadah({ schedules }: { schedules?: any[] }) {
                         animation: `slideIn${direction === 'left' ? 'Left' : 'Right'} 1s cubic-bezier(0.16, 1, 0.3, 1) both`,
                     }}
                 >
-                    {activeSchedule.items && activeSchedule.items.map((item: any, index: number) => (
+                    {activeItems.map((item: any, index: number) => (
                         <div key={index} className="flex items-center justify-center whitespace-nowrap">
-                            <div className={`${activeSchedule.items.length > 2 ? 'w-[48px] md:w-auto' : 'w-auto'} flex justify-end mr-1.5`}>
-                                <span className={`${activeSchedule.items.length > 2 ? 'text-[7px]' : 'text-[9px]'} md:text-xs font-semibold tracking-normal leading-none text-white text-right`}>
+                            <div className={`${activeItems.length > 2 ? 'w-[48px] md:w-auto' : 'w-auto'} flex justify-end mr-1.5`}>
+                                <span className={`${activeItems.length > 2 ? 'text-[7px]' : 'text-[9px]'} md:text-xs font-semibold tracking-normal leading-none text-white text-right`}>
                                     {item.type}
                                 </span>
                             </div>
                             <div className="h-4 w-0.5 bg-white mx-1 flex-shrink-0"></div>
                             <div className="ml-1.5">
-                                <span className={`${activeSchedule.items.length > 2 ? 'text-sm' : 'text-base'} md:text-2xl font-bold text-white leading-none`}>{item.time}</span>
+                                <span className={`${activeItems.length > 2 ? 'text-sm' : 'text-base'} md:text-2xl font-bold text-white leading-none`}>{item.time}</span>
                             </div>
                         </div>
                     ))}
@@ -185,21 +192,6 @@ export function JadwalIbadah({ schedules }: { schedules?: any[] }) {
                     ))}
                 </div>
             </div>
-
-            <style>{`
-                @keyframes progressBar {
-                    from { width: 0%; }
-                    to { width: 100%; }
-                }
-                @keyframes slideInLeft {
-                    from { opacity: 0; transform: translateX(60px); }
-                    to   { opacity: 1; transform: translateX(0); }
-                }
-                @keyframes slideInRight {
-                    from { opacity: 0; transform: translateX(-60px); }
-                    to   { opacity: 1; transform: translateX(0); }
-                }
-            `}</style>
         </section>
     );
 }
