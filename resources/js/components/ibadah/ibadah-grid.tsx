@@ -54,19 +54,19 @@ export function IbadahGrid({ data, type }: { data: any, type: string }) {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 {data.schedules.map((schedule: any, idx: number) => (
-                    <motion.div key={idx} whileHover={{ y: -8 }} className="bg-[#f5f7e4] p-8 rounded-sm shadow-sm flex flex-col justify-between relative border-b-[8px] border-[#8ca36b]">
-                        <div className="absolute top-6 right-6 text-right">
-                            <span className="block text-xl font-black text-[#1a1a1a] leading-none">{schedule.date.split(' ')[0]}</span>
-                            <span className="block text-[10px] font-bold text-[#1a1a1a] uppercase tracking-tighter">{schedule.date.split(' ')[1]}</span>
+                    <motion.div key={idx} whileHover={{ y: -8 }} className="bg-[#f5f7e4] p-5 md:p-8 rounded-sm shadow-sm flex flex-col justify-between relative border-b-[6px] md:border-b-[8px] border-[#8ca36b]">
+                        <div className="absolute top-5 right-5 text-right">
+                            <span className="block text-lg md:text-xl font-black text-[#1a1a1a] leading-none">{schedule.date.split(' ')[0]}</span>
+                            <span className="block text-[9px] md:text-[10px] font-bold text-[#1a1a1a] uppercase tracking-tighter">{schedule.date.split(' ')[1]}</span>
                         </div>
                         <div>
-                            <span className="text-[9px] font-bold text-[#7a9d54] tracking-widest uppercase mb-4 block leading-none">KEBAKTIAN</span>
-                            <h4 className="text-xl font-black text-[#1a1a1a] mb-3 uppercase leading-tight">{schedule.title}</h4>
-                            <p className="text-[13px] font-bold text-gray-800 italic mb-1 leading-snug">{schedule.theme}</p>
-                            <p className="text-xs font-medium text-gray-500 mb-6">{schedule.pastor}</p>
-                            <div className="space-y-2 text-xs font-bold text-gray-700">
+                            <span className="text-[8px] md:text-[9px] font-bold text-[#7a9d54] tracking-widest uppercase mb-3 block leading-none">KEBAKTIAN</span>
+                            <h4 className="text-lg md:text-xl font-black text-[#1a1a1a] mb-2 uppercase leading-tight pr-14">{schedule.title}</h4>
+                            <p className="text-xs md:text-[13px] font-bold text-gray-800 italic mb-1 leading-snug">{schedule.theme}</p>
+                            <p className="text-[11px] md:text-xs font-medium text-gray-500 mb-4">{schedule.pastor}</p>
+                            <div className="space-y-1.5 text-[11px] md:text-xs font-bold text-gray-700 pt-2 border-t border-black/5">
                                 <div className="flex items-center gap-2"><div className="w-4 h-4 rounded-full border-2 border-[#7a9d54] flex items-center justify-center scale-75"><div className="w-[1px] h-1.5 bg-[#7a9d54] rotate-45 translate-x-[0.5px] -translate-y-[0.5px]" /></div>{schedule.time}</div>
                                 <div className="flex items-center gap-2"><svg className="w-4 h-4 text-[#7a9d54]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>{schedule.location}</div>
                             </div>

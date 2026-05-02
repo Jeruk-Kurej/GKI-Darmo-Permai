@@ -18,14 +18,14 @@ export function AnggotaGereja() {
                 </div>
 
                 {/* Grid Members */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
                     {members.map((member, index) => (
                         <div 
                             key={index} 
-                            className="bg-[#eef3d2] flex flex-col items-center justify-center py-12 px-6 rounded-sm shadow-sm hover:shadow-md transition-shadow group"
+                            className="bg-[#eef3d2] flex flex-col items-center justify-center py-6 px-3 md:py-12 md:px-6 rounded-sm shadow-sm hover:shadow-md transition-shadow group"
                         >
                             {/* Profile Image (Circular) */}
-                            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-[6px] border-white shadow-lg mb-6 group-hover:scale-105 transition-transform duration-300">
+                            <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 lg:w-40 md:h-32 lg:h-40 rounded-full overflow-hidden border-4 md:border-[6px] border-white shadow-lg mb-4 group-hover:scale-105 transition-transform duration-300">
                                 <img 
                                     src={member.image} 
                                     alt={member.name} 
@@ -37,23 +37,23 @@ export function AnggotaGereja() {
                             </div>
 
                             {/* Info */}
-                            <h3 className="text-base md:text-lg font-black text-[#1a1a1a] mb-1">
+                            <h3 className="text-xs sm:text-sm md:text-lg font-black text-[#1a1a1a] mb-1 leading-tight text-center">
                                 {member.name}
                             </h3>
-                            <p className="text-[11px] md:text-xs text-gray-500 mb-6 uppercase tracking-widest font-semibold">
+                            <p className="text-[9px] md:text-xs text-gray-500 mb-4 uppercase tracking-widest font-semibold text-center leading-tight">
                                 {member.role}
                             </p>
 
                             {/* Social Icons */}
-                            <div className="flex gap-4 text-[#1a1a1a]">
-                                <a href="#" className="hover:text-[#7a9d54] transition-colors p-1" aria-label="Facebook">
-                                    <Facebook size={14} className="fill-current" />
+                            <div className="flex gap-2.5 md:gap-4 text-[#1a1a1a]">
+                                <a href="#" className="hover:text-[#7a9d54] transition-colors p-0.5 md:p-1" aria-label="Facebook">
+                                    <Facebook size={12} className="fill-current md:w-3.5 md:h-3.5" />
                                 </a>
-                                <a href="#" className="hover:text-[#7a9d54] transition-colors p-1" aria-label="Twitter">
-                                    <Twitter size={14} className="fill-current" />
+                                <a href="#" className="hover:text-[#7a9d54] transition-colors p-0.5 md:p-1" aria-label="Twitter">
+                                    <Twitter size={12} className="fill-current md:w-3.5 md:h-3.5" />
                                 </a>
-                                <a href="#" className="hover:text-[#7a9d54] transition-colors p-1" aria-label="LinkedIn">
-                                    <Linkedin size={14} className="fill-current" />
+                                <a href="#" className="hover:text-[#7a9d54] transition-colors p-0.5 md:p-1" aria-label="LinkedIn">
+                                    <Linkedin size={12} className="fill-current md:w-3.5 md:h-3.5" />
                                 </a>
                             </div>
                         </div>
