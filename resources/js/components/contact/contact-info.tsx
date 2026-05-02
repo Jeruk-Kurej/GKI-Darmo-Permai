@@ -9,7 +9,7 @@ export function ContactInfo() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5 pt-8 lg:pl-10"
+            className="hidden lg:block lg:col-span-5 pt-8 lg:pl-10"
         >
             <div className="max-w-[554px] min-h-[313px] flex flex-col justify-between">
                 <div className="space-y-10">

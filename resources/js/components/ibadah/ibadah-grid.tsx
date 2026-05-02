@@ -19,8 +19,8 @@ export function IbadahGrid({ data, type }: { data: any, type: string }) {
             </div>
 
             <div className="mb-16">
-                <div className="bg-[#f5f7e4] rounded-sm overflow-hidden shadow-md grid grid-cols-1 lg:grid-cols-12">
-                    <div className="lg:col-span-4 p-8 md:p-10 flex flex-col justify-between relative">
+                <div className="bg-[#f5f7e4] rounded-sm overflow-hidden shadow-md flex flex-col lg:grid lg:grid-cols-12">
+                    <div className="order-2 lg:order-1 lg:col-span-4 p-8 md:p-10 flex flex-col justify-between relative">
                         <div className="absolute top-8 right-8 text-right">
                             <span className="block text-2xl font-black text-[#1a1a1a] leading-none">{data.main.date.split(' ')[0]}</span>
                             <span className="block text-xs font-bold text-[#1a1a1a] uppercase tracking-tighter">{data.main.date.split(' ')[1]}</span>
@@ -45,7 +45,7 @@ export function IbadahGrid({ data, type }: { data: any, type: string }) {
                         </div>
                         <button className="w-full bg-[#8ca36b] cursor-pointer text-white py-4 font-bold rounded-md hover:bg-[#7a9d54] transition-all shadow-lg shadow-[#8ca36b]/20 uppercase tracking-widest text-sm">Tonton Sekarang</button>
                     </div>
-                    <div className="lg:col-span-8 relative group cursor-pointer overflow-hidden min-h-[300px] md:min-h-[450px]">
+                    <div className="order-1 lg:order-2 lg:col-span-8 relative group cursor-pointer overflow-hidden min-h-[300px] md:min-h-[450px]">
                         <img src={data.main.thumbnail} alt="Live Stream" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                         <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors flex items-center justify-center">
                             <motion.div whileHover={{ scale: 1.1 }} className="w-20 h-20 md:w-24 md:h-24 bg-black/80 backdrop-blur-sm rounded-full flex items-center justify-center border-4 border-white/20 shadow-2xl"><svg className="w-10 h-10 text-white fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg></motion.div>
