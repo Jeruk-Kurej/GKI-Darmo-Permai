@@ -49,12 +49,12 @@ export function Hero() {
                                     requestAnimationFrame(step);
                                 }
                             }}
-                            className="bg-[#7a9d54] hover:bg-[#688945] text-white px-8 py-6 text-lg rounded-md font-medium shadow-lg border border-transparent transition-all"
+                            className="cursor-pointer bg-[#7a9d54] hover:bg-[#688945] text-white px-8 py-6 text-lg rounded-md font-medium shadow-lg border border-transparent transition-all"
                         >
                             Lihat Jadwal Ibadah
                         </Button>
                         <Link href="/ibadah#umum">
-                            <Button variant="outline" className="w-full bg-transparent hover:bg-[#7a9d54]/20 text-white px-8 py-6 text-lg rounded-md font-medium shadow-lg border-2 border-[#7a9d54] transition-all">
+                            <Button variant="outline" className="cursor-pointer w-full bg-transparent hover:bg-[#7a9d54]/20 text-white px-8 py-6 text-lg rounded-md font-medium shadow-lg border-2 border-[#7a9d54] transition-all">
                                 Tonton Live Streaming
                             </Button>
                         </Link>
