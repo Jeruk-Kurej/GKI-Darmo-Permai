@@ -78,13 +78,13 @@ export function Footer() {
                 <div className="flex flex-col text-white">
                     <h4 className="font-bold mb-6 tracking-wide">Connect</h4>
                     <div className="flex gap-4">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform opacity-90 hover:opacity-100">
+                        <a href="https://www.facebook.com/share/1DpRcGs16R/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform opacity-90 hover:opacity-100" title="Facebook">
                             <Facebook size={20} />
                         </a>
-                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform opacity-90 hover:opacity-100">
+                        <a href="https://youtube.com/@gkidarmopermai?si=IFpHFV7zllj6yshV" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform opacity-90 hover:opacity-100" title="YouTube">
                             <Youtube size={20} />
                         </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform opacity-90 hover:opacity-100">
+                        <a href="https://www.instagram.com/gkidamai?igsh=MTEzM3UxbzVwZGNmMA==" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform opacity-90 hover:opacity-100" title="Instagram">
                             <Instagram size={20} />
                         </a>
                     </div>

@@ -73,9 +73,9 @@ export function ContactInfo() {
                 <div className="mt-16 pt-8">
                     <p className="text-xs font-bold text-gray-400 mb-6">Temukan Kami di</p>
                     <div className="flex gap-10">
-                        <a href="#" className="text-black hover:text-[#7a9d54] transition-all"><Facebook size={32} fill="black" stroke="none" /></a>
-                        <a href="#" className="text-black hover:text-[#7a9d54] transition-all"><Youtube size={32} fill="black" strokeWidth={1} className="text-white" /></a>
-                        <a href="#" className="text-black hover:text-[#7a9d54] transition-all"><Instagram size={32} /></a>
+                        <a href="https://www.facebook.com/share/1DpRcGs16R/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-black hover:text-[#7a9d54] transition-all" title="Facebook"><Facebook size={32} fill="black" stroke="none" /></a>
+                        <a href="https://youtube.com/@gkidarmopermai?si=IFpHFV7zllj6yshV" target="_blank" rel="noopener noreferrer" className="text-black hover:text-[#7a9d54] transition-all" title="YouTube"><Youtube size={32} fill="black" strokeWidth={1} className="text-white" /></a>
+                        <a href="https://www.instagram.com/gkidamai?igsh=MTEzM3UxbzVwZGNmMA==" target="_blank" rel="noopener noreferrer" className="text-black hover:text-[#7a9d54] transition-all" title="Instagram"><Instagram size={32} /></a>
                     </div>
                 </div>
             </div>
