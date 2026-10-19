@@ -15,10 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         if (!User::where('email', 'admin@gki.com')->exists()) {
-            User::create([
+            User::forceCreate([
                 'name' => 'Admin GKI',
                 'email' => 'admin@gki.com',
                 'password' => bcrypt('gkidamai24'),
+                'is_admin' => true,
             ]);
         }
 

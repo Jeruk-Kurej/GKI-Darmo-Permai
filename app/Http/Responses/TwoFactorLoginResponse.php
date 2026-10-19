@@ -13,8 +13,12 @@ class TwoFactorLoginResponse implements TwoFactorLoginResponseContract
         $user = $request->user();
         $team = $user?->currentTeam ?? $user?->personalTeam();
 
-        if ($user && ($user->email === 'admin@gki.com' || !$team)) {
+        if ($user?->is_admin) {
             return redirect()->intended(route('admin.dashboard'));
+        }
+
+        if (! $team) {
+            return redirect()->intended(route('home'));
         }
 
         return $request->wantsJson()

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\BulletinController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\MediaItemController;
 use App\Http\Middleware\EnsureTeamMembership;
+use App\Http\Middleware\EnsureUserIsAdmin;
 use App\Models\Schedule;
 use App\Models\Bulletin;
 use App\Models\Event;
@@ -14,11 +15,13 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
 
-function safe_db_get(callable $callback) {
-    try {
-        return $callback();
-    } catch (\Throwable $e) {
-        return collect([]);
+if (! function_exists('safe_db_get')) {
+    function safe_db_get(callable $callback) {
+        try {
+            return $callback();
+        } catch (\Throwable $e) {
+            return collect([]);
+        }
     }
 }
 
@@ -60,7 +63,9 @@ Route::prefix('{current_team}')
 
 Route::middleware(['auth'])->group(function () {
     Route::get('invitations/{invitation}/accept', [TeamInvitationController::class, 'accept'])->name('invitations.accept');
-    
+});
+
+Route::middleware(['auth', EnsureUserIsAdmin::class])->group(function () {
     // Admin Main Dashboard
     Route::get('admin', function () {
         return Inertia::render('admin/dashboard', [
