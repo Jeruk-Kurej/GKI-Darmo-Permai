@@ -10,23 +10,23 @@ export function VisiKami() {
             <div className="absolute inset-0 bg-black/60"></div>
 
             {/* Content */}
-            <div className="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
+            <div className="relative z-10 mx-auto flex w-full max-w-[calc(1085px+3rem)] flex-col items-center px-6 text-center">
                 
-                <p className="text-gray-300 text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase mb-2">
+                <p className="type-eyebrow mb-4 text-white">
                     VISI KAMI
                 </p>
                 
-                <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold leading-snug md:leading-tight mb-3 max-w-4xl">
+                <h2 className="type-h2 mb-3 max-w-[1085px] text-white">
                     “MEWUJUDKAN KELUARGA ‘DAMAI’ YANG MELAYANI.”
                 </h2>
                 
-                <p className="text-gray-200 text-sm md:text-base font-medium max-w-3xl leading-relaxed mb-6">
+                <p className="type-lead mb-10 max-w-[740px] text-white">
                     Mewujudkan keluarga Kristen yang berintegritas, mandiri dan produktif, dalam keutuhan jemaat yang saling menopang dan melayani.
                 </p>
 
                 <Link 
                     href="/tentang-kami#visi-misi" 
-                    className="group flex items-center gap-2 text-white font-medium hover:text-gray-300 transition-colors"
+                    className="group flex items-center gap-2 text-xl leading-8 text-white transition-colors hover:text-gray-300"
                 >
                     Lihat Semua
                     <svg 

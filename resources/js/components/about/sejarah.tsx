@@ -134,10 +134,10 @@ export function Sejarah() {
                     viewport={{ once: true }}
                     className="text-center mb-24"
                 >
-                    <h4 className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-gray-500 mb-4">
+                    <p className="type-eyebrow mb-4 text-ink">
                         PERJALANAN IMAN YANG DIMULAI DARI PERSEKUTUAN KECIL HINGGA MENJADI KOMUNITAS YANG BERTUMBUH
-                    </h4>
-                    <h2 className="text-4xl md:text-5xl font-black text-[#1a1a1a] tracking-tight uppercase">
+                    </p>
+                    <h2 className="type-h2 text-ink">
                         SEJARAH GKI DAMAI
                     </h2>
                 </motion.div>
@@ -152,7 +152,7 @@ export function Sejarah() {
                             whileInView={{ height: '100%' }}
                             viewport={{ once: true, margin: "0px" }}
                             transition={{ duration: 1.5, ease: "linear" }}
-                            className="w-full bg-[#7a9d54]"
+                            className="w-full bg-brand"
                         />
                     </div>
 
@@ -176,7 +176,7 @@ export function Sejarah() {
                                         initial={{ scale: 0 }}
                                         whileInView={{ scale: 1 }}
                                         viewport={{ once: true }}
-                                        className="absolute left-[42px] md:left-1/2 top-8 w-5 h-5 bg-white border-[4px] border-[#7a9d54] rounded-full transform -translate-x-1/2 z-20 shadow-sm group-hover:scale-125 transition-transform duration-300"
+                                        className="absolute left-[42px] md:left-1/2 top-8 w-5 h-5 bg-white border-[4px] border-brand rounded-full transform -translate-x-1/2 z-20 shadow-sm group-hover:scale-125 transition-transform duration-300"
                                     />
 
                                     {/* Left Alignment Container */}
@@ -193,7 +193,7 @@ export function Sejarah() {
                                                         className="text-[60px] md:text-[80px] lg:text-[100px] font-black leading-[0.8] select-none flex flex-col mt-4"
                                                         style={{
                                                             color: 'transparent',
-                                                            WebkitTextStroke: '2px #7a9d54',
+                                                            WebkitTextStroke: '2px var(--color-brand)',
                                                         }}
                                                     >
                                                         <span>{item.year.substring(0, 2)}</span>
@@ -244,7 +244,7 @@ export function Sejarah() {
                                                         ) : null}
                                                     </div>
                                                     
-                                                    <h3 className="text-[22px] md:text-[26px] font-black text-[#1a1a1a] mb-3 uppercase tracking-tight">
+                                                    <h3 className="text-[22px] md:text-[26px] font-black text-ink mb-3 uppercase tracking-tight">
                                                         {item.title}
                                                     </h3>
                                                     <div className="text-[14px] md:text-[15px] text-gray-600 leading-relaxed space-y-4">
@@ -271,7 +271,7 @@ export function Sejarah() {
                                                         className="text-[60px] md:text-[80px] lg:text-[100px] font-black leading-[0.8] select-none flex flex-col mt-4"
                                                         style={{
                                                             color: 'transparent',
-                                                            WebkitTextStroke: '2px #7a9d54',
+                                                            WebkitTextStroke: '2px var(--color-brand)',
                                                         }}
                                                     >
                                                         <span>{item.year.substring(0, 2)}</span>
@@ -317,7 +317,7 @@ export function Sejarah() {
                                                         ) : null}
                                                     </div>
                                                     
-                                                    <h3 className="text-[22px] md:text-[26px] font-black text-[#1a1a1a] mb-3 uppercase tracking-tight">
+                                                    <h3 className="text-[22px] md:text-[26px] font-black text-ink mb-3 uppercase tracking-tight">
                                                         {item.title}
                                                     </h3>
                                                     <div className="text-[14px] md:text-[15px] text-gray-600 leading-relaxed space-y-4">

@@ -74,14 +74,14 @@ const EventCard = ({ event }: { event: EventData }) => (
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
         </div>
         <div className="p-10 bg-white flex-1 flex flex-col">
-            <span className="text-[10px] font-bold text-[#7a9d54] tracking-[0.25em] uppercase mb-4 block">Event Pelayanan</span>
-            <h4 className="text-[21px] font-bold text-[#1a1a1a] mb-8 leading-tight group-hover:text-[#7a9d54] transition-colors line-clamp-2">{event.title}</h4>
+            <span className="text-[10px] font-bold text-brand tracking-[0.25em] uppercase mb-4 block">Event Pelayanan</span>
+            <h4 className="text-[21px] font-bold text-ink mb-8 leading-tight group-hover:text-brand transition-colors line-clamp-2">{event.title}</h4>
             <div className="mt-auto pt-6 border-t border-gray-50 space-y-2">
                 <p className="text-[15px] font-semibold text-gray-800">{event.pastor}</p>
                 <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em]">{event.time}</p>
             </div>
         </div>
-        <div className="h-1.5 w-full bg-[#7a9d54]" />
+        <div className="h-1.5 w-full bg-brand" />
     </motion.div>
 );
 
@@ -117,7 +117,7 @@ export function EventsGrid({ events }: { events?: any[] }) {
         <div className="w-full mt-0 flex flex-col items-center gap-16 select-none">
             {/* Search Bar */}
             <div className="w-full max-w-2xl relative group">
-                <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none text-gray-400 group-focus-within:text-[#7a9d54] transition-colors">
+                <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none text-gray-400 group-focus-within:text-brand transition-colors">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </div>
                 <input 
@@ -125,7 +125,7 @@ export function EventsGrid({ events }: { events?: any[] }) {
                     placeholder="Temukan kegiatan yang Anda cari..." 
                     value={searchQuery} 
                     onChange={(e) => setSearchQuery(e.target.value)} 
-                    className="w-full bg-white border border-gray-100 shadow-sm rounded-full py-5 pl-16 pr-10 text-lg font-medium focus:ring-4 focus:ring-[#7a9d54]/10 transition-all outline-none text-gray-800 placeholder:text-gray-400 caret-black" 
+                    className="w-full bg-white border border-gray-100 shadow-sm rounded-full py-5 pl-16 pr-10 text-lg font-medium focus:ring-4 focus:ring-brand/10 transition-all outline-none text-gray-800 placeholder:text-gray-400 caret-black" 
                 />
             </div>
 
@@ -135,7 +135,7 @@ export function EventsGrid({ events }: { events?: any[] }) {
                     <button 
                         key={cat} 
                         onClick={() => setActiveCategory(cat)} 
-                        className={`px-10 py-3 rounded-full font-bold text-sm cursor-pointer transition-all duration-300 ${activeCategory === cat ? 'bg-[#40512b] text-white shadow-xl scale-105' : 'bg-white text-gray-600 border border-gray-200 hover:border-[#7a9d54] hover:text-[#7a9d54]'}`}
+                        className={`px-10 py-3 rounded-full font-bold text-sm cursor-pointer transition-all duration-300 ${activeCategory === cat ? 'bg-[#40512b] text-white shadow-xl scale-105' : 'bg-white text-gray-600 border border-gray-200 hover:border-brand hover:text-brand'}`}
                     >
                         {cat}
                     </button>

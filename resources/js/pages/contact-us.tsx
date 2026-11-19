@@ -1,23 +1,18 @@
 import { Head } from '@inertiajs/react';
-import { Navbar } from '@/components/navbar';
-import { Footer } from '@/components/footer';
-import { ContactHero } from '@/components/contact/hero';
 import { ContactContent } from '@/components/contact/contact-content';
+import { PageHero } from '@/components/page-hero';
 
 export default function ContactUs() {
     return (
         <>
             <Head title="Hubungi Kami" />
 
-            <div className="bg-[#f8f9fa] w-full overflow-x-hidden">
-                <Navbar />
-                
-                <ContactHero />
-                
-                <ContactContent />
-
-                <Footer />
-            </div>
+            <PageHero
+                eyebrow="Hubungi Kami"
+                title="Mari terhubung dan bertumbuh bersama"
+                image="/images/contact-us/hubungi-kami-header.webp"
+            />
+            <ContactContent />
         </>
     );
 }

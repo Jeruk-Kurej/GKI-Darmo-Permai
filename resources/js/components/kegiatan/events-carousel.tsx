@@ -26,7 +26,7 @@ export function EventsCarousel({ events }: { events?: any[] }) {
                             </div>
                             <div className="relative mt-8 mb-8 text-center flex flex-col items-center gap-1">
                                 <h3 
-                                    className="text-[#1a1a1a] font-bold line-clamp-2"
+                                    className="text-ink font-bold line-clamp-2"
                                     style={{ 
                                         fontFamily: "'Roboto Condensed', sans-serif",
                                         fontSize: '25px',
@@ -37,12 +37,12 @@ export function EventsCarousel({ events }: { events?: any[] }) {
                                     {item.title}
                                 </h3>
                                 <p 
-                                    className="text-[#779965] uppercase pt-2 font-black tracking-wider text-xs"
+                                    className="text-brand uppercase pt-2 font-black tracking-wider text-xs"
                                 >
                                     {item.category}
                                 </p>
                                 <p 
-                                    className="text-[#1a1a1a] uppercase pt-1"
+                                    className="text-ink uppercase pt-1"
                                     style={{
                                         fontFamily: "'Roboto Condensed', sans-serif",
                                         fontWeight: 400,
@@ -64,7 +64,7 @@ export function EventsCarousel({ events }: { events?: any[] }) {
     return (
         <div className="w-full relative mt-10 px-4 md:px-16 select-none">
             {/* Left Arrow */}
-            <button className="absolute left-0 top-[30%] -translate-y-1/2 text-[#779965] cursor-pointer hover:text-[#5f7a50] transition-colors active:scale-95 z-30" aria-label="Previous">
+            <button className="absolute left-0 top-[30%] -translate-y-1/2 text-brand cursor-pointer hover:text-brand-dark transition-colors active:scale-95 z-30" aria-label="Previous">
                 <svg className="w-10 h-10 md:w-14 md:h-14" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
@@ -92,7 +92,7 @@ export function EventsCarousel({ events }: { events?: any[] }) {
                     <div className="aspect-[3/4] bg-[#dcdcdc] rounded-sm shadow-xl w-full transition-transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer overflow-hidden relative" />
                     <div className="relative mt-16 mb-16 w-[600px] flex-shrink-0 text-center flex flex-col items-center gap-1">
                         <h3 
-                            className="text-[#1a1a1a] font-bold"
+                            className="text-ink font-bold"
                             style={{ 
                                 fontFamily: "'Roboto Condensed', sans-serif",
                                 fontSize: '25px',
@@ -103,7 +103,7 @@ export function EventsCarousel({ events }: { events?: any[] }) {
                             Berbahagialah yang Murah Hati <br className="hidden md:block" /> dan Lemah Lembut
                         </h3>
                         <p 
-                            className="text-[#1a1a1a] uppercase pt-2"
+                            className="text-ink uppercase pt-2"
                             style={{
                                 fontFamily: "'Roboto Condensed', sans-serif",
                                 fontWeight: 400,
@@ -128,7 +128,7 @@ export function EventsCarousel({ events }: { events?: any[] }) {
             </div>
 
             {/* Right Arrow */}
-            <button className="absolute right-0 top-[30%] -translate-y-1/2 text-[#779965] cursor-pointer hover:text-[#5f7a50] transition-colors active:scale-95 z-30" aria-label="Next">
+            <button className="absolute right-0 top-[30%] -translate-y-1/2 text-brand cursor-pointer hover:text-brand-dark transition-colors active:scale-95 z-30" aria-label="Next">
                 <svg className="w-10 h-10 md:w-14 md:h-14" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>

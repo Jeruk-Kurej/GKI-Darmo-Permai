@@ -9,10 +9,10 @@ export function AnggotaGereja() {
                 
                 {/* Header */}
                 <div className="mb-16">
-                    <h4 className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-gray-500 mb-4">
+                    <p className="type-eyebrow mb-4 text-ink">
                         CHURCH MEMBERS
-                    </h4>
-                    <h2 className="text-4xl md:text-5xl font-black text-[#1a1a1a] tracking-tight uppercase">
+                    </p>
+                    <h2 className="type-h2 text-ink">
                         ANGGOTA GEREJA
                     </h2>
                 </div>
@@ -37,7 +37,7 @@ export function AnggotaGereja() {
                             </div>
 
                             {/* Info */}
-                            <h3 className="text-xs sm:text-sm md:text-lg font-black text-[#1a1a1a] mb-1 leading-tight text-center">
+                            <h3 className="text-xs sm:text-sm md:text-lg font-black text-ink mb-1 leading-tight text-center">
                                 {member.name}
                             </h3>
                             <p className="text-[9px] md:text-xs text-gray-500 mb-4 uppercase tracking-widest font-semibold text-center leading-tight">
@@ -45,14 +45,14 @@ export function AnggotaGereja() {
                             </p>
 
                             {/* Social Icons */}
-                            <div className="flex gap-2.5 md:gap-4 text-[#1a1a1a]">
-                                <a href="#" className="hover:text-[#7a9d54] transition-colors p-0.5 md:p-1" aria-label="Facebook">
+                            <div className="flex gap-2.5 md:gap-4 text-ink">
+                                <a href="#" className="hover:text-brand transition-colors p-0.5 md:p-1" aria-label="Facebook">
                                     <Facebook size={12} className="fill-current md:w-3.5 md:h-3.5" />
                                 </a>
-                                <a href="#" className="hover:text-[#7a9d54] transition-colors p-0.5 md:p-1" aria-label="Twitter">
+                                <a href="#" className="hover:text-brand transition-colors p-0.5 md:p-1" aria-label="Twitter">
                                     <Twitter size={12} className="fill-current md:w-3.5 md:h-3.5" />
                                 </a>
-                                <a href="#" className="hover:text-[#7a9d54] transition-colors p-0.5 md:p-1" aria-label="LinkedIn">
+                                <a href="#" className="hover:text-brand transition-colors p-0.5 md:p-1" aria-label="LinkedIn">
                                     <Linkedin size={12} className="fill-current md:w-3.5 md:h-3.5" />
                                 </a>
                             </div>

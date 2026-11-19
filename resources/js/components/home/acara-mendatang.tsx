@@ -27,7 +27,7 @@ export function AcaraMendatang() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.8 }}
                     transition={{ duration: 0.6 }}
-                    className="text-[10px] md:text-xs font-semibold tracking-[0.15em] text-gray-500 uppercase mb-4"
+                    className="type-eyebrow mb-4 text-ink"
                 >
                     Ikuti berbagai kegiatan dan pelayanan yang akan segera dilaksanakan.
                 </motion.p>
@@ -37,7 +37,7 @@ export function AcaraMendatang() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.8 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-3xl md:text-5xl font-extrabold text-black tracking-tight mb-8"
+                    className="type-h2 mb-8 text-ink"
                 >
                     ACARA MENDATANG
                 </motion.h2>
@@ -48,7 +48,7 @@ export function AcaraMendatang() {
                     viewport={{ once: false, amount: 0.8 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     href="#" 
-                    className="inline-block bg-[#779965] hover:bg-[#5f7a50] text-white font-semibold py-3 px-10 rounded-md transition-colors shadow-md mb-4 md:-mb-10 relative z-20"
+                    className="inline-block bg-brand hover:bg-brand-dark text-white font-semibold py-3 px-10 rounded-md transition-colors shadow-md mb-4 md:-mb-10 relative z-20"
                 >
                     Lihat Semua
                 </motion.a>
@@ -57,7 +57,7 @@ export function AcaraMendatang() {
                 <div className="w-full flex items-center justify-center gap-4 md:gap-8 lg:gap-12 mt-10">
                     
                     {/* Left Arrow */}
-                    <button className="text-[#779965] hover:text-[#5f7a50] transition-colors active:scale-95 flex-shrink-0" aria-label="Previous">
+                    <button className="text-brand hover:text-brand-dark transition-colors active:scale-95 flex-shrink-0" aria-label="Previous">
                         <svg className="w-10 h-10 md:w-14 md:h-14" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                         </svg>
@@ -96,7 +96,7 @@ export function AcaraMendatang() {
                     </div>
 
                     {/* Right Arrow */}
-                    <button className="text-[#779965] hover:text-[#5f7a50] transition-colors active:scale-95 flex-shrink-0" aria-label="Next">
+                    <button className="text-brand hover:text-brand-dark transition-colors active:scale-95 flex-shrink-0" aria-label="Next">
                         <svg className="w-10 h-10 md:w-14 md:h-14" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                         </svg>

@@ -32,10 +32,10 @@ export function GaleriSection({ mediaItems }: { mediaItems?: any[] }) {
 
                 {/* Header */}
                 <div className="text-center mb-6">
-                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.15em] text-gray-500 uppercase mb-2">
+                    <p className="type-eyebrow mb-4 text-ink">
                         DOKUMENTASI KEGIATAN
                     </p>
-                    <h2 className="text-3xl md:text-5xl font-black text-[#1a1a1a] tracking-tight mb-6">
+                    <h2 className="type-h2 mb-6 text-ink">
                         GALERI
                     </h2>
                 </div>
@@ -64,7 +64,7 @@ export function GaleriSection({ mediaItems }: { mediaItems?: any[] }) {
                             className="group relative bg-[#EDEDED] aspect-[4/3] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col justify-end border border-gray-100"
                         >
                             {/* Fallback color / background image */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/85 via-black/25 to-transparent z-10"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-black/25 to-transparent z-10"></div>
                             {item.image && (
                                 <img 
                                     src={item.image} 
@@ -82,7 +82,7 @@ export function GaleriSection({ mediaItems }: { mediaItems?: any[] }) {
                                     {item.subtitle}
                                 </p>
                             </div>
-                            <div className="h-1 bg-[#7a9d54] w-full relative z-20"></div>
+                            <div className="h-1 bg-brand w-full relative z-20"></div>
                         </motion.div>
                     ))}
                 </div>

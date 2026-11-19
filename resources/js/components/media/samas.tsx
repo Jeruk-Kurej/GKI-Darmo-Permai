@@ -44,10 +44,10 @@ export function SamasSection({ mediaItems }: { mediaItems?: any[] }) {
 
                 {/* Header */}
                 <div className="text-center mb-6">
-                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.15em] text-gray-500 uppercase mb-2">
+                    <p className="type-eyebrow mb-4 text-ink">
                         RENUNGAN SAPAAN DAMAI SEJAHTERA
                     </p>
-                    <h2 className="text-3xl md:text-5xl font-black text-[#1a1a1a] tracking-tight mb-6">
+                    <h2 className="type-h2 mb-6 text-ink">
                         SAMAS
                     </h2>
                 </div>
@@ -73,7 +73,7 @@ export function SamasSection({ mediaItems }: { mediaItems?: any[] }) {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: idx * 0.05 }}
-                            className="flex items-center justify-between bg-[#6a8b4b] hover:bg-[#5f7d43] text-white p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-[#7a9d54]/20 group select-none"
+                            className="flex items-center justify-between bg-[#6a8b4b] hover:bg-[#5f7d43] text-white p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-brand/20 group select-none"
                         >
                             {/* Left: Thumbnail area */}
                             <div className="flex items-center gap-4">

@@ -28,7 +28,7 @@ export function LatestPost() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.8 }}
                         transition={{ duration: 0.6 }}
-                        className="text-[10px] md:text-xs font-semibold tracking-[0.15em] text-gray-500 uppercase mb-4"
+                        className="type-eyebrow mb-4 text-ink"
                     >
                         READ OUR BLOG
                     </motion.p>
@@ -38,7 +38,7 @@ export function LatestPost() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.8 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-3xl md:text-5xl font-extrabold text-black tracking-tight"
+                        className="type-h2 text-ink"
                     >
                         LATEST POST
                     </motion.h2>
@@ -79,12 +79,12 @@ export function LatestPost() {
                             </div>
 
                             {/* Card Content Area */}
-                            <div className="flex-1 bg-[#f3f4e8] p-6 flex flex-col justify-between border-b-[12px] border-[#779965]">
+                            <div className="flex-1 bg-[#f3f4e8] p-6 flex flex-col justify-between border-b-[12px] border-brand">
                                 <div>
-                                    <p className="text-[#779965] font-bold text-xs tracking-widest uppercase mb-2">
+                                    <p className="text-brand font-bold text-xs tracking-widest uppercase mb-2">
                                         KEBAKTIAN
                                     </p>
-                                    <h3 className="text-xl font-extrabold text-black leading-tight mb-4 group-hover:text-[#5f7a50] transition-colors">
+                                    <h3 className="text-xl font-extrabold text-black leading-tight mb-4 group-hover:text-brand-dark transition-colors">
                                         CAMP JEMAAT GKI DAMAI 2026
                                     </h3>
                                 </div>
@@ -110,7 +110,7 @@ export function LatestPost() {
                     transition={{ duration: 0.5, delay: 0.5 }}
                     className="w-full flex justify-end mt-8"
                 >
-                    <Link href="/e-warta#warta-list" className="flex items-center text-gray-800 hover:text-[#779965] font-semibold transition-colors group">
+                    <Link href="/e-warta#warta-list" className="flex items-center text-gray-800 hover:text-brand font-semibold transition-colors group">
                         Lihat Semua 
                         <svg className="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" strokeWidth="2" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

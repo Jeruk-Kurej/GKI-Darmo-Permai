@@ -60,10 +60,10 @@ export function EWartaContent({ bulletins }: { bulletins?: any[] }) {
                 
                 {/* Accent shapes in the middle/right with nice muted green opacity */}
                 <div className="absolute top-[40%] left-1/4 w-32 h-32 opacity-15">
-                    <div className="w-full h-full border border-[#7a9d54] rotate-45 transform origin-center"></div>
+                    <div className="w-full h-full border border-brand rotate-45 transform origin-center"></div>
                 </div>
                 <div className="absolute bottom-[40%] right-1/4 w-32 h-32 opacity-15">
-                    <div className="w-full h-full border border-[#7a9d54] rotate-45 transform origin-center"></div>
+                    <div className="w-full h-full border border-brand rotate-45 transform origin-center"></div>
                 </div>
             </div>
 
@@ -87,7 +87,7 @@ export function EWartaContent({ bulletins }: { bulletins?: any[] }) {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="text-3xl md:text-4xl font-black text-center text-[#1a1a1a] mb-12 uppercase tracking-tight select-none"
+                            className="text-3xl md:text-4xl font-black text-center text-ink mb-12 uppercase tracking-tight select-none"
                         >
                             {group.month}
                         </motion.h2>
@@ -111,14 +111,14 @@ export function EWartaContent({ bulletins }: { bulletins?: any[] }) {
                                         />
                                         {/* Date Badge */}
                                         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-center shadow-md">
-                                            <span className="block text-xl font-black text-[#1a1a1a] leading-none">{item.day || 20}</span>
+                                            <span className="block text-xl font-black text-ink leading-none">{item.day || 20}</span>
                                             <span className="block text-[10px] font-bold text-gray-500 uppercase tracking-tighter">{item.monthShort || "JULI"}</span>
                                         </div>
                                     </div>
 
                                     {/* Content Area */}
                                     <div className="p-6 flex-1 flex flex-col bg-[#fdfdf5] group-hover:bg-[#f7f9f0] transition-colors duration-500">
-                                        <h3 className="text-lg font-black text-[#1a1a1a] mb-1 uppercase tracking-tight">
+                                        <h3 className="text-lg font-black text-ink mb-1 uppercase tracking-tight">
                                             {item.title}
                                         </h3>
                                         <p className="text-xs font-medium text-gray-600 mb-4 italic leading-relaxed">
@@ -126,12 +126,12 @@ export function EWartaContent({ bulletins }: { bulletins?: any[] }) {
                                         </p>
 
                                         <div className="mt-auto flex items-center justify-between">
-                                            <span className="text-[10px] font-bold text-[#7a9d54] uppercase tracking-wider">
+                                            <span className="text-[10px] font-bold text-brand uppercase tracking-wider">
                                                 {item.dayTime}
                                             </span>
                                             <button 
                                                 onClick={() => handleDownload(item.file_path || item.image)}
-                                                className="bg-[#7a9d54] cursor-pointer p-2 rounded-lg text-white hover:bg-[#688945] transition-all duration-300 transform group-hover:translate-y-[-2px] shadow-lg shadow-[#7a9d54]/20"
+                                                className="bg-brand cursor-pointer p-2 rounded-lg text-white hover:bg-brand-dark transition-all duration-300 transform group-hover:translate-y-[-2px] shadow-lg shadow-brand/20"
                                             >
                                                 <Download size={18} strokeWidth={2.5} />
                                             </button>
@@ -139,7 +139,7 @@ export function EWartaContent({ bulletins }: { bulletins?: any[] }) {
                                     </div>
 
                                     {/* Bottom Decorative Line */}
-                                    <div className="h-2 bg-[#7a9d54] w-full"></div>
+                                    <div className="h-2 bg-brand w-full"></div>
                                 </motion.div>
                             ))}
                         </div>
