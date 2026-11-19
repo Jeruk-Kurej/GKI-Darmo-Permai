@@ -1,6 +1,6 @@
 import React from 'react';
+import { ArrowLink } from '@/components/arrow-link';
 import { motion } from 'framer-motion';
-import { Link } from '@inertiajs/react';
 import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
 
 export function LatestPost() {
@@ -110,12 +110,9 @@ export function LatestPost() {
                     transition={{ duration: 0.5, delay: 0.5 }}
                     className="w-full flex justify-end mt-8"
                 >
-                    <Link href="/e-warta#warta-list" className="flex items-center text-gray-800 hover:text-brand font-semibold transition-colors group">
-                        Lihat Semua 
-                        <svg className="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" strokeWidth="2" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </Link>
+                    <ArrowLink href="/e-warta#warta-list" className="text-ink hover:text-brand">
+                        Lihat Semua
+                    </ArrowLink>
                 </motion.div>
 
             </div>

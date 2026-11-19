@@ -1,4 +1,5 @@
 import React from 'react';
+import { ButtonLink } from '@/components/button-link';
 import { motion } from 'framer-motion';
 import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
 
@@ -42,16 +43,15 @@ export function AcaraMendatang() {
                     ACARA MENDATANG
                 </motion.h2>
 
-                <motion.a 
+                <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: false, amount: 0.8 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    href="#" 
-                    className="inline-block bg-brand hover:bg-brand-dark text-white font-semibold py-3 px-10 rounded-md transition-colors shadow-md mb-4 md:-mb-10 relative z-20"
+                    className="relative z-20 mb-4 md:-mb-10"
                 >
-                    Lihat Semua
-                </motion.a>
+                    <ButtonLink href="/kegiatan">Lihat Semua</ButtonLink>
+                </motion.div>
 
                 {/* Carousel Container */}
                 <div className="w-full flex items-center justify-center gap-4 md:gap-8 lg:gap-12 mt-10">

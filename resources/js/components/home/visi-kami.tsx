@@ -1,4 +1,4 @@
-import { Link } from '@inertiajs/react';
+import { ArrowLink } from '@/components/arrow-link';
 
 export function VisiKami() {
     return (
@@ -24,20 +24,9 @@ export function VisiKami() {
                     Mewujudkan keluarga Kristen yang berintegritas, mandiri dan produktif, dalam keutuhan jemaat yang saling menopang dan melayani.
                 </p>
 
-                <Link 
-                    href="/tentang-kami#visi-misi" 
-                    className="group flex items-center gap-2 text-xl leading-8 text-white transition-colors hover:text-gray-300"
-                >
+                <ArrowLink href="/tentang-kami#visi-misi" className="text-white hover:text-gray-300">
                     Lihat Semua
-                    <svg 
-                        className="w-5 h-5 group-hover:translate-x-1 transition-transform" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                </Link>
+                </ArrowLink>
                 
             </div>
         </section>

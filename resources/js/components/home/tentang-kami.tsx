@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@inertiajs/react';
+import { ButtonLink } from '@/components/button-link';
 import { motion } from 'framer-motion';
 import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
 
@@ -102,12 +102,9 @@ export function TentangKami() {
                             </p>
                         </div>
 
-                        <Link 
-                            href="/tentang-kami" 
-                            className="bg-brand hover:bg-brand-dark text-white font-medium py-3 px-8 rounded transition-colors shadow-sm"
-                        >
+                        <ButtonLink href="/tentang-kami" size="wide">
                             Lihat Selengkapnya
-                        </Link>
+                        </ButtonLink>
 
                     </motion.div>
 
