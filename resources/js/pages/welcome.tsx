@@ -13,9 +13,7 @@ export default function Welcome({ schedules }: { schedules: any[] }) {
         <>
             <Head title="Home" />
 
-            <div className="flex h-screen w-full flex-col">
-                <Hero />
-            </div>
+            <Hero />
             <JadwalIbadah schedules={schedules} />
             <div className="flex min-h-screen w-full flex-col">
                 <TentangKami />
