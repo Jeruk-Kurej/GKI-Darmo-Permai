@@ -68,7 +68,7 @@ export function VideoIbadahSection({ mediaItems }: { mediaItems?: any[] }) {
                     {filteredVideos.length > 3 && (
                         <button 
                             onClick={handlePrev}
-                            className="absolute left-0 lg:-left-6 z-20 bg-white border border-gray-200 text-gray-700 hover:bg-[#7a9d54] hover:text-white hover:border-[#7a9d54] transition-all p-3 rounded-full shadow-lg active:scale-95 flex-shrink-0"
+                            className="absolute left-0 lg:-left-6 z-20 bg-white border border-gray-200 text-gray-700 hover:bg-brand hover:text-white hover:border-brand transition-all p-3 rounded-full shadow-lg active:scale-95 flex-shrink-0"
                             aria-label="Previous"
                         >
                             <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
@@ -95,7 +95,7 @@ export function VideoIbadahSection({ mediaItems }: { mediaItems?: any[] }) {
                                     <div className="relative aspect-[4/3] bg-gray-200 overflow-hidden">
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
                                         <div className="absolute inset-0 flex items-center justify-center z-20">
-                                            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-full text-[#1a1a1a] shadow-xl group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#7a9d54] group-hover:text-white">
+                                            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-full text-ink shadow-xl group-hover:scale-110 transition-transform duration-500 group-hover:bg-brand group-hover:text-white">
                                                 <Play size={24} fill="currentColor" strokeWidth={0} />
                                             </div>
                                         </div>
@@ -113,7 +113,7 @@ export function VideoIbadahSection({ mediaItems }: { mediaItems?: any[] }) {
                                             </span>
                                         </div>
                                     </div>
-                                    <div className="h-1.5 bg-[#7a9d54] w-full"></div>
+                                    <div className="h-1.5 bg-brand w-full"></div>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -122,7 +122,7 @@ export function VideoIbadahSection({ mediaItems }: { mediaItems?: any[] }) {
                     {filteredVideos.length > 3 && (
                         <button 
                             onClick={handleNext}
-                            className="absolute right-0 lg:-right-6 z-20 bg-white border border-gray-200 text-gray-700 hover:bg-[#7a9d54] hover:text-white hover:border-[#7a9d54] transition-all p-3 rounded-full shadow-lg active:scale-95 flex-shrink-0"
+                            className="absolute right-0 lg:-right-6 z-20 bg-white border border-gray-200 text-gray-700 hover:bg-brand hover:text-white hover:border-brand transition-all p-3 rounded-full shadow-lg active:scale-95 flex-shrink-0"
                             aria-label="Next"
                         >
                             <ChevronRight className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />

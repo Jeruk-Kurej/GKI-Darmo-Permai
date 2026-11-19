@@ -73,7 +73,7 @@ export function SamasSection({ mediaItems }: { mediaItems?: any[] }) {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: idx * 0.05 }}
-                            className="flex items-center justify-between bg-[#6a8b4b] hover:bg-[#5f7d43] text-white p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-[#7a9d54]/20 group select-none"
+                            className="flex items-center justify-between bg-[#6a8b4b] hover:bg-[#5f7d43] text-white p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-brand/20 group select-none"
                         >
                             {/* Left: Thumbnail area */}
                             <div className="flex items-center gap-4">

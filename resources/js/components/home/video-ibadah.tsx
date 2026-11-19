@@ -72,7 +72,7 @@ export function VideoIbadah() {
 
                                 {/* Play Button Icon (Center) */}
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-16 h-16 md:w-20 md:h-20 bg-[#1a1a1a] rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                                    <div className="w-16 h-16 md:w-20 md:h-20 bg-ink rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
                                         <svg className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M5 3l14 9-14 9V3z" />
                                         </svg>

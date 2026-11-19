@@ -52,7 +52,7 @@ export function IbadahTabs() {
     };
 
     return (
-        <div className="sticky top-20 z-40 w-full bg-[#8ca36b] shadow-lg select-none">
+        <div className="sticky top-20 z-40 w-full bg-brand shadow-lg select-none">
             <div className="max-w-7xl mx-auto flex items-center">
                 {tabs.map((tab, idx) => (
                     <React.Fragment key={tab}>

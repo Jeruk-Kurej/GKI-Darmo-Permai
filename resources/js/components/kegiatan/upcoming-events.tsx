@@ -43,7 +43,7 @@ export function UpcomingEvents({ events }: { events?: any[] }) {
                     viewport={{ once: false, amount: 0.8 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     href="#"
-                    className="inline-block bg-[#779965] hover:bg-[#5f7a50] text-white font-semibold py-3 px-10 rounded-md transition-colors shadow-md mb-4 md:-mb-10 relative z-20 cursor-pointer"
+                    className="inline-block bg-brand hover:bg-brand-dark text-white font-semibold py-3 px-10 rounded-md transition-colors shadow-md mb-4 md:-mb-10 relative z-20 cursor-pointer"
                 >
                     Lihat Semua
                 </motion.a>

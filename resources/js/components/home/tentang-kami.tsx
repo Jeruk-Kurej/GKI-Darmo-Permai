@@ -44,7 +44,7 @@ export function TentangKami() {
                             TENTANG KAMI
                         </h2>
                         {/* Garis Hijau di bawah "TENTANG" */}
-                        <div className="absolute -bottom-2 left-0 w-[55%] h-1.5 bg-[#779965]"></div>
+                        <div className="absolute -bottom-2 left-0 w-[55%] h-1.5 bg-brand"></div>
                     </motion.div>
                 </div>
 
@@ -79,9 +79,9 @@ export function TentangKami() {
                                 <p className="text-gray-700 text-lg md:text-xl tracking-widest uppercase">
                                     YOUR OWN
                                 </p>
-                                <div className="w-12 md:w-16 h-4 md:h-5 bg-[#779965]"></div>
+                                <div className="w-12 md:w-16 h-4 md:h-5 bg-brand"></div>
                             </div>
-                            <h3 className="text-4xl md:text-5xl font-extrabold text-[#779965] mt-1">
+                            <h3 className="text-4xl md:text-5xl font-extrabold text-brand mt-1">
                                 PURPOSE
                             </h3>
                         </div>
@@ -104,7 +104,7 @@ export function TentangKami() {
 
                         <Link 
                             href="/tentang-kami" 
-                            className="bg-[#779965] hover:bg-[#5f7a50] text-white font-medium py-3 px-8 rounded transition-colors shadow-sm"
+                            className="bg-brand hover:bg-brand-dark text-white font-medium py-3 px-8 rounded transition-colors shadow-sm"
                         >
                             Lihat Selengkapnya
                         </Link>
@@ -120,7 +120,7 @@ export function TentangKami() {
                         className="relative flex justify-center lg:justify-end order-1 lg:order-2"
                     >
                         {/* Aksen Kotak Hijau di Belakang Foto */}
-                        <div className="absolute right-0 md:right-[-20px] top-[-20px] w-64 h-64 md:w-80 md:h-80 bg-[#779965] z-0"></div>
+                        <div className="absolute right-0 md:right-[-20px] top-[-20px] w-64 h-64 md:w-80 md:h-80 bg-brand z-0"></div>
                         
                         {/* Main Image */}
                         <div className="relative z-10 pr-6 pb-6">

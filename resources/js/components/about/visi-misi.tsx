@@ -74,10 +74,10 @@ export function VisiMisi() {
 
                             <div className="flex items-start mb-4">
                                 <div className="w-[55px] md:w-[75px] shrink-0 flex justify-end">
-                                    <span className="text-[48px] md:text-7xl lg:text-8xl font-black text-[#1a1a1a] leading-[0.7] -mt-1 md:-mt-2 mr-1">"</span>
+                                    <span className="text-[48px] md:text-7xl lg:text-8xl font-black text-ink leading-[0.7] -mt-1 md:-mt-2 mr-1">"</span>
                                 </div>
                                 <div className="flex-grow">
-                                    <span className="text-[48px] md:text-7xl lg:text-8xl font-black text-[#1a1a1a] leading-[0.7] uppercase tracking-tighter block">
+                                    <span className="text-[48px] md:text-7xl lg:text-8xl font-black text-ink leading-[0.7] uppercase tracking-tighter block">
                                         DAMAI",
                                     </span>
                                 </div>
@@ -94,7 +94,7 @@ export function VisiMisi() {
                                         whileInView={{ width: '85%' }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 1.2, delay: 0.5, ease: "circOut" }}
-                                        className="h-[12px] md:h-[18px] lg:h-[24px] bg-[#7a9d54]"
+                                        className="h-[12px] md:h-[18px] lg:h-[24px] bg-brand"
                                     />
                                 </div>
                             </div>
@@ -102,7 +102,7 @@ export function VisiMisi() {
                             <div className="flex items-start">
                                 <div className="w-[55px] md:w-[75px] shrink-0"></div>
                                 <div className="flex-grow">
-                                    <span className="text-[46px] md:text-7xl lg:text-[100px] font-black text-[#7a9d54] leading-[0.75] uppercase tracking-tighter block">
+                                    <span className="text-[46px] md:text-7xl lg:text-[100px] font-black text-brand leading-[0.75] uppercase tracking-tighter block">
                                         MELAYANI
                                     </span>
                                 </div>
@@ -117,7 +117,7 @@ export function VisiMisi() {
                             whileInView={{ height: '100%' }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeInOut" }}
-                            className="absolute left-0 top-0 bottom-0 w-[8px] md:w-[10px] bg-[#7a9d54]"
+                            className="absolute left-0 top-0 bottom-0 w-[8px] md:w-[10px] bg-brand"
                         />
                         
                         <div className="space-y-6 md:space-y-8 lg:space-y-10">
@@ -133,7 +133,7 @@ export function VisiMisi() {
                                         className="flex items-start group"
                                     >
                                         <div className="mr-4 md:mr-6 shrink-0 -mt-1">
-                                            <span className={`text-[28px] md:text-[36px] font-black leading-none ${isGreen ? 'text-[#7a9d54]' : 'text-[#1a1a1a]'}`}>
+                                            <span className={`text-[28px] md:text-[36px] font-black leading-none ${isGreen ? 'text-brand' : 'text-ink'}`}>
                                                 {String(index + 1).padStart(2, '0')}
                                             </span>
                                         </div>

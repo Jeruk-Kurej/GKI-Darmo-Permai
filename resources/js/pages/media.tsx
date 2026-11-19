@@ -74,7 +74,7 @@ export default function Media({ mediaItems }: { mediaItems?: any[] }) {
                 title="Dengar dan tonton kembali"
                 image="/images/media/media-header.webp"
             />
-            <div className="sticky top-20 z-40 w-full bg-[#8ca36b] shadow-lg select-none">
+            <div className="sticky top-20 z-40 w-full bg-brand shadow-lg select-none">
                 <div className="mx-auto flex max-w-7xl items-center">
                     {tabs.map((tab, idx) => (
                         <React.Fragment key={tab.id}>

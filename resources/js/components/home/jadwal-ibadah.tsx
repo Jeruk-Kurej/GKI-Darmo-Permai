@@ -82,7 +82,7 @@ export function JadwalIbadah({ schedules }: { schedules?: any[] }) {
     return (
         <section
             id="jadwal-ibadah"
-            className="relative w-full overflow-hidden bg-[#779965] py-4 md:py-6"
+            className="relative w-full overflow-hidden bg-brand py-4 md:py-6"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
         >
