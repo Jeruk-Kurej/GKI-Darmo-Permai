@@ -1,45 +1,30 @@
 import { Head } from '@inertiajs/react';
-import { Navbar } from '@/components/navbar';
+import { AcaraMendatang } from '@/components/home/acara-mendatang';
+import { CallToAction } from '@/components/home/cta';
 import { Hero } from '@/components/home/hero';
 import { JadwalIbadah } from '@/components/home/jadwal-ibadah';
-import { TentangKami } from '@/components/home/tentang-kami';
-import { VisiKami } from '@/components/home/visi-kami';
-import { AcaraMendatang } from '@/components/home/acara-mendatang';
-import { VideoIbadah } from '@/components/home/video-ibadah';
 import { LatestPost } from '@/components/home/latest-post';
-import { CallToAction } from '@/components/home/cta';
-import { Footer } from '@/components/footer';
+import { TentangKami } from '@/components/home/tentang-kami';
+import { VideoIbadah } from '@/components/home/video-ibadah';
+import { VisiKami } from '@/components/home/visi-kami';
 
 export default function Welcome({ schedules }: { schedules: any[] }) {
     return (
         <>
             <Head title="Home" />
 
-            <div className="bg-[#f8f9fa] w-full flex flex-col">
-                
-                {/* SCREEN 1: Navbar + Hero */}
-                <div className="w-full h-screen flex flex-col">
-                    <Navbar />
-                    <Hero />
-                </div>
-
-                {/* Jadwal Ibadah - biarkan ukuran natural */}
-                <JadwalIbadah schedules={schedules} />
-                
-                {/* SCREEN 2: Tentang Kami (Full Screen) */}
-                <div className="w-full min-h-screen flex flex-col">
-                    <TentangKami />
-                </div>
-                
-                {/* Lanjutan Section Bawah */}
-                <VisiKami />
-                <AcaraMendatang />
-                <VideoIbadah />
-                <LatestPost />
-                <CallToAction />
-                <Footer />
-                
+            <div className="flex h-screen w-full flex-col">
+                <Hero />
             </div>
+            <JadwalIbadah schedules={schedules} />
+            <div className="flex min-h-screen w-full flex-col">
+                <TentangKami />
+            </div>
+            <VisiKami />
+            <AcaraMendatang />
+            <VideoIbadah />
+            <LatestPost />
+            <CallToAction />
         </>
     );
 }
