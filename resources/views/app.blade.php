@@ -48,11 +48,7 @@
         <meta property="twitter:image" content="https://gki-darmo-permai.vercel.app/images/home/home-header.webp">
 
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600|roboto-condensed:400,600,700|onest:400,600,700|pacifico:400|cormorant-infant:700|tangerine:400,700&display=swap" rel="stylesheet" />
 
         @viteReactRefresh
         @vite(['resources/css/app.css', 'resources/js/app.tsx'])

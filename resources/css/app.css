@@ -13,6 +13,18 @@
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
 
+    --font-display: 'Roboto Condensed', ui-sans-serif, system-ui, sans-serif;
+    --font-ui: 'Onest', ui-sans-serif, system-ui, sans-serif;
+    --font-script: 'Pacifico', cursive;
+    --font-wordmark: 'Cormorant Infant', ui-serif, serif;
+
+    --color-brand: #7a9b4f;
+    --color-brand-dark: #68874c;
+    --color-brand-light: #9fbe77;
+    --color-cream: #f0f4cb;
+    --color-ink: #161722;
+    --color-mist: #dee5d8;
+
     --radius-lg: var(--radius);
     --radius-md: calc(var(--radius) - 2px);
     --radius-sm: calc(var(--radius) - 4px);
@@ -140,6 +152,59 @@
     body {
         @apply bg-background text-foreground;
     }
+}
+
+/* --- Public site type styles (Figma "web-gereja"; sizes shrink on phones, the file has desktop frames only) --- */
+
+@utility type-h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 1.5rem + 3.2vw, 4rem);
+    line-height: 1.28;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+}
+
+@utility type-h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2rem, 1.25rem + 2.4vw, 3rem);
+    line-height: 1.333;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+}
+
+@utility type-eyebrow {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+@utility type-paragraph {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+@utility type-lead {
+    font-family: var(--font-display);
+    font-size: clamp(1.125rem, 0.9rem + 0.8vw, 1.5rem);
+    line-height: 1.25;
+}
+
+@utility type-button {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+@utility container-page {
+    width: 100%;
+    max-width: calc(80rem + 3rem);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
 }
 
 @keyframes progressBar {
