@@ -28,7 +28,7 @@ if (! function_exists('safe_db_get')) {
 Route::get('/', function () {
     return Inertia::render('welcome', [
         'canRegister' => Features::enabled(Features::registration()),
-        'schedules' => safe_db_get(fn() => Schedule::orderBy('category')->orderBy('id')->get()),
+        'schedules' => safe_db_get(fn() => Schedule::orderByRaw("CASE category WHEN 'Umum' THEN 0 WHEN 'PROUD' THEN 1 WHEN 'Anak' THEN 2 ELSE 3 END")->orderBy('id')->get()),
     ]);
 })->name('home');
 
