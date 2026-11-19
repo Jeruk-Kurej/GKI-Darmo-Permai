@@ -1,137 +1,102 @@
-import React from 'react';
-import { ButtonLink } from '@/components/button-link';
 import { motion } from 'framer-motion';
+import { ButtonLink } from '@/components/button-link';
 import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
 
 export function TentangKami() {
     return (
-        <section className="relative w-full min-h-screen flex items-center justify-center bg-white overflow-hidden py-16 lg:py-24">
-            
-            {/* === BACKGROUND SHAPES === */}
-            
-            {/* Kiri Atas */}
-            <div className="absolute top-0 left-0 h-full w-[30%] pointer-events-none">
+        <section className="relative w-full overflow-hidden bg-white pt-14 pb-16 lg:pb-[130px]">
+            <div className="pointer-events-none absolute top-0 left-0 h-full w-[30%]">
                 <BrandDecoLeft className="-translate-x-32 -translate-y-20 scale-150 opacity-50" />
             </div>
-
-            {/* Kanan Bawah */}
-            <div className="absolute top-0 right-0 h-full w-[30%] pointer-events-none flex justify-end items-end pb-10">
+            <div className="pointer-events-none absolute top-0 right-0 flex h-full w-[30%] items-end justify-end pb-10">
                 <BrandDecoRight className="translate-x-32 translate-y-32 scale-150 opacity-50" />
             </div>
 
-            {/* === MAIN CONTENT === */}
-            <div className="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col items-center">
-                
-                {/* HEADER */}
-                <div className="text-center mb-20 md:mb-32 flex flex-col items-center">
-                    <motion.p 
+            <div className="relative z-10 container-page">
+                <div className="flex flex-col items-center text-center">
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.3 }}
                         transition={{ duration: 0.6 }}
-                        className="type-eyebrow mb-4 text-ink"
+                        className="mb-4 type-eyebrow text-ink"
                     >
                         Gereja yang rindu menjadi berkat bagi kota dan generasi.
                     </motion.p>
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.3 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="relative inline-block"
+                        className="relative"
                     >
-                        <h2 className="type-h2 text-ink">
-                            TENTANG KAMI
-                        </h2>
-                        {/* Garis Hijau di bawah "TENTANG" */}
-                        <div className="absolute -bottom-2 left-0 w-[55%] h-1.5 bg-brand"></div>
+                        <h2 className="type-h2 text-ink">Tentang Kami</h2>
+                        <span className="absolute -bottom-[5px] left-0 h-2 w-[170px] max-w-[57%] bg-brand" />
                     </motion.div>
                 </div>
 
-                {/* TWO COLUMN LAYOUT */}
-                <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
-                    
-                    {/* KIRI: QUOTE & TEXT */}
-                    <motion.div 
+                <div className="mt-12 grid grid-cols-1 items-start gap-16 lg:mt-[31px] lg:grid-cols-[1fr_491px] lg:gap-0 lg:pr-[71px] lg:pl-[120px]">
+                    <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: false, amount: 0.3 }}
                         transition={{ duration: 0.8 }}
-                        className="flex flex-col items-start relative pl-4 md:pl-10 order-2 lg:order-1"
+                        className="relative order-2 pt-16 pl-8 lg:order-1 lg:pt-[102px] lg:pl-[52px]"
                     >
-                        
-                        {/* Quote Mark Using Custom SVG Asset */}
-                        <div className="absolute top-[-40px] left-[-20px] md:top-[-60px] md:left-[-40px] pointer-events-none w-24 h-24 md:w-40 md:h-40 opacity-90">
-                            <img src="/assets/about-us/quote.svg" alt="Quote Icon" className="w-full h-full object-contain" />
-                        </div>
+                        <img
+                            src="/assets/about-us/quote.svg"
+                            alt=""
+                            className="pointer-events-none absolute top-0 left-0 w-28 lg:w-[213px]"
+                        />
 
-                        <div className="relative z-10 space-y-1">
-                            <p className="text-gray-700 text-lg md:text-xl tracking-widest uppercase">
-                                WHEN YOU ARE AFTER
+                        <div className="relative font-display text-ink uppercase">
+                            <p className="text-2xl leading-none lg:text-[34px]">
+                                When you are after
                             </p>
-                            <h3 className="text-4xl md:text-5xl font-extrabold text-black">
-                                GOD'S WILL,
-                            </h3>
-                            <p className="text-gray-700 text-lg md:text-xl tracking-widest uppercase mt-2">
-                                HE WILL BE AFTER
+                            <p className="text-[44px] leading-none font-bold lg:text-[62px]">
+                                God’s will,
                             </p>
-                            <div className="flex items-center gap-4">
-                                <p className="text-gray-700 text-lg md:text-xl tracking-widest uppercase">
-                                    YOUR OWN
+                            <p className="mt-2 text-2xl leading-none lg:text-[34px]">
+                                He will be after
+                            </p>
+                            <div className="mt-1.5 flex items-center gap-2.5">
+                                <p className="text-2xl leading-none lg:text-[34px]">
+                                    Your own
                                 </p>
-                                <div className="w-12 md:w-16 h-4 md:h-5 bg-brand"></div>
+                                <span className="h-5 w-24 bg-brand lg:h-[26px] lg:w-[143px]" />
                             </div>
-                            <h3 className="text-4xl md:text-5xl font-extrabold text-brand mt-1">
-                                PURPOSE
-                            </h3>
-                        </div>
-
-                        {/* Signature */}
-                        <div className="mt-8 mb-10">
-                            <p 
-                                className="text-gray-800"
-                                style={{
-                                    fontFamily: 'Tangerine, cursive',
-                                    fontWeight: 700,
-                                    fontSize: '40px',
-                                    lineHeight: '100%',
-                                    letterSpacing: '0%'
-                                }}
-                            >
-                                Pst. Emmanuel Oarhe
+                            <p className="mt-1 text-[56px] leading-none font-bold text-brand lg:text-[78px]">
+                                Purpose
                             </p>
                         </div>
 
-                        <ButtonLink href="/tentang-kami" size="wide">
+                        <p className="mt-1 font-[Tangerine,cursive] text-[40px] leading-none font-bold text-ink">
+                            Pst. Emmanuel Oarhe
+                        </p>
+
+                        <ButtonLink
+                            href="/tentang-kami"
+                            size="wide"
+                            className="mt-[38px]"
+                        >
                             Lihat Selengkapnya
                         </ButtonLink>
-
                     </motion.div>
 
-                    {/* KANAN: IMAGE */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative flex justify-center lg:justify-end order-1 lg:order-2"
+                        className="relative order-1 mx-auto aspect-square w-full max-w-[491px] lg:order-2"
                     >
-                        {/* Aksen Kotak Hijau di Belakang Foto */}
-                        <div className="absolute right-0 md:right-[-20px] top-[-20px] w-64 h-64 md:w-80 md:h-80 bg-brand z-0"></div>
-                        
-                        {/* Main Image */}
-                        <div className="relative z-10 pr-6 pb-6">
-                            <img 
-                                src="/images/home/about-us-people.webp" 
-                                alt="Pdt. Emmanuel Oarhe" 
-                                className="w-full max-w-sm md:max-w-md h-auto object-cover shadow-lg"
-                                onError={(e) => {
-                                    e.currentTarget.src = "https://via.placeholder.com/400x500/e5e7eb/9ca3af?text=Photo";
-                                }}
-                            />
-                        </div>
+                        <div className="absolute top-[4.9%] right-0 aspect-square w-[87%] bg-brand" />
+                        <img
+                            src="/images/home/about-us-people.webp"
+                            alt="Pdt. Emmanuel Oarhe"
+                            className="absolute bottom-0 left-0 aspect-square w-[87%] object-cover"
+                        />
                     </motion.div>
-
                 </div>
             </div>
         </section>
