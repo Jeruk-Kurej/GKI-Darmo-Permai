@@ -1,9 +1,9 @@
 import { Head } from '@inertiajs/react';
 import React, { useState, useEffect } from 'react';
 import { GaleriSection } from '@/components/media/galeri';
-import { MediaHero } from '@/components/media/hero';
 import { SamasSection } from '@/components/media/samas';
 import { VideoIbadahSection } from '@/components/media/video-ibadah';
+import { PageHero } from '@/components/page-hero';
 
 const slowSmoothScrollTo = (targetY: number, duration: number) => {
     const startY = window.scrollY;
@@ -26,20 +26,24 @@ const slowSmoothScrollTo = (targetY: number, duration: number) => {
 };
 
 export default function Media({ mediaItems }: { mediaItems?: any[] }) {
-    const [activeTab, setActiveTab] = useState<string>("video-ibadah");
+    const [activeTab, setActiveTab] = useState<string>('video-ibadah');
     const tabs = [
-        { id: "video-ibadah", label: "Video Ibadah" },
-        { id: "samas", label: "SAMAS" },
-        { id: "galeri", label: "Galeri" }
+        { id: 'video-ibadah', label: 'Video Ibadah' },
+        { id: 'samas', label: 'SAMAS' },
+        { id: 'galeri', label: 'Galeri' },
     ];
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = tabs.map(tab => document.getElementById(tab.id));
+            const sections = tabs.map((tab) => document.getElementById(tab.id));
             const scrollPosition = window.scrollY + 200;
 
             sections.forEach((section, idx) => {
-                if (section && scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+                if (
+                    section &&
+                    scrollPosition >= section.offsetTop &&
+                    scrollPosition < section.offsetTop + section.offsetHeight
+                ) {
                     setActiveTab(tabs[idx].id);
                 }
             });
@@ -55,7 +59,8 @@ export default function Media({ mediaItems }: { mediaItems?: any[] }) {
 
         if (element) {
             const offset = 148;
-            const targetY = element.getBoundingClientRect().top + window.scrollY - offset;
+            const targetY =
+                element.getBoundingClientRect().top + window.scrollY - offset;
             slowSmoothScrollTo(targetY, 1200);
         }
     };
@@ -64,15 +69,21 @@ export default function Media({ mediaItems }: { mediaItems?: any[] }) {
         <>
             <Head title="Media - GKI Darmo Permai" />
 
-            <MediaHero />
+            <PageHero
+                eyebrow="Media"
+                title="Dengar dan tonton kembali"
+                image="/images/media/media-header.webp"
+            />
             <div className="sticky top-20 z-40 w-full bg-[#8ca36b] shadow-lg select-none">
-                <div className="max-w-7xl mx-auto flex items-center">
+                <div className="mx-auto flex max-w-7xl items-center">
                     {tabs.map((tab, idx) => (
                         <React.Fragment key={tab.id}>
                             <button
                                 onClick={() => handleTabClick(tab.id)}
-                                className={`flex-1 py-5 text-sm md:text-xl font-bold tracking-[0.2em] transition-all relative uppercase cursor-pointer select-none ${
-                                    activeTab === tab.id ? 'text-white' : 'text-white/60 hover:text-white'
+                                className={`relative flex-1 cursor-pointer py-5 text-sm font-bold tracking-[0.2em] uppercase transition-all select-none md:text-xl ${
+                                    activeTab === tab.id
+                                        ? 'text-white'
+                                        : 'text-white/60 hover:text-white'
                                 }`}
                             >
                                 {tab.label}

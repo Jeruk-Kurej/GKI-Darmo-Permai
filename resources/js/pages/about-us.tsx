@@ -1,20 +1,24 @@
 import { Head } from '@inertiajs/react';
 import { useEffect } from 'react';
 import { AnggotaGereja } from '@/components/about/anggota-gereja';
-import { AboutHero } from '@/components/about/hero';
 import { Sejarah } from '@/components/about/sejarah';
 import { VisiMisi } from '@/components/about/visi-misi';
-
+import { PageHero } from '@/components/page-hero';
 
 export default function AboutUs() {
     useEffect(() => {
         if (window.location.hash) {
             setTimeout(() => {
-                const element = document.getElementById(window.location.hash.substring(1));
+                const element = document.getElementById(
+                    window.location.hash.substring(1),
+                );
 
                 if (element) {
                     const offset = 80;
-                    const targetY = element.getBoundingClientRect().top + window.scrollY - offset;
+                    const targetY =
+                        element.getBoundingClientRect().top +
+                        window.scrollY -
+                        offset;
                     const startY = window.scrollY;
                     const difference = targetY - startY;
                     const startTime = performance.now();
@@ -25,7 +29,10 @@ export default function AboutUs() {
 
                         if (progress < 1) {
                             const easeProgress = 1 - Math.pow(1 - progress, 3);
-                            window.scrollTo(0, startY + difference * easeProgress);
+                            window.scrollTo(
+                                0,
+                                startY + difference * easeProgress,
+                            );
                             requestAnimationFrame(step);
                         } else {
                             window.scrollTo(0, targetY);
@@ -41,7 +48,12 @@ export default function AboutUs() {
         <>
             <Head title="Tentang Kami" />
 
-            <AboutHero />
+            <PageHero
+                eyebrow="Tentang Kami"
+                title="Serving the world around us"
+                image="/images/about-us/about-us-header.webp"
+                tone="dark"
+            />
             <VisiMisi />
             <Sejarah />
             <AnggotaGereja />

@@ -1,13 +1,17 @@
 import { Head } from '@inertiajs/react';
 import { ContactContent } from '@/components/contact/contact-content';
-import { ContactHero } from '@/components/contact/hero';
+import { PageHero } from '@/components/page-hero';
 
 export default function ContactUs() {
     return (
         <>
             <Head title="Hubungi Kami" />
 
-            <ContactHero />
+            <PageHero
+                eyebrow="Hubungi Kami"
+                title="Mari terhubung dan bertumbuh bersama"
+                image="/images/contact-us/hubungi-kami-header.webp"
+            />
             <ContactContent />
         </>
     );
