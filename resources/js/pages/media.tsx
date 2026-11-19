@@ -54,7 +54,7 @@ export default function Media({ mediaItems }: { mediaItems?: any[] }) {
         const element = document.getElementById(id);
 
         if (element) {
-            const offset = 140;
+            const offset = 148;
             const targetY = element.getBoundingClientRect().top + window.scrollY - offset;
             slowSmoothScrollTo(targetY, 1200);
         }
@@ -65,7 +65,7 @@ export default function Media({ mediaItems }: { mediaItems?: any[] }) {
             <Head title="Media - GKI Darmo Permai" />
 
             <MediaHero />
-            <div className="sticky top-[72px] z-40 w-full bg-[#8ca36b] shadow-lg select-none">
+            <div className="sticky top-20 z-40 w-full bg-[#8ca36b] shadow-lg select-none">
                 <div className="max-w-7xl mx-auto flex items-center">
                     {tabs.map((tab, idx) => (
                         <React.Fragment key={tab.id}>

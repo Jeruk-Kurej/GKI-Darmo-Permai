@@ -7,6 +7,7 @@ const slowSmoothScrollTo = (targetY: number, duration: number) => {
 
     const step = (currentTime: number) => {
         const progress = (currentTime - startTime) / duration;
+
         if (progress < 1) {
             const easeProgress = 1 - Math.pow(1 - progress, 3);
             window.scrollTo(0, startY + difference * easeProgress);
@@ -36,20 +37,22 @@ export function IbadahTabs() {
         };
 
         window.addEventListener('scroll', handleScroll);
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const handleTabClick = (tab: string) => {
         const element = document.getElementById(tab.toLowerCase());
+
         if (element) {
-            const offset = 140;
+            const offset = 148;
             const targetY = element.getBoundingClientRect().top + window.scrollY - offset;
             slowSmoothScrollTo(targetY, 1200);
         }
     };
 
     return (
-        <div className="sticky top-[72px] z-40 w-full bg-[#8ca36b] shadow-lg select-none">
+        <div className="sticky top-20 z-40 w-full bg-[#8ca36b] shadow-lg select-none">
             <div className="max-w-7xl mx-auto flex items-center">
                 {tabs.map((tab, idx) => (
                     <React.Fragment key={tab}>

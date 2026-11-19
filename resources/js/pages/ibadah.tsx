@@ -11,7 +11,7 @@ export default function Ibadah() {
                 const element = document.getElementById(window.location.hash.substring(1));
 
                 if (element) {
-                    const offset = 140;
+                    const offset = 148;
                     const targetY = element.getBoundingClientRect().top + window.scrollY - offset;
                     const startY = window.scrollY;
                     const difference = targetY - startY;
