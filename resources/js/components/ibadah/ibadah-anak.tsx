@@ -12,9 +12,9 @@ export function IbadahAnak() {
             className="select-none"
         >
             <div className="text-center mb-16">
-                <p className="text-[10px] md:text-xs font-bold text-gray-500 tracking-[0.2em] uppercase mb-3">LAYANAN SEKOLAH MINGGU</p>
+                <p className="type-eyebrow mb-4 text-ink">LAYANAN SEKOLAH MINGGU</p>
                 <div className="relative inline-block">
-                    <h2 className="text-4xl md:text-5xl font-black text-[#1a1a1a] uppercase tracking-tight">IBADAH ANAK</h2>
+                    <h2 className="type-h2 text-ink">IBADAH ANAK</h2>
                     <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-2/3 h-[5px] bg-[#7a9d54]" />
                 </div>
             </div>

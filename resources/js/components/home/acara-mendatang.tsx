@@ -27,7 +27,7 @@ export function AcaraMendatang() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.8 }}
                     transition={{ duration: 0.6 }}
-                    className="text-[10px] md:text-xs font-semibold tracking-[0.15em] text-gray-500 uppercase mb-4"
+                    className="type-eyebrow mb-4 text-ink"
                 >
                     Ikuti berbagai kegiatan dan pelayanan yang akan segera dilaksanakan.
                 </motion.p>
@@ -37,7 +37,7 @@ export function AcaraMendatang() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.8 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-3xl md:text-5xl font-extrabold text-black tracking-tight mb-8"
+                    className="type-h2 mb-8 text-ink"
                 >
                     ACARA MENDATANG
                 </motion.h2>

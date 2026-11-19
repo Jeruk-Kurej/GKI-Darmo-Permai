@@ -134,10 +134,10 @@ export function Sejarah() {
                     viewport={{ once: true }}
                     className="text-center mb-24"
                 >
-                    <h4 className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-gray-500 mb-4">
+                    <p className="type-eyebrow mb-4 text-ink">
                         PERJALANAN IMAN YANG DIMULAI DARI PERSEKUTUAN KECIL HINGGA MENJADI KOMUNITAS YANG BERTUMBUH
-                    </h4>
-                    <h2 className="text-4xl md:text-5xl font-black text-[#1a1a1a] tracking-tight uppercase">
+                    </p>
+                    <h2 className="type-h2 text-ink">
                         SEJARAH GKI DAMAI
                     </h2>
                 </motion.div>

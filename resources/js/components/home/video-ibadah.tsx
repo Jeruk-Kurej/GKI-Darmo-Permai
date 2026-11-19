@@ -19,7 +19,7 @@ export function VideoIbadah() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.8 }}
                         transition={{ duration: 0.6 }}
-                        className="text-[9px] md:text-xs font-medium tracking-[0.2em] text-gray-300 uppercase mb-4"
+                        className="type-eyebrow mb-4 text-white"
                     >
                         Saksikan kembali firman Tuhan dan pujian penyembahan dari ibadah minggu terakhir.
                     </motion.p>
@@ -28,7 +28,7 @@ export function VideoIbadah() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.8 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight"
+                        className="type-h2 text-white"
                     >
                         VIDEO IBADAH TERBARU
                     </motion.h2>

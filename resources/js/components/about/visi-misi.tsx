@@ -29,10 +29,10 @@ export function VisiMisi() {
                 
                 {/* Header */}
                 <div className="text-center mb-20">
-                    <h4 className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-gray-500 mb-4">
+                    <p className="type-eyebrow mb-4 text-ink">
                         ARAH DAN PANGGILAN YANG MENJADI DASAR PELAYANAN KAMI
-                    </h4>
-                    <h2 className="text-4xl md:text-5xl font-black text-[#1a1a1a] tracking-tight">
+                    </p>
+                    <h2 className="type-h2 text-ink">
                         VISI & MISI
                     </h2>
                 </div>

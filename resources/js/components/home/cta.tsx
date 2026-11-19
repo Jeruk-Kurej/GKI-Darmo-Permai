@@ -21,12 +21,12 @@ export function CallToAction() {
             >
                 {/* Left Content */}
                 <div className="flex-1 text-center md:text-left pr-0 md:pr-10">
-                    <h2 className="text-3xl md:text-5xl font-black text-[#1a1a1a] leading-[1.1] mb-6 tracking-tight">
+                    <h2 className="type-h2 mb-4 text-ink">
                         WE WANT TO<br />
                         SERVE THE WORLD<br />
                         AROUND US
                     </h2>
-                    <p className="text-gray-600 mb-8 max-w-sm mx-auto md:mx-0 font-medium leading-relaxed">
+                    <p className="type-paragraph mx-auto mb-8 max-w-[302px] text-ink/78 md:mx-0">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
                     </p>
                     <Link 

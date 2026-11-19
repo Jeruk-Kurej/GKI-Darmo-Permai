@@ -11,9 +11,9 @@ export function IbadahGrid({ data, type }: { data: any, type: string }) {
             className="select-none"
         >
             <div className="text-center mb-16">
-                <p className="text-[10px] md:text-xs font-bold text-gray-500 tracking-[0.2em] uppercase mb-3">JADWAL PELAYANAN MINGGUAN</p>
+                <p className="type-eyebrow mb-4 text-ink">JADWAL PELAYANAN MINGGUAN</p>
                 <div className="relative inline-block">
-                    <h2 className="text-4xl md:text-5xl font-black text-[#1a1a1a] uppercase tracking-tight">{type}</h2>
+                    <h2 className="type-h2 text-ink">{type}</h2>
                     <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-2/3 h-[5px] bg-[#7a9d54]" />
                 </div>
             </div>

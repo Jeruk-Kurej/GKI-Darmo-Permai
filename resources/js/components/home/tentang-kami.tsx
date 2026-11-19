@@ -29,7 +29,7 @@ export function TentangKami() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.3 }}
                         transition={{ duration: 0.6 }}
-                        className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase mb-3"
+                        className="type-eyebrow mb-4 text-ink"
                     >
                         Gereja yang rindu menjadi berkat bagi kota dan generasi.
                     </motion.p>
@@ -40,7 +40,7 @@ export function TentangKami() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="relative inline-block"
                     >
-                        <h2 className="text-3xl md:text-4xl font-extrabold text-black tracking-tight">
+                        <h2 className="type-h2 text-ink">
                             TENTANG KAMI
                         </h2>
                         {/* Garis Hijau di bawah "TENTANG" */}

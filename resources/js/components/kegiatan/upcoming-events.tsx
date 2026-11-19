@@ -22,7 +22,7 @@ export function UpcomingEvents({ events }: { events?: any[] }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.8 }}
                     transition={{ duration: 0.6 }}
-                    className="text-[10px] md:text-xs font-semibold tracking-[0.15em] text-gray-500 uppercase mb-4 text-center"
+                    className="type-eyebrow mb-4 text-ink text-center"
                 >
                     Ikuti berbagai kegiatan dan pelayanan yang akan segera dilaksanakan.
                 </motion.p>
@@ -32,7 +32,7 @@ export function UpcomingEvents({ events }: { events?: any[] }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.8 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-3xl md:text-5xl font-extrabold text-black tracking-tight mb-8 text-center"
+                    className="type-h2 mb-8 text-center text-ink"
                 >
                     ACARA MENDATANG
                 </motion.h2>

@@ -32,10 +32,10 @@ export function GaleriSection({ mediaItems }: { mediaItems?: any[] }) {
 
                 {/* Header */}
                 <div className="text-center mb-6">
-                    <p className="text-[10px] md:text-xs font-semibold tracking-[0.15em] text-gray-500 uppercase mb-2">
+                    <p className="type-eyebrow mb-4 text-ink">
                         DOKUMENTASI KEGIATAN
                     </p>
-                    <h2 className="text-3xl md:text-5xl font-black text-[#1a1a1a] tracking-tight mb-6">
+                    <h2 className="type-h2 mb-6 text-ink">
                         GALERI
                     </h2>
                 </div>

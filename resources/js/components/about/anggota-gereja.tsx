@@ -9,10 +9,10 @@ export function AnggotaGereja() {
                 
                 {/* Header */}
                 <div className="mb-16">
-                    <h4 className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-gray-500 mb-4">
+                    <p className="type-eyebrow mb-4 text-ink">
                         CHURCH MEMBERS
-                    </h4>
-                    <h2 className="text-4xl md:text-5xl font-black text-[#1a1a1a] tracking-tight uppercase">
+                    </p>
+                    <h2 className="type-h2 text-ink">
                         ANGGOTA GEREJA
                     </h2>
                 </div>
