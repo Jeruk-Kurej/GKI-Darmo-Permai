@@ -1,9 +1,17 @@
 import { Head } from '@inertiajs/react';
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { GaleriSection } from '@/components/media/galeri';
 import { SamasSection } from '@/components/media/samas';
 import { VideoIbadahSection } from '@/components/media/video-ibadah';
 import { PageHero } from '@/components/page-hero';
+
+const TAB_BAR_OFFSET = 176;
+
+const tabs = [
+    { id: 'video-ibadah', label: 'Video Ibadah' },
+    { id: 'samas', label: 'SAMAS' },
+    { id: 'galeri', label: 'Galeri' },
+];
 
 const slowSmoothScrollTo = (targetY: number, duration: number) => {
     const startY = window.scrollY;
@@ -27,11 +35,6 @@ const slowSmoothScrollTo = (targetY: number, duration: number) => {
 
 export default function Media({ mediaItems }: { mediaItems?: any[] }) {
     const [activeTab, setActiveTab] = useState<string>('video-ibadah');
-    const tabs = [
-        { id: 'video-ibadah', label: 'Video Ibadah' },
-        { id: 'samas', label: 'SAMAS' },
-        { id: 'galeri', label: 'Galeri' },
-    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -58,9 +61,10 @@ export default function Media({ mediaItems }: { mediaItems?: any[] }) {
         const element = document.getElementById(id);
 
         if (element) {
-            const offset = 148;
             const targetY =
-                element.getBoundingClientRect().top + window.scrollY - offset;
+                element.getBoundingClientRect().top +
+                window.scrollY -
+                TAB_BAR_OFFSET;
             slowSmoothScrollTo(targetY, 1200);
         }
     };
@@ -74,24 +78,21 @@ export default function Media({ mediaItems }: { mediaItems?: any[] }) {
                 title="Dengar dan tonton kembali"
                 image="/images/media/media-header.webp"
             />
-            <div className="sticky top-20 z-40 w-full bg-brand shadow-lg select-none">
-                <div className="mx-auto flex max-w-7xl items-center">
-                    {tabs.map((tab, idx) => (
-                        <React.Fragment key={tab.id}>
-                            <button
-                                onClick={() => handleTabClick(tab.id)}
-                                className={`relative flex-1 cursor-pointer py-5 text-sm font-bold tracking-[0.2em] uppercase transition-all select-none md:text-xl ${
-                                    activeTab === tab.id
-                                        ? 'text-white'
-                                        : 'text-white/60 hover:text-white'
-                                }`}
-                            >
-                                {tab.label}
-                            </button>
-                            {idx < tabs.length - 1 && (
-                                <div className="h-8 w-[2px] bg-white/20" />
-                            )}
-                        </React.Fragment>
+            <div className="sticky top-20 z-40 w-full bg-white py-4 select-none">
+                <div className="container-page grid grid-cols-3 gap-4">
+                    {tabs.map((tab) => (
+                        <button
+                            key={tab.id}
+                            type="button"
+                            onClick={() => handleTabClick(tab.id)}
+                            className={`mx-auto flex h-12 w-full max-w-[317px] cursor-pointer items-center justify-center rounded-full font-display text-sm font-bold uppercase transition-colors sm:text-lg md:h-16 md:text-[32px] ${
+                                activeTab === tab.id
+                                    ? 'bg-brand text-white'
+                                    : 'text-ink hover:text-brand'
+                            }`}
+                        >
+                            {tab.label}
+                        </button>
                     ))}
                 </div>
             </div>

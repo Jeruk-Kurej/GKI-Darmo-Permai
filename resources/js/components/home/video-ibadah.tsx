@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { MediaThumbnail } from '@/components/media/media-thumbnail';
 
 const videos = [1, 2, 3];
 
@@ -79,7 +80,7 @@ export function VideoIbadah() {
                                     duration: 0.7,
                                     delay: 0.2 + index * 0.15,
                                 }}
-                                className={`group relative aspect-[385/249] w-full cursor-pointer overflow-hidden bg-[linear-gradient(to_bottom,#d9d9d9_28%,#2e2e2e)] ${
+                                className={`w-full cursor-pointer ${
                                     index === 1
                                         ? 'hidden md:block'
                                         : index === 2
@@ -87,20 +88,16 @@ export function VideoIbadah() {
                                           : ''
                                 }`}
                             >
-                                <div className="absolute top-[31%] left-1/2 flex h-16 w-16 -translate-x-1/2 items-center justify-center rounded-full bg-ink transition-transform duration-300 group-hover:scale-110 md:h-[83px] md:w-[83px]">
-                                    <svg
-                                        className="ml-1 h-10 w-10 text-white"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path d="M5 3l14 9-14 9V3z" />
-                                    </svg>
-                                </div>
-                                <p className="absolute bottom-3.5 left-2.5 font-display text-[23px] leading-7 font-bold text-white uppercase">
-                                    Lorem ipsum
-                                    <br />
-                                    Dolor sit amet
-                                </p>
+                                <MediaThumbnail
+                                    playable
+                                    caption={
+                                        <>
+                                            Lorem ipsum
+                                            <br />
+                                            Dolor sit amet
+                                        </>
+                                    }
+                                />
                             </motion.div>
                         ))}
                     </div>

@@ -1,127 +1,106 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Calendar } from 'lucide-react';
-import { FilterDropdown } from '@/components/ui/filter-dropdown';
+import { useState } from 'react';
+import { MediaHeading } from '@/components/media/media-heading';
+import { MonthFilter } from '@/components/media/month-filter';
+import { SpotifyIcon, YoutubeIcon } from '@/components/media/platform-icons';
 import { initialSamas } from './media-data';
-
-// Spotify custom icon for matching perfectly
-function SpotifyIcon({ className = "w-5 h-5" }) {
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.49 17.31c-.22.36-.68.47-1.04.25-2.86-1.74-6.47-2.14-10.72-1.17-.4.09-.81-.16-.9-.57-.09-.41.16-.82.57-.9 4.66-1.06 8.65-.6 11.83 1.34.37.23.48.69.26 1.05zm1.47-3.26c-.28.45-.87.59-1.32.31-3.28-2.02-8.29-2.61-12.18-1.42-.51.15-1.05-.14-1.21-.65-.15-.51.15-1.05.65-1.21 4.45-1.35 10-0.7 13.73 1.59.45.28.59.87.31 1.32zm.12-3.41c-3.93-2.33-10.43-2.55-14.21-1.4-.6.18-1.24-.16-1.42-.77-.18-.6.16-1.24.77-1.42 4.34-1.31 11.53-1.05 16.07 1.64.54.32.72 1.02.4 1.56-.32.54-1.02.72-1.56.4z"/>
-        </svg>
-    );
-}
 
 export function SamasSection({ mediaItems }: { mediaItems?: any[] }) {
     let displaySamas = initialSamas;
 
     if (mediaItems && mediaItems.length > 0) {
-        const dbSamas = mediaItems.filter(m => m.type === 'samas').map(m => ({
-            id: m.id,
-            month: m.month,
-            title: m.title,
-            date: m.subtitle || m.month,
-            youtube: m.youtube_url,
-            spotify: m.spotify_url,
-            image: m.image_path,
-        }));
+        const dbSamas = mediaItems
+            .filter((m) => m.type === 'samas')
+            .map((m) => ({
+                id: m.id,
+                month: m.month,
+                title: m.title,
+                date: m.subtitle || m.month,
+                youtube: m.youtube_url,
+                spotify: m.spotify_url,
+                image: m.image_path,
+            }));
+
         if (dbSamas.length > 0) {
             displaySamas = dbSamas;
         }
     }
 
-    const uniqueMonths = [...new Set(displaySamas.map(s => s.month))];
-    const [selectedMonth, setSelectedMonth] = useState<string>(uniqueMonths[0] || "JANUARI 2026");
+    const uniqueMonths = [...new Set(displaySamas.map((s) => s.month))];
+    const [selectedMonth, setSelectedMonth] = useState<string>(
+        uniqueMonths[0] || 'JANUARI 2026',
+    );
 
-    const filteredSamas = displaySamas.filter(s => s.month === selectedMonth);
-
-    const monthOptions = uniqueMonths.map(m => ({ value: m, label: m }));
+    const filteredSamas = displaySamas.filter((s) => s.month === selectedMonth);
 
     return (
-        <section id="samas" className="relative py-16 overflow-hidden bg-[#fafbfa]">
-            <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col items-center">
+        <section id="samas" className="relative bg-white py-16">
+            <div className="container-page flex flex-col items-center">
+                <MediaHeading
+                    eyebrow="RENUNGAN SAPAAN DAMAI SEJAHTERA"
+                    title="SAMAS"
+                />
 
-                {/* Header */}
-                <div className="text-center mb-6">
-                    <p className="type-eyebrow mb-4 text-ink">
-                        RENUNGAN SAPAAN DAMAI SEJAHTERA
-                    </p>
-                    <h2 className="type-h2 mb-6 text-ink">
-                        SAMAS
-                    </h2>
-                </div>
+                <MonthFilter
+                    value={selectedMonth}
+                    options={uniqueMonths}
+                    onValueChange={setSelectedMonth}
+                />
 
-                {/* Filter Section */}
-                {monthOptions.length > 1 && (
-                    <div className="flex justify-center mb-10">
-                        <FilterDropdown 
-                            value={selectedMonth} 
-                            onValueChange={setSelectedMonth} 
-                            placeholder="Choose Month"
-                            options={monthOptions}
-                        />
-                    </div>
-                )}
-
-                {/* 2-Column Responsive Grid */}
-                <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid w-full grid-cols-1 gap-x-[25px] gap-y-9 md:grid-cols-2">
                     {filteredSamas.map((samas, idx) => (
-                        <motion.div
+                        <motion.article
                             key={samas.id}
                             initial={{ opacity: 0, y: 25 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: idx * 0.05 }}
-                            className="flex items-center justify-between bg-[#6a8b4b] hover:bg-[#5f7d43] text-white p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-brand/20 group select-none"
+                            className="flex items-center justify-between gap-3 bg-brand-dark p-4 text-white select-none md:gap-4 md:p-5"
                         >
-                            {/* Left: Thumbnail area */}
-                            <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 bg-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-                                    <img 
-                                        src={samas.image} 
-                                        alt={samas.title} 
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                            <div className="flex min-w-0 items-center gap-5">
+                                <div className="size-16 shrink-0 overflow-hidden bg-[#d9d9d9] md:size-[87px]">
+                                    <img
+                                        src={samas.image}
+                                        alt=""
+                                        className="h-full w-full object-cover"
                                     />
                                 </div>
 
-                                {/* Title and Date */}
-                                <div className="flex flex-col text-left">
-                                    <h3 className="text-sm md:text-base font-extrabold leading-snug tracking-tight mb-1">
+                                <div className="flex min-w-0 flex-col text-left">
+                                    <h3 className="font-display text-lg leading-6 font-bold uppercase md:text-2xl md:leading-7">
                                         {samas.title}
                                     </h3>
-                                    <span className="text-[10px] md:text-xs font-semibold text-gray-200 uppercase tracking-wider">
+                                    <span className="font-display text-sm uppercase md:text-base">
                                         {samas.date}
                                     </span>
                                 </div>
                             </div>
 
-                            {/* Right: Platforms / Links */}
-                            <div className="flex items-center gap-3">
+                            <div className="flex shrink-0 items-center gap-3">
                                 {samas.youtube && (
-                                    <a 
-                                        href={samas.youtube} 
-                                        target="_blank" 
-                                        rel="noreferrer" 
-                                        className="p-2 bg-white/10 hover:bg-white text-white hover:text-red-500 rounded-full transition-all duration-300 transform hover:scale-110 flex items-center justify-center backdrop-blur-sm"
+                                    <a
+                                        href={samas.youtube}
+                                        target="_blank"
+                                        rel="noreferrer"
                                         aria-label="YouTube"
+                                        className="transition-opacity hover:opacity-80"
                                     >
-                                        <Play size={16} fill="currentColor" strokeWidth={0} />
+                                        <YoutubeIcon className="h-6 w-6 md:h-8 md:w-8" />
                                     </a>
                                 )}
                                 {samas.spotify && (
-                                    <a 
-                                        href={samas.spotify} 
-                                        target="_blank" 
-                                        rel="noreferrer" 
-                                        className="p-2 bg-white/10 hover:bg-white text-white hover:text-green-500 rounded-full transition-all duration-300 transform hover:scale-110 flex items-center justify-center backdrop-blur-sm"
+                                    <a
+                                        href={samas.spotify}
+                                        target="_blank"
+                                        rel="noreferrer"
                                         aria-label="Spotify"
+                                        className="transition-opacity hover:opacity-80"
                                     >
-                                        <SpotifyIcon className="w-4 h-4" />
+                                        <SpotifyIcon className="h-6 w-6 md:h-8 md:w-8" />
                                     </a>
                                 )}
                             </div>
-                        </motion.div>
+                        </motion.article>
                     ))}
                 </div>
             </div>
