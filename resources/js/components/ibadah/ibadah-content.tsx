@@ -17,9 +17,9 @@ export function IbadahContent() {
                 <BrandDecoRight className="absolute top-[30%] -right-80 scale-125 opacity-30" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24 pt-24 space-y-40">
-                <div id="umum"><IbadahGrid data={UMUM_DATA} type="IBADAH UMUM" /></div>
-                <div id="proud"><IbadahGrid data={PROUD_DATA} type="PROUD" /></div>
+            <div className="container-page relative z-10 pt-24 space-y-40">
+                <div id="umum"><IbadahGrid data={UMUM_DATA} type="IBADAH UMUM" eyebrow="IBADAH MINGGUAN UNTUK SELURUH JEMAAT" /></div>
+                <div id="proud"><IbadahGrid data={PROUD_DATA} type="PROUD" eyebrow="RUANG IBADAH DAN PERSEKUTUAN BAGI GENERASI MUDA" /></div>
                 <div id="anak"><IbadahAnak /></div>
             </div>
         </section>

@@ -1,24 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-const slowSmoothScrollTo = (targetY: number, duration: number) => {
-    const startY = window.scrollY;
-    const difference = targetY - startY;
-    const startTime = performance.now();
-
-    const step = (currentTime: number) => {
-        const progress = (currentTime - startTime) / duration;
-
-        if (progress < 1) {
-            const easeProgress = 1 - Math.pow(1 - progress, 3);
-            window.scrollTo(0, startY + difference * easeProgress);
-            requestAnimationFrame(step);
-        } else {
-            window.scrollTo(0, targetY);
-        }
-    };
-
-    requestAnimationFrame(step);
-};
+import { smoothScrollTo, TAB_BAR_OFFSET } from '@/lib/scroll';
 
 export function IbadahTabs() {
     const [activeTab, setActiveTab] = useState('UMUM');
@@ -45,27 +26,26 @@ export function IbadahTabs() {
         const element = document.getElementById(tab.toLowerCase());
 
         if (element) {
-            const offset = 148;
-            const targetY = element.getBoundingClientRect().top + window.scrollY - offset;
-            slowSmoothScrollTo(targetY, 1200);
+            const targetY = element.getBoundingClientRect().top + window.scrollY - TAB_BAR_OFFSET;
+            smoothScrollTo(targetY);
         }
     };
 
     return (
         <div className="sticky top-20 z-40 w-full bg-brand shadow-lg select-none">
-            <div className="max-w-7xl mx-auto flex items-center">
+            <div className="flex h-24 items-stretch">
                 {tabs.map((tab, idx) => (
                     <React.Fragment key={tab}>
                         <button
                             onClick={() => handleTabClick(tab)}
-                            className={`flex-1 py-5 text-sm md:text-xl font-bold tracking-[0.2em] transition-all relative uppercase cursor-pointer select-none ${
-                                activeTab === tab ? 'text-white' : 'text-white/60 hover:text-white'
+                            className={`flex flex-1 items-center justify-center font-display text-2xl leading-none font-bold uppercase transition-colors cursor-pointer select-none md:text-[40px] ${
+                                activeTab === tab ? 'text-white' : 'text-white/70 hover:text-white'
                             }`}
                         >
                             {tab}
                         </button>
                         {idx < tabs.length - 1 && (
-                            <div className="h-8 w-[2px] bg-white/20" />
+                            <div className="my-auto h-12 w-[3px] bg-white" />
                         )}
                     </React.Fragment>
                 ))}

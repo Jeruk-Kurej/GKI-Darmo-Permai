@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { buttonClasses } from '@/components/button-link';
 
-export function IbadahGrid({ data, type }: { data: any, type: string }) {
+export function IbadahGrid({ data, type, eyebrow }: { data: any, type: string, eyebrow: string }) {
     return (
         <motion.div 
             initial={{ opacity: 0, y: 30 }} 
@@ -11,7 +12,7 @@ export function IbadahGrid({ data, type }: { data: any, type: string }) {
             className="select-none"
         >
             <div className="text-center mb-16">
-                <p className="type-eyebrow mb-4 text-ink">JADWAL PELAYANAN MINGGUAN</p>
+                <p className="type-eyebrow mb-4 text-ink">{eyebrow}</p>
                 <div className="relative inline-block">
                     <h2 className="type-h2 text-ink">{type}</h2>
                     <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-2/3 h-[5px] bg-brand" />
@@ -26,7 +27,7 @@ export function IbadahGrid({ data, type }: { data: any, type: string }) {
                             <span className="block text-xs font-bold text-ink uppercase tracking-tighter">{data.main.date.split(' ')[1]}</span>
                         </div>
                         <div>
-                            <span className="text-[10px] font-bold text-brand tracking-widest uppercase mb-4 block">LIVE STREAM</span>
+                            <span className="text-[10px] font-bold text-brand tracking-widest uppercase mb-4 block">KEBAKTIAN</span>
                             <h3 className="text-2xl font-black text-ink mb-4 uppercase leading-tight">{data.main.title}</h3>
                             <div className="space-y-1 mb-8">
                                 <p className="text-[15px] font-bold text-gray-800 leading-snug">{data.main.theme}</p>
@@ -43,7 +44,7 @@ export function IbadahGrid({ data, type }: { data: any, type: string }) {
                                 </div>
                             </div>
                         </div>
-                        <button className="w-full bg-brand cursor-pointer text-white py-4 font-bold rounded-md hover:bg-brand transition-all shadow-lg shadow-brand/20 uppercase tracking-widest text-sm">Tonton Sekarang</button>
+                        <button className={`${buttonClasses()} w-full cursor-pointer`}>Tonton Streaming</button>
                     </div>
                     <div className="order-1 lg:order-2 lg:col-span-8 relative group cursor-pointer overflow-hidden min-h-[300px] md:min-h-[450px]">
                         <img src={data.main.thumbnail} alt="Live Stream" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
@@ -54,7 +55,7 @@ export function IbadahGrid({ data, type }: { data: any, type: string }) {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 {data.schedules.map((schedule: any, idx: number) => (
                     <motion.div key={idx} whileHover={{ y: -8 }} className="bg-[#f5f7e4] p-5 md:p-8 rounded-sm shadow-sm flex flex-col justify-between relative border-b-[6px] md:border-b-[8px] border-brand">
                         <div className="absolute top-5 right-5 text-right">

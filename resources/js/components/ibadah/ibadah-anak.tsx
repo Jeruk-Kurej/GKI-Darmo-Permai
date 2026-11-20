@@ -19,7 +19,7 @@ export function IbadahAnak() {
                 </div>
             </div>
 
-            <div className="bg-[#f5f7e4] rounded-sm shadow-lg grid grid-cols-1 md:grid-cols-2 relative p-10 md:p-16 lg:p-20 overflow-hidden">
+            <div className="mx-auto max-w-[835px] bg-[#f5f7e4] rounded-sm shadow-lg grid grid-cols-1 md:grid-cols-2 relative p-10 md:p-16 lg:p-12 overflow-hidden">
                 <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[6px] h-3/5 bg-brand" />
                 <div className="flex flex-col justify-center pr-0 md:pr-16 mb-12 md:mb-0">
                     <div className="flex justify-between items-start mb-10">
