@@ -1,14 +1,50 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
-import { FilterDropdown } from '@/components/ui/filter-dropdown';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
+import { MediaHeading } from '@/components/media/media-heading';
+import { MediaThumbnail } from '@/components/media/media-thumbnail';
+import { MonthFilter } from '@/components/media/month-filter';
 import { initialVideos } from './media-data';
 
+const VISIBLE_COUNT = 3;
+
+type VideoItem = {
+    id: number | string;
+    month: string;
+    title: string;
+    subtitle: string;
+    image?: string;
+    youtube_url?: string | null;
+};
+
+function SlideArrow({
+    label,
+    direction,
+    onClick,
+}: {
+    label: string;
+    direction: 'prev' | 'next';
+    onClick: () => void;
+}) {
+    const Icon = direction === 'prev' ? ChevronLeft : ChevronRight;
+
+    return (
+        <button
+            type="button"
+            onClick={onClick}
+            aria-label={label}
+            className="shrink-0 text-brand transition-colors hover:text-brand-dark active:scale-95"
+        >
+            <Icon className="h-10 w-10 lg:h-[57px] lg:w-[57px]" strokeWidth={2} />
+        </button>
+    );
+}
+
 export function VideoIbadahSection({ mediaItems }: { mediaItems?: any[] }) {
-    let displayVideos = initialVideos;
+    let displayVideos: VideoItem[] = initialVideos;
 
     if (mediaItems && mediaItems.length > 0) {
-        const dbVideos = mediaItems.filter(m => m.type === 'video').map(m => ({
+        const dbVideos = mediaItems.filter((m) => m.type === 'video').map((m) => ({
             id: m.id,
             month: m.month,
             title: m.title,
@@ -16,118 +52,73 @@ export function VideoIbadahSection({ mediaItems }: { mediaItems?: any[] }) {
             image: m.image_path,
             youtube_url: m.youtube_url,
         }));
+
         if (dbVideos.length > 0) {
             displayVideos = dbVideos;
         }
     }
 
-    const uniqueMonths = [...new Set(displayVideos.map(v => v.month))];
-    const [selectedMonth, setSelectedMonth] = useState<string>(uniqueMonths[0] || "JANUARI 2026");
+    const uniqueMonths = [...new Set(displayVideos.map((v) => v.month))];
+    const [selectedMonth, setSelectedMonth] = useState<string>(uniqueMonths[0] || 'JANUARI 2026');
     const [slideIndex, setSlideIndex] = useState(0);
 
-    const filteredVideos = displayVideos.filter(v => v.month === selectedMonth);
+    const filteredVideos = displayVideos.filter((v) => v.month === selectedMonth);
+    const canSlide = filteredVideos.length > VISIBLE_COUNT;
+    const lastStart = filteredVideos.length - VISIBLE_COUNT;
+    const visibleVideos = filteredVideos.slice(slideIndex, slideIndex + VISIBLE_COUNT);
 
     const handlePrev = () => {
-        setSlideIndex(prev => (prev > 0 ? prev - 1 : filteredVideos.length - 3));
+        setSlideIndex((prev) => (prev > 0 ? prev - 1 : lastStart));
     };
 
     const handleNext = () => {
-        setSlideIndex(prev => (prev < filteredVideos.length - 3 ? prev + 1 : 0));
+        setSlideIndex((prev) => (prev < lastStart ? prev + 1 : 0));
     };
 
-    const monthOptions = uniqueMonths.map(m => ({ value: m, label: m }));
-
     return (
-        <section id="video-ibadah" className="relative py-16 overflow-hidden bg-white">
-            <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col items-center">
-                
-                {/* Header */}
-                <div className="text-center mb-6">
-                    <p className="type-eyebrow mb-4 text-ink">
-                        REKAMAN IBADAH
-                    </p>
-                    <h2 className="type-h2 mb-6 text-ink">
-                        VIDEO IBADAH
-                    </h2>
-                </div>
+        <section id="video-ibadah" className="relative bg-white py-16">
+            <div className="container-page flex flex-col items-center">
+                <MediaHeading eyebrow="REKAMAN IBADAH" title="VIDEO IBADAH" />
 
-                {/* Filter Section */}
-                {monthOptions.length > 1 && (
-                    <div className="flex justify-center mb-10">
-                        <FilterDropdown 
-                            value={selectedMonth} 
-                            onValueChange={(val) => { setSelectedMonth(val); setSlideIndex(0); }} 
-                            placeholder="Choose Month"
-                            options={monthOptions}
-                        />
-                    </div>
-                )}
+                <MonthFilter
+                    value={selectedMonth}
+                    options={uniqueMonths}
+                    onValueChange={(val) => {
+                        setSelectedMonth(val);
+                        setSlideIndex(0);
+                    }}
+                />
 
-                {/* Slider / Carousel with left/right arrows */}
-                <div className="relative w-full flex items-center justify-center gap-4">
-                    {filteredVideos.length > 3 && (
-                        <button 
-                            onClick={handlePrev}
-                            className="absolute left-0 lg:-left-6 z-20 bg-white border border-gray-200 text-gray-700 hover:bg-brand hover:text-white hover:border-brand transition-all p-3 rounded-full shadow-lg active:scale-95 flex-shrink-0"
-                            aria-label="Previous"
-                        >
-                            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
-                        </button>
-                    )}
+                <div className="flex w-full items-center gap-4 lg:gap-[47px]">
+                    {canSlide && <SlideArrow label="Video sebelumnya" direction="prev" onClick={handlePrev} />}
 
-                    <div className="w-full max-w-5xl overflow-hidden py-4">
-                        <motion.div 
-                            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-                            animate={{ x: 0 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        >
-                            {filteredVideos.map((video, idx) => (
-                                <motion.div 
-                                    key={video.id}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: idx * 0.08 }}
-                                    onClick={() => video.youtube_url && window.open(video.youtube_url, '_blank')}
-                                    className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col cursor-pointer"
-                                >
-                                    {/* Video Thumbnail Container */}
-                                    <div className="relative aspect-[4/3] bg-gray-200 overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
-                                        <div className="absolute inset-0 flex items-center justify-center z-20">
-                                            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-full text-ink shadow-xl group-hover:scale-110 transition-transform duration-500 group-hover:bg-brand group-hover:text-white">
-                                                <Play size={24} fill="currentColor" strokeWidth={0} />
-                                            </div>
-                                        </div>
-                                        {video.image && (
-                                            <img src={video.image} alt={video.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                                        )}
-                                        {/* Fallback pattern background just in case image fails */}
-                                        <div className="absolute inset-0 bg-gradient-to-br from-gray-400 to-gray-600 opacity-60"></div>
-                                        <div className="absolute bottom-4 left-4 right-4 z-20 text-white flex flex-col text-left">
-                                            <span className="text-base md:text-lg font-black uppercase tracking-tight leading-tight">
-                                                {video.title}
-                                            </span>
-                                            <span className="text-[10px] md:text-xs font-bold text-gray-300 uppercase tracking-wide">
-                                                {video.subtitle}
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="h-1.5 bg-brand w-full"></div>
-                                </motion.div>
-                            ))}
-                        </motion.div>
+                    <div className="grid flex-1 grid-cols-1 gap-6 md:grid-cols-3 lg:gap-[55px]">
+                        {visibleVideos.map((video, idx) => (
+                            <motion.div
+                                key={video.id}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                                onClick={() => video.youtube_url && window.open(video.youtube_url, '_blank')}
+                                className="cursor-pointer"
+                            >
+                                <MediaThumbnail
+                                    image={video.image}
+                                    playable
+                                    caption={
+                                        <>
+                                            {video.title}
+                                            <br />
+                                            {video.subtitle}
+                                        </>
+                                    }
+                                />
+                            </motion.div>
+                        ))}
                     </div>
 
-                    {filteredVideos.length > 3 && (
-                        <button 
-                            onClick={handleNext}
-                            className="absolute right-0 lg:-right-6 z-20 bg-white border border-gray-200 text-gray-700 hover:bg-brand hover:text-white hover:border-brand transition-all p-3 rounded-full shadow-lg active:scale-95 flex-shrink-0"
-                            aria-label="Next"
-                        >
-                            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
-                        </button>
-                    )}
+                    {canSlide && <SlideArrow label="Video selanjutnya" direction="next" onClick={handleNext} />}
                 </div>
             </div>
         </section>

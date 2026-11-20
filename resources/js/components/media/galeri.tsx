@@ -1,59 +1,40 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FilterDropdown } from '@/components/ui/filter-dropdown';
+import { useState } from 'react';
+import { MediaHeading } from '@/components/media/media-heading';
+import { MediaThumbnail } from '@/components/media/media-thumbnail';
+import { MonthFilter } from '@/components/media/month-filter';
 import { initialGallery } from './media-data';
 
 export function GaleriSection({ mediaItems }: { mediaItems?: any[] }) {
     let displayGallery = initialGallery;
 
     if (mediaItems && mediaItems.length > 0) {
-        const dbGallery = mediaItems.filter(m => m.type === 'gallery').map(m => ({
+        const dbGallery = mediaItems.filter((m) => m.type === 'gallery').map((m) => ({
             id: m.id,
             month: m.month,
             title: m.title,
             subtitle: m.subtitle,
             image: m.image_path,
         }));
+
         if (dbGallery.length > 0) {
             displayGallery = dbGallery;
         }
     }
 
-    const uniqueMonths = [...new Set(displayGallery.map(g => g.month))];
-    const [selectedMonth, setSelectedMonth] = useState<string>(uniqueMonths[0] || "JANUARI 2026");
+    const uniqueMonths = [...new Set(displayGallery.map((g) => g.month))];
+    const [selectedMonth, setSelectedMonth] = useState<string>(uniqueMonths[0] || 'JANUARI 2026');
 
-    const filteredGallery = displayGallery.filter(g => g.month === selectedMonth);
-
-    const monthOptions = uniqueMonths.map(m => ({ value: m, label: m }));
+    const filteredGallery = displayGallery.filter((g) => g.month === selectedMonth);
 
     return (
-        <section id="galeri" className="relative py-16 overflow-hidden bg-white">
-            <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col items-center">
+        <section id="galeri" className="relative bg-white py-16">
+            <div className="container-page flex flex-col items-center">
+                <MediaHeading eyebrow="DOKUMENTASI KEGIATAN" title="GALERI" />
 
-                {/* Header */}
-                <div className="text-center mb-6">
-                    <p className="type-eyebrow mb-4 text-ink">
-                        DOKUMENTASI KEGIATAN
-                    </p>
-                    <h2 className="type-h2 mb-6 text-ink">
-                        GALERI
-                    </h2>
-                </div>
+                <MonthFilter value={selectedMonth} options={uniqueMonths} onValueChange={setSelectedMonth} />
 
-                {/* Filter Section */}
-                {monthOptions.length > 1 && (
-                    <div className="flex justify-center mb-10">
-                        <FilterDropdown 
-                            value={selectedMonth} 
-                            onValueChange={setSelectedMonth} 
-                            placeholder="Choose Month"
-                            options={monthOptions}
-                        />
-                    </div>
-                )}
-
-                {/* 3-Column Image Grid */}
-                <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3 lg:gap-[55px]">
                     {filteredGallery.map((item, idx) => (
                         <motion.div
                             key={item.id}
@@ -61,28 +42,18 @@ export function GaleriSection({ mediaItems }: { mediaItems?: any[] }) {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: idx * 0.05 }}
-                            className="group relative bg-[#EDEDED] aspect-[4/3] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col justify-end border border-gray-100"
+                            className="cursor-pointer"
                         >
-                            {/* Fallback color / background image */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-black/25 to-transparent z-10"></div>
-                            {item.image && (
-                                <img 
-                                    src={item.image} 
-                                    alt={item.title} 
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0 select-none opacity-80" 
-                                />
-                            )}
-
-                            {/* Caption at bottom */}
-                            <div className="relative z-20 p-6 text-left flex flex-col">
-                                <h3 className="text-base md:text-lg font-extrabold text-white uppercase leading-tight group-hover:text-[#e4efe0] transition-colors duration-300 tracking-tight">
-                                    {item.title}
-                                </h3>
-                                <p className="text-[10px] md:text-xs font-semibold text-gray-200 uppercase tracking-wide">
-                                    {item.subtitle}
-                                </p>
-                            </div>
-                            <div className="h-1 bg-brand w-full relative z-20"></div>
+                            <MediaThumbnail
+                                image={item.image}
+                                caption={
+                                    <>
+                                        {item.title}
+                                        <br />
+                                        {item.subtitle}
+                                    </>
+                                }
+                            />
                         </motion.div>
                     ))}
                 </div>
