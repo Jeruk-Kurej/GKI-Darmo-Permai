@@ -4,34 +4,13 @@ import { GaleriSection } from '@/components/media/galeri';
 import { SamasSection } from '@/components/media/samas';
 import { VideoIbadahSection } from '@/components/media/video-ibadah';
 import { PageHero } from '@/components/page-hero';
-
-const TAB_BAR_OFFSET = 176;
+import { smoothScrollTo, TAB_BAR_OFFSET } from '@/lib/scroll';
 
 const tabs = [
     { id: 'video-ibadah', label: 'Video Ibadah' },
     { id: 'samas', label: 'SAMAS' },
     { id: 'galeri', label: 'Galeri' },
 ];
-
-const slowSmoothScrollTo = (targetY: number, duration: number) => {
-    const startY = window.scrollY;
-    const difference = targetY - startY;
-    const startTime = performance.now();
-
-    const step = (currentTime: number) => {
-        const progress = (currentTime - startTime) / duration;
-
-        if (progress < 1) {
-            const easeProgress = 1 - Math.pow(1 - progress, 3);
-            window.scrollTo(0, startY + difference * easeProgress);
-            requestAnimationFrame(step);
-        } else {
-            window.scrollTo(0, targetY);
-        }
-    };
-
-    requestAnimationFrame(step);
-};
 
 export default function Media({ mediaItems }: { mediaItems?: any[] }) {
     const [activeTab, setActiveTab] = useState<string>('video-ibadah');
@@ -65,7 +44,7 @@ export default function Media({ mediaItems }: { mediaItems?: any[] }) {
                 element.getBoundingClientRect().top +
                 window.scrollY -
                 TAB_BAR_OFFSET;
-            slowSmoothScrollTo(targetY, 1200);
+            smoothScrollTo(targetY);
         }
     };
 
@@ -78,7 +57,7 @@ export default function Media({ mediaItems }: { mediaItems?: any[] }) {
                 title="Dengar dan tonton kembali"
                 image="/images/media/media-header.webp"
             />
-            <div className="sticky top-20 z-40 w-full bg-white py-4 select-none">
+            <div className="sticky top-20 z-40 flex h-24 w-full items-center bg-white select-none">
                 <div className="container-page grid grid-cols-3 gap-4">
                     {tabs.map((tab) => (
                         <button
