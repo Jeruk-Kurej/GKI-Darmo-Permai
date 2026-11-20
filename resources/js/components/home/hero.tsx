@@ -1,4 +1,4 @@
-import { Link } from '@inertiajs/react';
+import { buttonClasses, ButtonLink } from '@/components/button-link';
 
 const NAVBAR_HEIGHT = 80;
 
@@ -53,16 +53,13 @@ export function Hero() {
                     <button
                         type="button"
                         onClick={scrollToJadwal}
-                        className="flex h-[55px] items-center justify-center rounded-2xl bg-brand type-button text-white transition-colors hover:bg-brand-dark"
+                        className={buttonClasses({ size: 'wide' })}
                     >
                         Lihat Jadwal Ibadah
                     </button>
-                    <Link
-                        href="/ibadah#umum"
-                        className="flex h-[55px] items-center justify-center rounded-2xl border-4 border-brand type-button font-bold text-white transition-colors hover:bg-brand/20"
-                    >
+                    <ButtonLink href="/ibadah#umum" variant="outline" size="wide">
                         Tonton Live Streaming
-                    </Link>
+                    </ButtonLink>
                 </div>
 
                 <div className="mt-4 flex items-start gap-3">

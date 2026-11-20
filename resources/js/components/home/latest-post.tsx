@@ -1,125 +1,111 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from '@inertiajs/react';
+import { ArrowLink } from '@/components/arrow-link';
 import { BrandDecoLeft, BrandDecoRight } from '@/components/ui/shapes';
+
+const posts = [1, 2, 3, 4].map((id) => ({
+    id,
+    image: '/images/kegiatan/kebaktian-thumbnail.webp',
+    day: '20',
+    month: 'Juli',
+    category: 'Kebaktian',
+    title: 'Camp Jemaat GKI Damai 2026',
+    author: 'Oleh Albert Einstein',
+    time: 'MINGGU | 07:00 WIB',
+}));
 
 export function LatestPost() {
     return (
-        <section className="relative w-full overflow-hidden bg-white py-16 md:py-24">
-            {/* === BACKGROUND SHAPES === */}
-            
-            {/* Kiri Atas */}
-            <div className="absolute top-0 left-0 h-full w-[30%] pointer-events-none">
+        <section className="relative w-full overflow-hidden bg-white pt-16 pb-16 lg:pt-[70px] lg:pb-[70px]">
+            <div className="pointer-events-none absolute top-0 left-0 h-full w-[30%]">
                 <BrandDecoLeft className="-translate-x-20 -translate-y-10 scale-125 opacity-70" />
             </div>
-
-            {/* Kanan Bawah */}
-            <div className="absolute top-0 right-0 h-full w-[30%] pointer-events-none flex justify-end items-end pb-20">
+            <div className="pointer-events-none absolute top-0 right-0 flex h-full w-[30%] items-end justify-end pb-20">
                 <BrandDecoRight className="translate-x-10 translate-y-20 scale-110 opacity-70" />
             </div>
 
-            {/* === MAIN CONTENT === */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center">
-                
-                {/* Header */}
-                <div className="text-center mb-12">
-                    <motion.p 
+            <div className="relative z-10 container-page flex flex-col items-center">
+                <div className="text-center">
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.8 }}
                         transition={{ duration: 0.6 }}
-                        className="type-eyebrow mb-4 text-ink"
+                        className="mb-4 type-eyebrow text-ink"
                     >
-                        READ OUR BLOG
+                        Read our Blog
                     </motion.p>
-                    
-                    <motion.h2 
+                    <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.8 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="type-h2 text-ink"
                     >
-                        LATEST POST
+                        Latest Post
                     </motion.h2>
                 </div>
 
-                {/* Grid 4 Kolom */}
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    {[1, 2, 3, 4].map((item, index) => (
-                        <motion.div 
-                            key={item}
+                <div className="mt-12 grid w-full grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+                    {posts.map((post, index) => (
+                        <motion.article
+                            key={post.id}
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, amount: 0.2 }}
                             transition={{ duration: 0.6, delay: 0.1 * index }}
-                            className="flex flex-col w-full shadow-lg hover:-translate-y-2 transition-transform duration-300 cursor-pointer group"
+                            className="group relative flex h-[367px] w-full max-w-[302px] cursor-pointer flex-col bg-cream transition-transform duration-300 hover:-translate-y-2"
                         >
-                            {/* Card Image Area */}
-                            <div className="relative w-full aspect-square bg-[#63a4d4] overflow-hidden">
-                                {/* Placeholder Gambar / Gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-b from-[#4ca1af] to-[#2c3e50] mix-blend-multiply opacity-20 group-hover:scale-105 transition-transform duration-700"></div>
-                                
-                                {/* Placeholder Teks Gambar (Hanya untuk referensi ketiadaan foto asli) */}
-                                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none opacity-80">
-                                    <h4 className="text-[#f1c40f] font-extrabold text-3xl md:text-4xl text-center leading-none tracking-tighter" style={{ fontFamily: 'Georgia, serif' }}>
-                                        THE<br/>SERMON
-                                    </h4>
-                                    <p className="text-white font-medium italic mt-2 text-sm" style={{ fontFamily: 'Tangerine, cursive', fontSize: '24px' }}>
-                                        on The Mount
-                                    </p>
-                                </div>
-
-                                {/* Date Badge */}
-                                <div className="absolute top-4 right-4 text-right">
-                                    <span className="block text-2xl font-black text-black leading-none">20</span>
-                                    <span className="block text-[10px] font-bold text-black uppercase tracking-wider">JULI</span>
+                            <div className="relative h-[170px] w-full overflow-hidden">
+                                <img
+                                    src={post.image}
+                                    alt=""
+                                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute top-[5px] right-[15px] text-right font-display leading-none text-ink uppercase">
+                                    <span className="block text-xl font-bold tracking-[-0.01em]">
+                                        {post.day}
+                                    </span>
+                                    <span className="block text-[15px]">
+                                        {post.month}
+                                    </span>
                                 </div>
                             </div>
 
-                            {/* Card Content Area */}
-                            <div className="flex-1 bg-[#f3f4e8] p-6 flex flex-col justify-between border-b-[12px] border-brand">
-                                <div>
-                                    <p className="text-brand font-bold text-xs tracking-widest uppercase mb-2">
-                                        KEBAKTIAN
-                                    </p>
-                                    <h3 className="text-xl font-extrabold text-black leading-tight mb-4 group-hover:text-brand-dark transition-colors">
-                                        CAMP JEMAAT GKI DAMAI 2026
-                                    </h3>
-                                </div>
-                                
-                                <div className="mt-4">
-                                    <p className="text-gray-800 text-xs mb-1">
-                                        Oleh Albert Einstein
-                                    </p>
-                                    <p className="text-gray-600 text-[10px] font-semibold tracking-wide">
-                                        MINGGU | 07:00 WIB
-                                    </p>
-                                </div>
+                            <div className="flex flex-1 flex-col px-7 pt-[11px] font-display">
+                                <p className="inline-block self-start bg-[linear-gradient(164.6deg,#5d6c4c_53.8%,#86a661_62.6%)] bg-clip-text text-xl leading-none font-bold tracking-[0.08em] text-transparent uppercase">
+                                    {post.category}
+                                </p>
+                                <h3 className="mt-2.5 text-2xl leading-7 font-bold tracking-[-0.01em] text-black uppercase">
+                                    {post.title}
+                                </h3>
+                                <p className="mt-auto text-lg leading-none text-ink">
+                                    {post.author}
+                                </p>
+                                <p className="mt-[3px] mb-[13px] text-base leading-6 text-ink">
+                                    {post.time}
+                                </p>
                             </div>
-                        </motion.div>
+
+                            <span className="h-4 w-full bg-brand-dark" />
+                        </motion.article>
                     ))}
                 </div>
 
-                {/* Footer Link */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: false }}
                     transition={{ duration: 0.5, delay: 0.5 }}
-                    className="w-full flex justify-end mt-8"
+                    className="mt-5 flex w-full justify-end"
                 >
-                    <Link href="/e-warta#warta-list" className="flex items-center text-gray-800 hover:text-brand font-semibold transition-colors group">
-                        Lihat Semua 
-                        <svg className="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" strokeWidth="2" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </Link>
+                    <ArrowLink
+                        href="/e-warta#warta-list"
+                        className="text-ink hover:text-brand"
+                    >
+                        Lihat Semua
+                    </ArrowLink>
                 </motion.div>
-
             </div>
         </section>
     );
 }
-

@@ -1,111 +1,116 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+
+const videos = [1, 2, 3];
+
+function VideoArrow({
+    label,
+    path,
+    className,
+}: {
+    label: string;
+    path: string;
+    className: string;
+}) {
+    return (
+        <button
+            type="button"
+            aria-label={label}
+            className={`absolute top-1/2 z-20 hidden -translate-y-1/2 text-white transition-colors hover:text-gray-300 active:scale-90 md:block ${className}`}
+        >
+            <svg
+                className="h-12 w-12 lg:h-[57px] lg:w-[57px]"
+                fill="none"
+                strokeWidth="2"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path strokeLinecap="round" strokeLinejoin="round" d={path} />
+            </svg>
+        </button>
+    );
+}
 
 export function VideoIbadah() {
     return (
-        <section 
-            className="relative w-full py-20 md:py-32 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('/images/home/video-terbaru-bg.webp')` }}
+        <section
+            className="relative w-full bg-cover bg-center bg-no-repeat pt-10 pb-14 lg:pt-[41px] lg:pb-[66px]"
+            style={{
+                backgroundImage: `url('/images/home/video-terbaru-bg.webp')`,
+            }}
         >
-            {/* Dark Overlay untuk membuat teks putih lebih terbaca */}
-            <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
-
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center">
-                
-                {/* Header */}
-                <div className="text-center mb-16">
-                    <motion.p 
+            <div className="relative z-10 mx-auto w-full max-w-[calc(1265px+3rem)] px-6">
+                <div className="text-center">
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.8 }}
                         transition={{ duration: 0.6 }}
-                        className="type-eyebrow mb-4 text-white"
+                        className="mb-[19px] type-eyebrow text-white"
                     >
-                        Saksikan kembali firman Tuhan dan pujian penyembahan dari ibadah minggu terakhir.
+                        Saksikan kembali firman Tuhan dan pujian penyembahan
+                        dari ibadah minggu terakhir.
                     </motion.p>
-                    <motion.h2 
+                    <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.8 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="type-h2 text-white"
                     >
-                        VIDEO IBADAH TERBARU
+                        Video Ibadah Terbaru
                     </motion.h2>
                 </div>
 
-                {/* Video Carousel Section */}
-                <div className="w-full relative flex items-center justify-center">
-                    
-                    {/* Left Navigation Arrow */}
-                    <motion.button 
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="absolute left-[-20px] md:left-[-50px] text-white hover:text-gray-300 transition-colors active:scale-90 z-20 hidden md:block"
-                        aria-label="Previous Video"
-                    >
-                        <svg className="w-12 h-12 lg:w-16 lg:h-16 drop-shadow-md" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </motion.button>
+                <div className="relative mt-10 lg:mt-[63px]">
+                    <VideoArrow
+                        label="Video sebelumnya"
+                        path="M15 19l-7-7 7-7"
+                        className="-left-12 lg:-left-[57px]"
+                    />
 
-                    {/* Cards Grid */}
-                    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                        
-                        {/* Dummy Video Array untuk Loop */}
-                        {[1, 2, 3].map((item, index) => (
-                            <motion.div 
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-[55px]">
+                        {videos.map((item, index) => (
+                            <motion.div
                                 key={item}
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: false, amount: 0.2 }}
-                                transition={{ duration: 0.7, delay: 0.2 + (index * 0.15) }}
-                                className={`group relative w-full aspect-[16/10] bg-gray-300 overflow-hidden cursor-pointer shadow-xl ${index === 1 ? 'hidden md:block' : ''} ${index === 2 ? 'hidden lg:block' : ''}`}
+                                transition={{
+                                    duration: 0.7,
+                                    delay: 0.2 + index * 0.15,
+                                }}
+                                className={`group relative aspect-[385/249] w-full cursor-pointer overflow-hidden bg-[linear-gradient(to_bottom,#d9d9d9_28%,#2e2e2e)] ${
+                                    index === 1
+                                        ? 'hidden md:block'
+                                        : index === 2
+                                          ? 'hidden lg:block'
+                                          : ''
+                                }`}
                             >
-                                {/* Placeholder Background (Bisa diganti dengan thumbnail Youtube nantinya) */}
-                                <div className="absolute inset-0 bg-gradient-to-b from-gray-200 to-gray-400 group-hover:scale-105 transition-transform duration-700 ease-out"></div>
-                                
-                                {/* Gradient Bawah Hitam untuk teks */}
-                                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-
-                                {/* Play Button Icon (Center) */}
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-16 h-16 md:w-20 md:h-20 bg-ink rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
-                                        <svg className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M5 3l14 9-14 9V3z" />
-                                        </svg>
-                                    </div>
+                                <div className="absolute top-[31%] left-1/2 flex h-16 w-16 -translate-x-1/2 items-center justify-center rounded-full bg-ink transition-transform duration-300 group-hover:scale-110 md:h-[83px] md:w-[83px]">
+                                    <svg
+                                        className="ml-1 h-10 w-10 text-white"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M5 3l14 9-14 9V3z" />
+                                    </svg>
                                 </div>
-
-                                {/* Teks Bawah */}
-                                <div className="absolute bottom-6 left-6 right-6">
-                                    <p className="text-white text-lg md:text-xl font-bold leading-tight tracking-wide drop-shadow-md">
-                                        LOREM IPSUM<br/>
-                                        DOLOR SIT AMET
-                                    </p>
-                                </div>
+                                <p className="absolute bottom-3.5 left-2.5 font-display text-[23px] leading-7 font-bold text-white uppercase">
+                                    Lorem ipsum
+                                    <br />
+                                    Dolor sit amet
+                                </p>
                             </motion.div>
                         ))}
                     </div>
 
-                    {/* Right Navigation Arrow */}
-                    <motion.button 
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="absolute right-[-20px] md:right-[-50px] text-white hover:text-gray-300 transition-colors active:scale-90 z-20 hidden md:block"
-                        aria-label="Next Video"
-                    >
-                        <svg className="w-12 h-12 lg:w-16 lg:h-16 drop-shadow-md" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </motion.button>
-
+                    <VideoArrow
+                        label="Video selanjutnya"
+                        path="M9 5l7 7-7 7"
+                        className="-right-12 lg:-right-[57px]"
+                    />
                 </div>
-
             </div>
         </section>
     );
